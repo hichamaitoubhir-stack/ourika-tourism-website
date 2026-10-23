@@ -11,7 +11,7 @@ import {
 import { experiences, reviews as reviewsData } from './lib/data';
 import { LangContext, dict, type Lang } from './lib/i18n';
 
-const WHATSAPP_NUMBER = '212606125022';
+const WHATSAPP_NUMBER = '212623886682';
 const WA_LINK = (text: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
 // --- Lang Provider
