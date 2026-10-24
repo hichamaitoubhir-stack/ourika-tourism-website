@@ -269,21 +269,39 @@ function HomePage() {
     <main>
       {/* HERO */}
       <section className="relative max-w-[1280px] mx-auto px-6 lg:px-8 pt-2">
-        <div className="relative rounded-[32px] overflow-hidden bg-[#1A3A2F] min-h-[88vh] flex items-end">
-          <img src="/images/hero-atlas.jpg" alt="Atlas Mountains Ourika Valley" className="absolute inset-0 w-full h-full object-cover opacity-[0.72]" loading="eager"/>
+        {/* <div className="relative rounded-[32px] overflow-hidden bg-[#1A3A2F] min-h-[88vh] flex items-end"> */}
+        <div className="relative rounded-[28px] md:rounded-[32px] overflow-hidden bg-[#1A3A2F] min-h-[720px] md:min-h-[88vh] flex items-end">
+          <img src="/images/hero-atlas.jpg" alt="Atlas Mountains Ourika Valley" className="absolute inset-0 
+          w-full h-full object-cover opacity-[0.72]" loading="eager"/>
           <div className="absolute inset-0 bg-gradient-to-t from-[#1A3A2F] via-[#1A3A2F]/30 to-transparent" />
-          <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
-            <Badge><span className="w-2 h-2 rounded-full bg-[#D9773A] animate-pulse"/>{t.hero.badge}</Badge>
-            <div className="hidden md:flex items-center gap-2 text-[11px] text-white/70"><MapPin className="w-3.5 h-3.5"/> 31.316°N, 7.780°W • Tnine Ourika</div>
-          </div>
+          {/* <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
+            <Badge><span className="w-2 h-2 rounded-full bg-[#D9773A] animate-pulse"/>
+            {t.hero.badge}</Badge>
+            <div className="hidden md:flex items-center gap-2 text-[11px] text-white/70">
+            <MapPin className="w-3.5 h-3.5"/> 31.316°N, 7.780°W • Tnine Ourika</div>
+          </div> */}
+
+          {/* chengeer */}
+<div className="absolute top-6 left-6 right-6 flex items-center justify-between">
+  <Badge>
+    <span className="w-2 h-2 rounded-full bg-[#D9773A] animate-pulse"/>
+    {t.hero.badge}
+  </Badge>
+  <div className="hidden md:flex items-center gap-2 text-[11px] text-white/70">
+    <MapPin className="w-3.5 h-3.5"/>
+    31.316°N, 7.780°W • Tnine Ourika
+  </div>
+</div>
+
+          {/* changer */}
             
-          <div className="relative p-8 lg:p-12 w-full grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-end">
+          {/* <div className="relative p-8 lg:p-12 w-full grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-end"> */}
+          <div className="relative z-10 p-5 pt-32 sm:p-8 sm:pt-32 lg:p-12 w-full grid lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-10 items-end">
           
             <div>
-          
-                {/* <h1 className="font-display text-[32px] sm:text-[42px] lg:text-[72px] font-[640] leading-[1.05] tracking-[-0.04em] text-white whitespace-pre-line">{t.hero.title}</h1> */}
-
               {/* <h1 className="font-display text-[42px] lg:text-[72px] font-[640] leading-[0.9] tracking-[-0.04em] text-white whitespace-pre-line">{t.hero.title}</h1> */}
+               <h1 className="font-display text-[clamp(2.5rem,9vw,4.5rem)] lg:text-[72px] font-[640] leading-[0.98] tracking-[-0.04em] text-white whitespace-pre-line">{t.hero.title}</h1>
+              
               <p className="text-[16px] lg:text-[18px] leading-[1.5] text-white/75 max-w-[48ch] mt-6">{t.hero.subtitle}</p>
               <div className="flex flex-wrap gap-3 mt-8">
                 <Link to="/experiences" className="h-12 px-7 rounded-full bg-[#FFFBF2] text-[#1A3A2F] font-[700] text-[14px] inline-flex items-center gap-2 hover:bg-white transition">{t.hero.ctaPrimary}<ArrowUpRight className="w-4 h-4"/></Link>
