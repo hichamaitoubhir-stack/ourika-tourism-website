@@ -287,7 +287,7 @@ function HomePage() {
     <span className="w-2 h-2 rounded-full bg-[#D9773A] animate-pulse"/>
     {t.hero.badge}
   </Badge>
-  <div className="hidden md:flex items-center gap-2 text-[11px] text-white/70">
+  <div className="hidden md:flex items-center gap-4 text-[11px] text-white/70">
     <MapPin className="w-3.5 h-3.5"/>
     31.316°N, 7.780°W • Tnine Ourika
   </div>

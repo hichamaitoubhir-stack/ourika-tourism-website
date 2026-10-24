@@ -6,7 +6,7 @@ export const dict: Record<Lang, any> = {
   en: {
     nav: { home: 'Home', experiences: 'Experiences', half: 'Half-Day', full: 'Full-Day', about: 'About Us', gallery: 'Gallery', blog: 'Journal', contact: 'Contact' },
     hero: {
-      badge: '40 min from Marrakech • Atlas Mountains',
+      badge: '40 min from Marrakech •Atlas Mountains ',
       title: 'Ourika Valley,\nWhere the Atlas Breathes',
       subtitle: 'Authentic Berber experiences with the families who have shaped these terraces for centuries. No staged tours — just real kitchens, real trails, real welcome.',
       ctaPrimary: 'Explore Experiences',
@@ -34,7 +34,7 @@ export const dict: Record<Lang, any> = {
   es: {
     nav: { home: 'Inicio', experiences: 'Experiencias', half: 'Medio día', full: 'Día completo', about: 'Nosotros', gallery: 'Galería', blog: 'Blog', contact: 'Contacto' },
     hero: {
-      badge: '40 min de Marrakech • Atlas',
+      badge: '40 min de Marrakech • Atlas Mountains',
       title: 'Valle de Ourika,\nDonde el Atlas Respira',
       subtitle: 'Experiencias bereberes auténticas con las familias que han dado forma a estas terrazas durante siglos. Sin montajes — cocinas reales, senderos reales.',
       ctaPrimary: 'Ver experiencias',
