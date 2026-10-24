@@ -280,8 +280,8 @@ function HomePage() {
           <div className="relative p-8 lg:p-12 w-full grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-end">
           
             <div>
-           
-                <h1 className="font-display text-[32px] sm:text-[42px] lg:text-[72px] font-[640] leading-[1.05] tracking-[-0.04em] text-white whitespace-pre-line">{t.hero.title}</h1>
+          
+                {/* <h1 className="font-display text-[32px] sm:text-[42px] lg:text-[72px] font-[640] leading-[1.05] tracking-[-0.04em] text-white whitespace-pre-line">{t.hero.title}</h1> */}
 
               {/* <h1 className="font-display text-[42px] lg:text-[72px] font-[640] leading-[0.9] tracking-[-0.04em] text-white whitespace-pre-line">{t.hero.title}</h1> */}
               <p className="text-[16px] lg:text-[18px] leading-[1.5] text-white/75 max-w-[48ch] mt-6">{t.hero.subtitle}</p>
