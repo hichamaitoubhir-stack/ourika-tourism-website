@@ -276,10 +276,11 @@ function HomePage() {
             <Badge><span className="w-2 h-2 rounded-full bg-[#D9773A] animate-pulse"/>{t.hero.badge}</Badge>
             <div className="hidden md:flex items-center gap-2 text-[11px] text-white/70"><MapPin className="w-3.5 h-3.5"/> 31.316°N, 7.780°W • Tnine Ourika</div>
           </div>
+            
           <div className="relative p-8 lg:p-12 w-full grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-end">
           
             <div>
-              
+           
                 <h1 className="font-display text-[32px] sm:text-[42px] lg:text-[72px] font-[640] leading-[1.05] tracking-[-0.04em] text-white whitespace-pre-line">{t.hero.title}</h1>
 
               {/* <h1 className="font-display text-[42px] lg:text-[72px] font-[640] leading-[0.9] tracking-[-0.04em] text-white whitespace-pre-line">{t.hero.title}</h1> */}
