@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { experiences, reviews as reviewsData } from './lib/data';
 import { LangContext, dict, type Lang } from './lib/i18n';
+import WinterPromotionBar from "./lib/WinterPromotionBar";
 
 const WHATSAPP_NUMBER = '212606125022';
 const WA_LINK = (text: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -23,6 +24,7 @@ function LangProvider({ children }: { children: React.ReactNode }) {
 }
 
 // --- Header
+
 function Header() {
   const { lang, setLang, t } = useContext(LangContext);
   const [open, setOpen] = useState(false);
@@ -43,6 +45,7 @@ function Header() {
   ];
 
   return (
+    
     <>
       <header className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled||open?'bg-[#FFFBF2]/90 backdrop-blur-xl shadow-[0_2px_30px_rgba(0,0,0,0.06)]':'bg-transparent'}`}>
         <div className="mx-auto max-w-[1280px] px-6 lg:px-8 h-[72px] flex items-center justify-between">
@@ -266,7 +269,9 @@ function HomePage() {
   const l = lang as 'en'|'fr'|'es';
   const featured = experiences.filter(e=>e.featured);
   return (
+    
     <main>
+      <WinterPromotionBar />
       {/* HERO */}
       <section className="relative max-w-[1280px] mx-auto px-6 lg:px-8 pt-2">
         {/* <div className="relative rounded-[32px] overflow-hidden bg-[#1A3A2F] min-h-[88vh] flex items-end"> */}
