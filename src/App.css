@@ -1,0 +1,9 @@
+@keyframes shine {
+  0% {
+    transform: translateX(-150%);
+  }
+  60%,
+  100% {
+    transform: translateX(150%);
+  }
+}
