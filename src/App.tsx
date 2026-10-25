@@ -11,6 +11,7 @@ import {
 import { experiences, reviews as reviewsData } from './lib/data';
 import { LangContext, dict, type Lang } from './lib/i18n';
 import WinterPromotionBar from "./lib/WinterPromotionBar";
+import FAQSection from "./lib/FAQSection";
 
 const WHATSAPP_NUMBER = '212606125022';
 const WA_LINK = (text: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -98,6 +99,7 @@ function Header() {
         </AnimatePresence>
       </header>
       <div className="h-[72px]" />
+       
     </>
   );
 }
@@ -420,11 +422,13 @@ function HomePage() {
             ))}
           </div>
         </div>
+        
       </section>
 
       {/* Map & Contact strip */}
       <section className="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-center">
         <div className="rounded-[24px] overflow-hidden border border-black/10 bg-white">
+       
           <iframe title="Ourika Valley map" src="https://www.openstreetmap.org/export/embed.html?bbox=-7.85%2C31.25%2C-7.68%2C31.38&layer=mapnik&marker=31.316%2C-7.78" className="w-full h-[420px] border-0" loading="lazy"/>
           <div className="p-4 flex items-center justify-between text-[12px]"><span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-[#D9773A]"/> Ourika Valley, 40n from Marrakech — pickup included on half/full-day tours</span><a href="https://maps.google.com/?q=Ourika+Valley" target="_blank" className="px-3 py-1.5 rounded-full bg-[#1A3A2F] text-white font-[600]">Open Google Maps</a></div>
         </div>
@@ -436,6 +440,7 @@ function HomePage() {
             <Link to="/contact" className="h-14 rounded-full bg-white border border-black/10 flex items-center justify-between px-6 font-[600] text-[14px]"><span>Or send a message</span><Mail className="w-5 h-5"/></Link>
           </div>
         </div>
+         <FAQSection />
       </section>
     </main>
   );
@@ -672,6 +677,7 @@ function ContactPage() {
   const [sent,setSent]=useState(false);
   return (
     <main className="max-w-[1280px] mx-auto px-6 lg:px-8 py-10 grid lg:grid-cols-[1fr_0.9fr] gap-10">
+      
       <div>
         <Badge>Contact • Usually replies in 20 minutes • WhatsApp preferred</Badge>
         <h1 className="font-display text-[42px] font-[650] leading-[0.9] tracking-tight mt-4">Salam — how can we help<br/>you explore Ourika?</h1>
@@ -726,6 +732,7 @@ export default function App() {
             <Route path="/half-day-tours" element={<HalfDayPage/>}/>
             <Route path="/full-day-tours" element={<FullDayPage/>}/>
             <Route path="/about" element={<AboutPage/>}/>
+            
             <Route path="/gallery" element={<GalleryPage/>}/>
             <Route path="/blog" element={<BlogPage/>}/>
             <Route path="/blog/:slug" element={<BlogDetailPage/>}/>
