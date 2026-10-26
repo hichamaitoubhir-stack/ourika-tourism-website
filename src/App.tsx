@@ -263,6 +263,7 @@ function BookingWidget({ exp }: { exp: typeof experiences[0] }) {
       <p className="text-[11px] leading-[1.4] text-[#8A7D6B] mt-4 text-center">Secure checkout via Stripe • Instant confirmation • No hidden fees</p>
     </form>
   );
+   
 }
 
 // Pages
@@ -557,10 +558,10 @@ function ExperienceDetailPage() {
             <div className="rounded-[18px] bg-white border border-black/10 p-5"><h4 className="font-[750] text-[13px] uppercase tracking-wide text-[#8A7D6B]">Not included</h4><ul className="mt-3 grid gap-1.5 text-[13px] text-[#8A7D6B]">{exp.notIncluded[l].map((x,i)=><li key={i}>• {x}</li>)}</ul></div>
           </div>
 
-          <div className="mt-12">
+          {/* <div className="mt-12">
             <h3 className="font-display text-[20px] font-[600]">You may also like</h3>
             <div className="mt-4 grid md:grid-cols-2 gap-4">{experiences.filter(e=>e.id!==exp.id).slice(0,2).map(e=><ExperienceCard key={e.id} exp={e}/>)}</div>
-          </div>
+          </div> */}
         </div>
 
         <div className="lg:sticky top-[90px]">
