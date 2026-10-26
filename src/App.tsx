@@ -278,8 +278,9 @@ function HomePage() {
       <section className="relative max-w-[1280px] mx-auto px-6 lg:px-8 pt-2">
         {/* <div className="relative rounded-[32px] overflow-hidden bg-[#1A3A2F] min-h-[88vh] flex items-end"> */}
         <div className="relative rounded-[28px] md:rounded-[32px] overflow-hidden bg-[#1A3A2F] min-h-[720px] md:min-h-[88vh] flex items-end">
-          <img src="/images/hero-atlas.jpg" alt="Atlas Mountains Ourika Valley" className="absolute inset-0 
+          <img src="/images/cookingClass.png" alt="Atlas Mountains Ourika Valley" className="absolute inset-0 
           w-full h-full object-cover opacity-[0.72]" loading="eager"/>
+
           <div className="absolute inset-0 bg-gradient-to-t from-[#1A3A2F] via-[#1A3A2F]/30 to-transparent" />
           {/* <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
             <Badge><span className="w-2 h-2 rounded-full bg-[#D9773A] animate-pulse"/>
