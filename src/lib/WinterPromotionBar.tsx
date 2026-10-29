@@ -30,18 +30,18 @@ export default function WinterPromotionBar() {
   if (!isVisible) return null;
 
   return (
-    <div className="mx-auto max-w-[1280px] px-6 lg:px-8 pt-3">
-      <div className="relative flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-2xl bg-[#1A3A2F] px-10 py-4 text-center text-white shadow-sm">
+            <div className="mx-auto max-w-[1280px] px-6 lg:px-8 pt-3">
+              <div className="relative flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-2xl bg-[#1A3A2F] px-10 py-4 text-center text-white shadow-sm">
 
-      <button
-  type="button"
-  onClick={() => setIsVisible(false)}
-  aria-label="Close promotion"
-  className="absolute right-0 top-0 z-20
-    flex h-9 w-9 items-center justify-center
-    rounded-full bg-white text-[#1A3A2F]
-    text-2xl font-bold shadow-sm
-    cursor-pointer"
+              <button
+                type="button"
+                onClick={() => setIsVisible(false)}
+                aria-label="Close promotion"
+                className="absolute right-0 top-0 z-20
+                flex h-9 w-9 items-center justify-center
+                rounded-full bg-white text-[#1A3A2F]
+                text-2xl font-bold shadow-sm
+                cursor-pointer"
 >
   ×
 </button>

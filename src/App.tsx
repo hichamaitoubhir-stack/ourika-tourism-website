@@ -53,9 +53,10 @@ function Header() {
           <Link to="/" className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-[#1A3A2F] grid place-items-center">
               <Mountain className="w-5 h-5 text-[#F5EBDC]" />
+              
             </div>
             <div className="leading-none">
-              <div className="font-display font-[660] text-[18px] tracking-[-0.02em] text-[#1A3A2F]">ATLAS OURIKA</div>
+              <div className="font-display font-[660] text-[18px] tracking-[-0.02em] text-[#1A3A2F]">OURIKA</div>
               <div className="text-[10px] tracking-[0.18em] uppercase font-[700] text-[#D9773A] -mt-0.5">Authentic</div>
             </div>
           </Link>
@@ -72,6 +73,7 @@ function Header() {
                 <button key={l} onClick={()=>setLang(l)} className={`w-8 h-8 rounded-full text-[11px] font-[700] uppercase tracking-wide transition ${lang===l?'bg-[#1A3A2F] text-white':'text-[#1A3A2F]/60 hover:bg-[#F5EBDC]'}`}>{l}</button>
               ))}
             </div>
+           
             <a href={WA_LINK('Salam! I want to know about Ourika experiences')} target="_blank" className="hidden md:inline-flex h-10 px-4 items-center gap-2 rounded-full bg-[#D9773A] text-white text-[13px] font-[600] hover:bg-[#B85C24] transition">
               <span className="w-5 h-5 rounded-full bg-white/20 grid place-items-center">↗</span> {t.common.whatsapp}
             </a>
@@ -88,11 +90,58 @@ function Header() {
                 {links.map(l=>(
                   <Link key={l.to} to={l.to} className={`py-3 text-[18px] font-display font-[550] tracking-tight flex items-center justify-between border-b border-black/5 last:border-0 ${loc.pathname===l.to?'text-[#D9773A]':'text-[#1A3A2F]'}`}>{l.label}<ChevronRight className="w-4 h-4 opacity-40"/></Link>
                 ))}
-                <div className="flex gap-2 pt-4">
+                {/* <div className="flex gap-2 pt-4">
                   {(['en','fr','es'] as Lang[]).map(l=>(
-                    <button key={l} onClick={()=>setLang(l)} className={`flex-1 h-11 rounded-full border text-[13px] font-[700] uppercase ${lang===l?'bg-[#1A3A2F] text-white border-[#1A3A2F]':'bg-white border-black/10'}`}>{l}</button>
+                    <button key={l} onClick={()=>setLang(l)} className={`flex-1 h-11 rounded-full border text-[13px] font-[700] uppercase ${lang===l?'bg-[#1A3A2F] text-white border-[#1A3A2F]':'bg-white border-black/10'}`}>{l}
+                    </button>
                   ))}
-                </div>
+                </div> */}
+
+              {/* labguage */}
+                            
+<div className="flex items-center justify-center gap-4 pt-4">
+  {([
+    {
+      code: 'en',
+      label: 'English',
+      flag: 'https://flagcdn.com/w80/gb.png',
+    },
+    {
+      code: 'fr',
+      label: 'Français',
+      flag: 'https://flagcdn.com/w80/fr.png',
+    },
+    {
+      code: 'es',
+      label: 'Español',
+      flag: 'https://flagcdn.com/w80/es.png',
+    },
+  ] as const).map((item) => (
+    <button
+      key={item.code}
+      type="button"
+      onClick={() => setLang(item.code)}
+      aria-label={item.label}
+      title={item.label}
+      aria-pressed={lang === item.code}
+      className={`flex h-12 w-12 items-center justify-center rounded-full border-2 transition-all duration-200 hover:scale-110 ${
+        lang === item.code
+          ? 'border-[#D9773A] bg-[#1A3A2F] shadow-md'
+          : 'border-black/10 bg-white'
+      }`}
+    >
+      <img
+        src={item.flag}
+        alt={item.label}
+        className="h-6 w-6 rounded-full object-cover"
+        loading="lazy"
+      />
+    </button>
+  ))}
+</div>
+
+
+              {/* labguage */}
               </div>
             </motion.div>
           )}
@@ -228,7 +277,7 @@ function BookingWidget({ exp }: { exp: typeof experiences[0] }) {
     <form onSubmit={submit} className="bg-white rounded-[24px] border border-black/[0.06] shadow-[0_12px_40px_rgba(0,0,0,0.06)] p-5 lg:p-6 sticky top-[90px]">
       <div className="flex items-baseline justify-between">
         <div><span className="text-[12px] text-[#8A7D6B]">{t.common.from} </span><span className="font-display text-[28px] font-[750] tracking-tight">€{exp.price}</span><span className="text-[12px] text-[#8A7D6B]">{t.common.perPerson}</span></div>
-        <div className="text-[12px] flex items-center gap-1"><Star className="w-3.5 h-3.5 fill-[#1A3A2F]"/>{exp.rating} ({exp.reviewsCount})</div>
+        <div className="text-[14px] flex items-center gap-1"><Star className="w-3.5 h-3.5 fill-[#1A3A2F]"/>{exp.rating} ({exp.reviewsCount})</div>
       </div>
 
       <div className="grid grid-cols-2 gap-3 mt-5">
@@ -282,7 +331,7 @@ function HomePage() {
       <section className="relative max-w-[1280px] mx-auto px-6 lg:px-8 pt-2">
         {/* <div className="relative rounded-[32px] overflow-hidden bg-[#1A3A2F] min-h-[88vh] flex items-end"> */}
         <div className="relative rounded-[28px] md:rounded-[32px] overflow-hidden bg-[#1A3A2F] min-h-[720px] md:min-h-[88vh] flex items-end">
-          <img src="/images/cookingClass.png" alt="Atlas Mountains Ourika Valley" className="absolute inset-0 
+          <img src="/images/cookingClass.png" alt="Atlas Mountains Ourika Valley" fetchPriority="high" decoding="async" className="absolute inset-0 
           w-full h-full object-cover opacity-[0.72]" loading="eager"/>
 
           <div className="absolute inset-0 bg-gradient-to-t from-[#1A3A2F] via-[#1A3A2F]/30 to-transparent" />
@@ -368,7 +417,7 @@ function HomePage() {
       <section className="bg-white border-y border-black/5">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
-            <img src="/images/berber-village.jpg" alt="Berber village" className="rounded-[28px] aspect-[4/3] object-cover w-full" loading="lazy"/>
+            <img src="/images/asguine_pueblo_atlas_mountains.png" alt="Berber village" className="rounded-[28px] aspect-[4/3] object-cover w-full" loading="lazy"/>
             <div className="absolute -bottom-6 -right-6 bg-[#FFFBF2] rounded-[20px] p-4 border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.12)] max-w-[240px]">
               <div className="flex items-center gap-2 text-[11px] font-[800] uppercase tracking-wide text-[#D9773A]"><Heart className="w-4 h-4"/> Community Impact</div>
               <div className="grid grid-cols-3 gap-2 mt-3 text-center">
@@ -380,8 +429,8 @@ function HomePage() {
           </div>
           <div>
             <Badge>Berber Culture • Amazigh • Atlas Heritage</Badge>
-            <h2 className="font-display text-[36px] lg:text-[48px] font-[600] leading-[0.95] tracking-[-0.03em] mt-4">A valley shaped by hands, not hashtags.</h2>
-            <p className="text-[15px] leading-[1.7] text-[#5A5348] mt-5">Ourika isn’t a day-trip backdrop. It’s 32 villages, terraced by Amazigh families for 800 years. Water from khettara tunnels, bread from communal tabouna, argan oil cracked by women’s cooperatives. We’re not operators — we’re neighbors who started inviting friends.</p>
+            <h2 className="font-display text-[36px] lg:text-[48px] font-[600] leading-[0.95] tracking-[-0.03em] mt-4">Not just earthen homes, but breathtaking landscapes and unforgettable hospitality</h2>
+            <p className="text-[15px] leading-[1.7] text-[#5A5348] mt-5">Ourika isn’t a day-trip backdrop. It’s 32 villages, terraced by Amazigh families for more than 2000 years. Water from khettara tunnels, bread from communal tabouna, argan oil cracked by women’s cooperatives. We’re not operators — we’re neighbors who started inviting friends.</p>
             <div className="grid sm:grid-cols-2 gap-4 mt-8">
               {[
                 { icon: HomeIcon, title: 'Real Homes', desc: 'No staged show houses. Tea in living rooms, kids running around.' },
@@ -460,7 +509,7 @@ function ExperiencesPage() {
     <main className="max-w-[1280px] mx-auto px-6 lg:px-8 py-10">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
-          <Badge>9 experiences • Direct bookings • No middlemen</Badge>
+          <Badge> More than 20 experiences • Direct bookings • No middlemen</Badge>
           <h1 className="font-display text-[40px] lg:text-[56px] font-[650] leading-[0.9] tracking-[-0.04em] mt-4">All Ourika experiences,<br/>built with families.</h1>
         </div>
         <div className="flex gap-2 flex-wrap p-1 rounded-full bg-white border border-black/5">
@@ -561,10 +610,7 @@ function ExperienceDetailPage() {
             <div className="rounded-[18px] bg-white border border-black/10 p-5"><h4 className="font-[750] text-[13px] uppercase tracking-wide text-[#8A7D6B]">Not included</h4><ul className="mt-3 grid gap-1.5 text-[13px] text-[#8A7D6B]">{exp.notIncluded[l].map((x,i)=><li key={i}>• {x}</li>)}</ul></div>
           </div>
 
-          {/* <div className="mt-12">
-            <h3 className="font-display text-[20px] font-[600]">You may also like</h3>
-            <div className="mt-4 grid md:grid-cols-2 gap-4">{experiences.filter(e=>e.id!==exp.id).slice(0,2).map(e=><ExperienceCard key={e.id} exp={e}/>)}</div>
-          </div> */}
+          
         </div>
 
         <div className="lg:sticky top-[90px]">
@@ -618,7 +664,7 @@ function AboutPage() {
 }
 
 function GalleryPage() {
-  const imgs = ["/images/hero-atlas.jpg","/images/berber-village.jpg","/images/cooking.jpg","/images/waterfall.jpg","/images/mint-tea.jpg","/images/bread.jpg","/images/cooperative.jpg","/images/hiking.jpg","/images/ourika-river.jpg","/images/farm.jpg","/images/spices.jpg","/images/village2.jpg"];
+  const imgs = [,"/images/cooking.jpg","/images/waterfall.jpg","/images/mint-tea.jpg","/images/bread.jpg","/images/cooperative.jpg","/images/hiking.jpg","/images/ourika-river.jpg","/images/farm.jpg","/images/spices.jpg","/images/village2.jpg",];
   return (
     <main className="max-w-[1280px] mx-auto px-6 lg:px-8 py-10">
       <h1 className="font-display text-[42px] font-[650] leading-[0.9] tracking-tight">Gallery — Atlas light, Berber life.</h1>
