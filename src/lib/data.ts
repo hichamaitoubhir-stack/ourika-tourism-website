@@ -1,10 +1,12 @@
+import { cultureExperiences } from './data by category/culture';
+
 export type Experience = {
   id: string;
   slug: string;
   title: { en: string; fr: string; es: string };
   shortDesc: { en: string; fr: string; es: string };
   longDesc: { en: string; fr: string; es: string };
-  category: 'half-day' | 'full-day' | 'cultural' | 'nature';
+  category: 'half-day' | 'full-day' | 'cultural' | 'nature'| 'Sahara-Desert';
   duration: string;
   price: number;
   originalPrice?: number;
@@ -22,140 +24,856 @@ export type Experience = {
 };
 
 export const experiences: Experience[] = [
-  {
-    id: 'cooking-class',
-    slug: 'traditional-moroccan-cooking-class',
-    title: { en: 'Traditional Moroccan Cooking Class', fr: 'Cours de Cuisine Marocaine Traditionnelle', es: 'Clase de Cocina Marroquí Tradicional con youssef y su Madre' },
-    shortDesc: { en: 'Learn to cook tagine & couscous with a Berber mama in her mountain home', fr: 'Apprenez à cuisiner le tagine et le couscous chez une maman berbère', es: 'Aprende a cocinar tajine y cuscús con una mamá bereber' },
-    longDesc: { en: 'Step into Fatima’s kitchen — stone walls, wood fire, the scent of cumin and preserved lemon. Over 3 hours, you’ll shop the tiny Ourika market, pound spices in a brass mortar, slow-cook a chicken tagine with olives, and roll couscous by hand. It ends around a low table with mint tea, stories, and far too much food.', fr: 'Entrez dans la cuisine de Fatima — murs en pierre, feu de bois, parfum de cumin et citron confit. 3h pour acheter au marché, piler les épices, mijoter un tajine et rouler le couscous à la main.', es: 'Entra en la cocina de Fatima — muros de piedra, fuego de leña, aroma a comino y limón. 3 horas para comprar en el mercado, moler especias y cocinar tajine.' },
-    category: 'cultural',
-    duration: '3.5 hours',
-    price: 45,
-    difficulty: 'Easy',
-    groupSize: '2-8 guests',
-    image: '/images/cookingClass.png',
-    gallery: ['/images/cookingClass.png', '/images/spices.jpg', '/images/bread.jpg',
-              '/images/cooking.jpg','/images/ourika_valley_mountains.png',
-              '/images/casa_berber.jpg','/images/ourika_valley_nature.webp',
-            
-    ],
-    highlights: { en: ['Market visit & spice souk', 'Hands-on tagine from scratch', 'Couscous rolling lesson', 'Lunch with family'], fr: ['Visite du marché', 'Tajine fait maison', 'Atelier couscous', 'Déjeuner en famille'], es: ['Visita al mercado en Lunes y Jueves ', 'Tajine desde cero', 'Taller de cuscús', 'Almuerzo familiar','platos bereres locales','Vida en Atlas montanas','paseo de una hora en el pueblo','ayuadar a la familia en granja','Amazigh cultua explicada'] },
-    itinerary: [
-      { time: '10:00', title: { en: 'Market & Garden Pick', fr: 'Marché & Jardin', es: 'Mercado y Huerto' }, desc: { en: 'Meet at Ourika bridge, pick herbs and vegetables', fr: 'Cueillette d’herbes et légumes', es: 'Recogeremos hierbas frescas y verduras de temporada para nuestra clase de cocina. Los lunes y jueves, podremos visitar el mercado semanal de la región para comprar ingredientes locales. Los demás días, compraremos las verduras frescas en una tienda del pueblo' } },
-      { time: '11:00', title: { en: 'Cooking Begins', fr: 'Début de l’atelier', es: 'Inicio del taller' }, desc: { en: 'Spice blending, chopping, tagine secrets', fr: 'Mélange d’épices et secrets du tajine', es:
-         'Comenzaremos con un agradable paseo de unos 20 minutos por el pueblo, durante el cual descubriremos las tradiciones, las costumbres y la vida cotidiana de los habitantes locales, Al llegar a nuestra casa bereber, Youssef y su madre nos darán la bienvenida. Prepararemos juntos la mesa con los ingredientes frescos y las especias necesarias para el plato del día. Después, ¡nos pondremos manos a la obra y comenzaremos nuestra auténtica experiencia de cocina marroquí! ' } },
-      { time: '13:00', title: { en: 'Feast & Tea', fr: 'Festin & Thé', es: 'Festín y Té' }, desc: { en: 'Eat together, mint tea ceremony, recipes to take home', fr: 'Repas partagé, cérémonie du thé, recettes', es: 'Después de disfrutar de nuestra comida tradicional y del té a la menta, nos despediremos de Youssef y su madre. Regresaremos tranquilamente por el pueblo, compartiendo nuestras últimas impresiones sobre la experiencia y las tradiciones locales que hemos descubierto juntos' } },
-    ],
-    included: { en: ['All ingredients', 'Market tour', 'Lunch & tea', 'Recipe PDF'], fr: ['Ingrédients', 'Tour du marché', 'Déjeuner & thé', 'Recettes PDF'], es: ['Ingredientes', 'Tour del mercado', 'Almuerzo y té', 'Recetas PDF'] },
-    notIncluded: { en: ['Transport from Marrakech'], fr: ['Transport depuis Marrakech'], es: ['Transporte desde Marrakech'] },
-    rating: 4.97,
-    reviewsCount: 312,
-    featured: true,
+  
+{
+  // BASIC INFORMATION
+  id: 'cooking-class',
+  slug: 'traditional-moroccan-cooking-class',
+
+  title: {
+    en: 'Traditional Moroccan Cooking Class',
+    fr: 'Cours de cuisine marocaine traditionnelle',
+    es: 'Clase de cocina marroquí con Youssef y su madre',
   },
-  {
-    id: 'berber-village',
-    slug: 'berber-village-visit',
-    title: { en: 'Berber Village Immersion', fr: 'Immersion Village Berbère', es: 'Inmersión en Pueblo Bereber' },
-    shortDesc: { en: 'Walk ancient paths, enter earthen homes, hear stories of the Atlas', fr: 'Sentiers anciens, maisons en pisé, histoires de l’Atlas', es: 'Caminos antiguos, casas de adobe, historias del Atlas' },
-    longDesc: { en: 'Not a staged tour. You’ll be welcomed by Brahim’s family in Tnine Ourika, visit the communal granary, see how wool is carded, and share bread still warm from the clay oven. A slow, respectful walk that supports the village directly.', fr: 'Pas un circuit touristique. Accueil chez la famille de Brahim, grenier collectif, tissage de laine et pain chaud du four en argile.', es: 'No es un tour escenificado. Bienvenida en familia, granero comunal, lana cardada y pan caliente del horno de barro.' },
-    category: 'half-day',
-    duration: '4 hours',
-    price: 38,
-    difficulty: 'Easy',
-    groupSize: '2-10 guests',
-    image: '/images/asguine_pueblo_atlas_mountains.png',
-    gallery: ['/images/asguine_pueblo_atlas_mountains.png','/images/berber-village.jpg', 
-      '/images/village2.jpg', '/images/ourika-river.jpg','/images/tizi_noucheg_berber_village.jpg',
-      '/images/yagour.jpg','/images/asguine_village.jpg',
-    ],
-    
-    highlights: { en: ['Private home visit', 'Communal oven & granary', 'Weaving demo', 'Direct community support'], fr: ['Visite maison privée', 'Four commun', 'Démo tissage', 'Soutien direct'], es: ['Visita casa privada', 'Horno comunal', 'Demo tejido', 'Apoyo directo'] },
-    itinerary: [
-      { time: '09:00', title: { en: 'Valley Walk', fr: 'Marche vallée', es: 'Caminata valle' }, desc: { en: 'Olive groves and irrigation channels (khettara)', fr: 'Oliveraies et khettaras', es: 'Olivares y acequias' } },
-      { time: '10:30', title: { en: 'Home Welcome', fr: 'Accueil maison', es: 'Bienvenida hogar' }, desc: { en: 'Tea, bread, life stories', fr: 'Thé, pain, histoires de vie', es: 'Té, pan, historias' } },
-      { time: '12:00', title: { en: 'Crafts & Farewell', fr: 'Artisanat', es: 'Artesanía' }, desc: { en: 'Wool workshop, optional small purchases', fr: 'Atelier laine, achats possibles', es: 'Taller lana, compras opcionales' } },
-    ],
-    included: { en: ['Berber guide', 'Tea & bread', 'Village donation', 'Small gift'], fr: ['Guide berbère', 'Thé & pain', 'Don village', 'Petit cadeau'], es: ['Guía bereber', 'Té y pan', 'Donación al pueblo', 'Pequeño regalo'] },
-    notIncluded: { en: ['Transport', 'Lunch'], fr: ['Transport', 'Déjeuner'], es: ['Transporte', 'Almuerzo'] },
-    rating: 4.95,
-    reviewsCount: 208,
-    featured: true,
+
+  shortDesc: {
+    en: 'Learn to cook tagine & couscous with a Berber mama in her mountain home',
+    fr: 'Apprenez à cuisiner le tagine et le couscous chez une maman berbère',
+    es: 'Aprende a cocinar tajine y cuscús con una mamá bereber',
   },
-  {
-    id: 'farming',
-    slug: 'farming-experience-local-family',
-    title: { en: 'Ourika valley & Atlas Mountains tour', fr: 'Vie à la Ferme avec Famille Locale', es: 'Vida en la Granja Familiar' },
-    shortDesc: { en: 'Plant, harvest, irrigate — live a morning as Atlas farmer', fr: 'Plantez, récoltez, irriguez — matinée paysanne', es: 'Planta, cosecha y riega — mañana campesina' },
-    longDesc: { en: 'Roll up sleeves. Depending on season, you’ll harvest olives, plant barley, water terraces with ancient methods, feed donkeys and chickens. Kids love it. You keep what you pick.', fr: 'Manches retroussées. Selon saison: olives, orge, irrigation ancestrale, animaux. Vous gardez votre récolte.', es: 'Remángate. Según temporada: aceitunas, cebada, riego ancestral, animales. Te llevas lo cosechado.' },
-    category: 'full-day',
-    duration: '8 hours',
-    price: 120,
-    difficulty: 'Active',
-    groupSize: '2-6 guests',
-    image: '/images/ourikavalley.jpg',
-    gallery: ['/images/ourikavalley.jpg', '/images/ourika-river.jpg', '/images/village2.jpg'],
-    highlights: { en: ['Seasonal farm work', 'Terrace irrigation', 'Animals & orchards', 'Take home produce'], fr: ['Travaux saisonniers', 'Irrigation terrasses', 'Animaux & vergers', 'Récolte à emporter'], es: ['Trabajo estacional', 'Riego terrazas', 'Animales y huertos', 'Lleva tu cosecha'] },
-    itinerary: [
-      { time: '08:00', title: { en: 'Field Walk', fr: 'Champs', es: 'Campos' }, desc: { en: 'Overview of terrace system', fr: 'Système de terrasses', es: 'Sistema de terrazas' } },
-      { time: '08:45', title: { en: 'Farm Work', fr: 'Travail ferme', es: 'Trabajo agrícola' }, desc: { en: 'Hands-on seasonal tasks', fr: 'Tâches saisonnières', es: 'Tareas de temporada' } },
-      { time: '10:30', title: { en: 'Breakfast in Field', fr: 'Petit-déj aux champs', es: 'Desayuno en campo' }, desc: { en: 'Bread, olives, oil, tea overlooking valley', fr: 'Pain, olives, huile, thé', es: 'Pan, aceitunas, aceite, té' } },
-    ],
-    included: { en: ['Farmer guide', 'Tools', 'Breakfast', 'Produce'], fr: ['Guide fermier', 'Outils', 'Petit-déj', 'Produits'], es: ['Guía granjero', 'Herramientas', 'Desayuno', 'Productos'] },
-    notIncluded: { en: ['Transport'], fr: ['Transport'], es: ['Transporte'] },
-    rating: 4.92,
-    reviewsCount: 94,
-    featured: true,
+
+  longDesc: {
+    en: 'Step into Fatima’s kitchen — stone walls, wood fire, the scent of cumin and preserved lemon. Over 3 hours, you’ll shop the tiny Ourika market, pound spices in a brass mortar, slow-cook a chicken tagine with olives, and roll couscous by hand. It ends around a low table with mint tea, stories, and far too much food.',
+    fr: 'Entrez dans la cuisine de Fatima — murs en pierre, feu de bois, parfum de cumin et citron confit. 3h pour acheter au marché, piler les épices, mijoter un tajine et rouler le couscous à la main.',
+    es: 'Entra en la cocina de Fatima — muros de piedra, fuego de leña, aroma a comino y limón. 3 horas para comprar en el mercado, moler especias y cocinar tajine.',
   },
-  {
-    id: 'hiking',
-    slug: 'atlas-mountains-guided-hiking',
-    title: { en: 'Atlas Mountains Guided Hiking', fr: 'Randonnée Guidée Haut Atlas', es: 'Senderismo Guiado Atlas' },
-    shortDesc: { en: 'From walnut valleys to 2,500m ridges with certified mountain guide', fr: 'Des vallées de noyers aux crêtes à 2500m avec guide certifié', es: 'De valles de nogales a crestas a 2500m con guía certificado' },
-    longDesc: { en: 'Choose your level: gentle valley floor or rugged ridge to Jbel Toubkal views. Certified guide Hassan knows where eagles nest and which spring is drinkable. Small groups, big silence.', fr: 'Choisissez: fond de vallée doux ou crête vers Toubkal. Guide certifié Hassan, petits groupes, grand silence.', es: 'Elige nivel: valle suave o cresta hacia Toubkal. Guía certificado Hassan, grupos pequeños, gran silencio.' },
-    category: 'nature',
-    duration: '5-6 hours',
-    price: 58,
-    difficulty: 'Moderate',
-    groupSize: '2-12 guests',
-    image: '/images/yagour.jpg',
-    gallery: ['/images/yagour.jpg','/images/hiking.jpg', '/images/hero-atlas.jpg', '/images/ourika-river.jpg'],
-    highlights: { en: ['Certified mountain guide', 'Route adapted to fitness', 'Picnic with view', 'Flora & fauna spotting'], fr: ['Guide certifié', 'Itinéraire adapté', 'Pique-nique vue', 'Faune & flore'], es: ['Guía certificado', 'Ruta adaptada', 'Picnic con vistas', 'Fauna y flora'] },
-    itinerary: [
-      { time: '08:30', title: { en: 'Trailhead Start', fr: 'Départ sentier', es: 'Inicio sendero' }, desc: { en: 'Safety briefing, poles & local map', fr: 'Briefing, bâtons & carte', es: 'Charla seguridad, bastones y mapa' } },
-      { time: '11:00', title: { en: 'Ridge & Tea', fr: 'Crête & Thé', es: 'Cresta y Té' }, desc: { en: 'Berber shepherd hut, tea, Atlas panorama', fr: 'Cabane berger, thé, panorama Atlas', es: 'Cabaña pastor, té, panorama Atlas' } },
-      { time: '13:30', title: { en: 'Return & Lunch', fr: 'Retour & Déjeuner', es: 'Regreso y Almuerzo' }, desc: { en: 'Valley descent, optional riverside tagine', fr: 'Descente vallée, tajine rivière option', es: 'Descenso valle, tajine río opcional' } },
+
+  // EXPERIENCE DETAILS
+  category: 'cultural',
+  duration: '3.5 hours',
+  price: 45,
+  difficulty: 'Easy',
+  groupSize: '2-8 guests',
+
+  // IMAGES
+  image: '/images/cookingClass.png',
+
+  gallery: [
+    '/images/cookingClass.png',
+    '/images/spices.jpg',
+    '/images/bread.jpg',
+    '/images/cooking.jpg',
+    '/images/ourika_valley_mountains.png',
+    '/images/casa_berber.jpg',
+    '/images/ourika_valley_nature.webp',
+  ],
+
+  // HIGHLIGHTS
+  highlights: {
+    en: [
+      'Local market visit (Mondays & Thursdays)',
+      'Hands-on Moroccan cooking',
+      'Traditional Berber dishes',
+      '20-minute village walk',
+      'Meet a local family and discover Amazigh culture',
     ],
-    included: { en: ['Guide', 'Poles', 'Picnic', 'Safety kit'], fr: ['Guide', 'Bâtons', 'Pique-nique', 'Kit sécu'], es: ['Guía', 'Bastones', 'Picnic', 'Kit seguridad'] },
-    notIncluded: { en: ['Transport', 'Gratuities'], fr: ['Transport', 'Pourboires'], es: ['Transporte', 'Propinas'] },
-    rating: 4.96,
-    reviewsCount: 267,
-    featured: true,
-  },
-  {
-    id: 'waterfalls',
-    slug: 'setti-fatma-waterfalls-excursion',
-    title: { en: 'Setti Fatma Waterfalls Excursion', fr: 'Excursion Cascades de Setti Fatma', es: 'Excursión Cascadas Setti Fatma' },
-    shortDesc: { en: 'Seven cascades, river crossings and mint tea above the clouds', fr: 'Sept cascades, traversées de rivière et thé au-dessus des nuages', es: 'Siete cascadas, cruces de río y té sobre las nubes' },
-    longDesc: { en: 'The classic Ourika walk, done right: with a local who grew up climbing these rocks barefoot. You’ll cross the river on stones, climb to the 7 falls, swim in summer, and have tea at the highest café.', fr: 'Le classique Ourika, bien fait: avec un local qui a grandi pieds nus sur ces rochers. Traversées, 7 cascades, baignade été, thé au café le plus haut.', es: 'El clásico Ourika, bien hecho: con un local criado descalzo en estas rocas. Cruces, 7 cascadas, baño en verano, té en el café más alto.' },
-    category: 'nature',
-    duration: '3 hours',
-    price: 35,
-    difficulty: 'Moderate',
-    groupSize: '2-15 guests',
-    image: '/images/waterfall.jpg',
-    gallery: ['/images/waterfall.jpg', '/images/ourika-river.jpg', '/images/hero-atlas.jpg'],
-    highlights: { en: ['Local falls guide', '7 waterfalls climb', 'River swimming (summer)', 'Panoramic tea stop'], fr: ['Guide cascades', '7 chutes', 'Baignade été', 'Thé panoramique'], es: ['Guía cascadas', '7 saltos', 'Baño verano', 'Té panorámico'] },
-    itinerary: [
-      { time: '10:00', title: { en: 'Village & River', fr: 'Village & Rivière', es: 'Pueblo y Río' }, desc: { en: 'Setti Fatma souk, start walk', fr: 'Souk Setti Fatma, départ', es: 'Zoco Setti Fatma, inicio' } },
-      { time: '10:45', title: { en: 'Ascent', fr: 'Ascension', es: 'Ascenso' }, desc: { en: 'Scramble to falls 1-7, stories along way', fr: 'Montée aux 7 cascades', es: 'Subida a las 7 cascadas' } },
-      { time: '12:30', title: { en: 'Tea & Return', fr: 'Thé & Retour', es: 'Té y Regreso' }, desc: { en: 'Highest café, descent, lunch option', fr: 'Café le plus haut, descente', es: 'Café más alto, descenso' } },
+
+    fr: [
+      'Visite du marché (lundis et jeudis)',
+      'Atelier de cuisine marocaine',
+      'Plats traditionnels berbères',
+      'Balade de 20 minutes dans le village',
+      'Rencontre avec une famille locale et découverte de la culture amazighe',
     ],
-    included: { en: ['Local guide', 'Tea', 'Entrance help'], fr: ['Guide local', 'Thé', 'Aide entrée'], es: ['Guía local', 'Té', 'Ayuda entrada'] },
-    notIncluded: { en: ['Transport', 'Lunch'], fr: ['Transport', 'Déjeuner'], es: ['Transporte', 'Almuerzo'] },
-    rating: 4.89,
-    reviewsCount: 421,
-    featured: true,
+
+    es: [
+      'Visita al mercado (lunes y jueves)',
+      'Taller práctico de cocina marroquí',
+      'Platos tradicionales bereberes',
+      'Paseo de 20 minutos por el pueblo',
+      'Conoce a una familia local y descubre la cultura amazigh',
+    ],
   },
+
+  // ITINERARY
+  itinerary: [
+    {
+      time: '10:00',
+
+      title: {
+        en: 'Market & Garden Visit',
+        fr: 'Marché et jardin',
+        es: 'Mercado y huerto',
+      },
+
+      desc: {
+        en: 'Pick fresh herbs and seasonal vegetables. On Mondays and Thursdays, visit the local weekly market. On other days, shop at a traditional village store.',
+        fr: 'Cueillez des herbes fraîches et des légumes de saison. Les lundis et jeudis, visitez le marché hebdomadaire local. Les autres jours, faites vos achats dans une petite épicerie du village.',
+        es: 'Recoge hierbas frescas y verduras de temporada. Los lunes y jueves visitaremos el mercado semanal. Los demás días, compraremos en una pequeña tienda del pueblo.',
+      },
+    },
+
+    {
+      time: '11:00',
+
+      title: {
+        en: 'Village Walk & Cooking Class',
+        fr: 'Balade au village et atelier cuisine',
+        es: 'Paseo por el pueblo y clase de cocina',
+      },
+
+      desc: {
+        en: 'Enjoy a 20-minute walk through the village and discover local traditions and daily life. Then, Youssef and his mother will welcome you into their Berber home for an authentic Moroccan cooking experience.',
+        fr: 'Profitez d’une balade de 20 minutes dans le village pour découvrir les traditions et la vie locale. Ensuite, Youssef et sa mère vous accueilleront dans leur maison berbère pour une authentique expérience de cuisine marocaine.',
+        es: 'Disfruta de un paseo de 20 minutos por el pueblo para descubrir las tradiciones y la vida local. Después, Youssef y su madre te recibirán en su casa bereber para vivir una auténtica experiencia de cocina marroquí.',
+      },
+    },
+
+    {
+      time: '13:00',
+
+      title: {
+        en: 'Lunch & Mint Tea',
+        fr: 'Déjeuner et thé à la menthe',
+        es: 'Almuerzo y té a la menta',
+      },
+
+      desc: {
+        en: 'Enjoy the traditional meal you prepared together, followed by Moroccan mint tea. Then take a relaxing walk back through the village.',
+        fr: 'Savourez le repas traditionnel que vous avez préparé ensemble, suivi d’un thé à la menthe marocain. Puis, profitez d’une agréable promenade pour retourner à travers le village.',
+        es: 'Disfruta de la comida tradicional que habéis preparado juntos, seguida de un té a la menta marroquí. Después, regresaremos tranquilamente paseando por el pueblo.',
+      },
+    },
+  ],
+
+  // WHAT'S INCLUDED
+  included: {
+    en: [
+      'All ingredients',
+      'Market tour',
+      'Lunch & tea',
+      'Recipe PDF',
+    ],
+    fr: [
+      'Ingrédients',
+      'Tour du marché',
+      'Déjeuner & thé',
+      'Recettes PDF',
+    ],
+    es: [
+      'Ingredientes',
+      'Tour del mercado',
+      'Almuerzo y té',
+      'Recetas PDF',
+    ],
+  },
+
+  // WHAT'S NOT INCLUDED
+  notIncluded: {
+    en: ['Transport from Marrakech'],
+    fr: ['Transport depuis Marrakech'],
+    es: ['Transporte desde Marrakech'],
+  },
+
+  // RATINGS & VISIBILITY
+  rating: 4.97,
+  reviewsCount: 312,
+  featured: true,
+},
+
+ 
+{
+  // BASIC INFORMATION
+  id: 'berber-village',
+  slug: 'berber-village-visit',
+
+  title: {
+    en: 'Authentic Berber Village Immersion',
+    fr: 'Immersion dans un village berbère authentique',
+    es: 'Inmersión en un auténtico pueblo bereber',
+  },
+
+  shortDesc: {
+    en: 'Discover traditional Berber life, visit a local family home and explore the culture of the Atlas Mountains',
+    fr: 'Découvrez la vie berbère, visitez une maison familiale et explorez la culture du Haut Atlas',
+    es: 'Descubre la vida bereber, visita una casa familiar y explora la cultura del Alto Atlas',
+  },
+
+  longDesc: {
+    en: 'Discover the authentic lifestyle of Berber communities in Ourika Valley. Walk through traditional mountain villages, explore ancient irrigation channels and visit Brahim’s family home in Tnine Ourika. Learn how local families prepare traditional bread, work with wool and preserve their ancestral customs. Share Moroccan mint tea, homemade bread and stories while discovering the traditions and hospitality of the Amazigh people.',
+    fr: 'Découvrez le mode de vie authentique des communautés berbères dans la vallée de l’Ourika. Parcourez les villages traditionnels, découvrez les anciens canaux d’irrigation et visitez la maison de la famille de Brahim à Tnine Ourika. Apprenez les traditions du pain traditionnel, du travail de la laine et partagez un thé à la menthe dans une ambiance chaleureuse.',
+    es: 'Descubre el estilo de vida auténtico de las comunidades bereberes en el valle de Ourika. Camina por pueblos tradicionales, descubre antiguos canales de riego y visita la casa de la familia de Brahim en Tnine Ourika. Aprende sobre la preparación del pan tradicional, el trabajo de la lana y comparte té marroquí mientras conoces las tradiciones amazigh.',
+  },
+
+  // EXPERIENCE DETAILS
+  category: 'cultural',
+  duration: '4 hours',
+  price: 38,
+  difficulty: 'Easy',
+  groupSize: '2-10 guests',
+
+  // IMAGES
+  image: '/images/asguine_pueblo_atlas_mountains.png',
+
+  gallery: [
+    '/images/asguine_pueblo_atlas_mountains.png',
+    '/images/berber-village.jpg',
+    '/images/village2.jpg',
+    '/images/ourika-river.jpg',
+    '/images/tizi_noucheg_berber_village.jpg',
+    '/images/yagour.jpg',
+    '/images/asguine_village.jpg',
+  ],
+
+  // HIGHLIGHTS
+  highlights: {
+    en: [
+      'Walk through traditional Berber villages in Ourika Valley',
+      'Visit a local family home and experience Amazigh hospitality',
+      'Discover traditional bread making in a clay oven',
+      'Learn about wool preparation and Berber weaving',
+      'Explore local traditions, agriculture and mountain life',
+    ],
+
+    fr: [
+      'Promenade dans les villages berbères de la vallée de l’Ourika',
+      'Visite d’une maison familiale et découverte de l’hospitalité amazighe',
+      'Découverte de la préparation du pain dans un four en terre',
+      'Initiation à la préparation de la laine et au tissage berbère',
+      'Découverte des traditions, de l’agriculture et de la vie en montagne',
+    ],
+
+    es: [
+      'Paseo por los pueblos bereberes del valle de Ourika',
+      'Visita a una casa familiar y descubre la hospitalidad amazigh',
+      'Descubre cómo se prepara el pan en un horno tradicional de barro',
+      'Conoce la preparación de lana y el tejido bereber',
+      'Explora las tradiciones, la agricultura y la vida en las montañas',
+    ],
+  },
+
+  // ITINERARY
+  itinerary: [
+    {
+      time: '09:00',
+
+      title: {
+        en: 'Village Walk & Local Traditions',
+        fr: 'Balade au village et traditions locales',
+        es: 'Paseo por el pueblo y tradiciones locales',
+      },
+
+      desc: {
+        en: 'Explore traditional Berber villages, narrow paths and earthen houses. Discover terraced gardens, olive groves and ancient irrigation channels while learning about agriculture and everyday life in the Atlas Mountains.',
+        fr: 'Explorez les villages berbères, les petits sentiers et les maisons en terre. Découvrez les jardins en terrasses, les oliveraies et les anciens canaux d’irrigation tout en découvrant la vie quotidienne dans le Haut Atlas.',
+        es: 'Explora pueblos bereberes, pequeños senderos y casas tradicionales de tierra. Descubre jardines en terrazas, olivares y antiguos canales de riego mientras conoces la vida cotidiana en el Alto Atlas.',
+      },
+    },
+
+    {
+      time: '10:00',
+
+      title: {
+        en: 'Visit a Traditional Berber Family Home',
+        fr: 'Visite d’une maison familiale berbère',
+        es: 'Visita a una casa familiar bereber',
+      },
+
+      desc: {
+        en: 'Meet Brahim’s family in Tnine Ourika and discover traditional Amazigh architecture, family customs and mountain hospitality. Learn about the history of communal granaries and how village communities have supported one another for generations.',
+        fr: 'Rencontrez la famille de Brahim à Tnine Ourika et découvrez l’architecture amazighe, les traditions familiales et l’hospitalité montagnarde. Apprenez l’histoire des greniers collectifs et de la solidarité villageoise.',
+        es: 'Conoce a la familia de Brahim en Tnine Ourika y descubre la arquitectura amazigh, las tradiciones familiares y la hospitalidad de montaña. Aprende sobre los antiguos graneros comunitarios y la solidaridad entre los habitantes.',
+      },
+    },
+
+    {
+      time: '11:00',
+
+      title: {
+        en: 'Traditional Bread & Berber Crafts',
+        fr: 'Pain traditionnel et artisanat berbère',
+        es: 'Pan tradicional y artesanía bereber',
+      },
+
+      desc: {
+        en: 'Discover how local families prepare homemade bread in traditional clay ovens. Learn about wool preparation, carding and Berber rug weaving, and discover how these traditional skills are passed from one generation to another.',
+        fr: 'Découvrez comment les familles préparent le pain maison dans les fours traditionnels en terre. Initiez-vous à la préparation de la laine et au tissage des tapis berbères, transmis de génération en génération.',
+        es: 'Descubre cómo las familias preparan pan casero en hornos tradicionales de barro. Conoce la preparación de la lana y el tejido de alfombras bereberes, transmitidos de generación en generación.',
+      },
+    },
+
+    {
+      time: '12:00',
+
+      title: {
+        en: 'Moroccan Tea & Cultural Exchange',
+        fr: 'Thé marocain et partage culturel',
+        es: 'Té marroquí e intercambio cultural',
+      },
+
+      desc: {
+        en: 'Enjoy Moroccan mint tea and freshly baked homemade bread with your hosts. Exchange stories, ask questions about Berber culture and discover the traditions, food and daily life of local mountain communities.',
+        fr: 'Partagez un thé à la menthe et du pain fait maison avec vos hôtes. Échangez des histoires et découvrez la culture berbère, la cuisine et le quotidien des communautés montagnardes.',
+        es: 'Disfruta de té marroquí y pan casero recién hecho con tus anfitriones. Comparte historias y descubre la cultura bereber, la gastronomía y la vida cotidiana de las comunidades de montaña.',
+      },
+    },
+  ],
+
+  // WHAT'S INCLUDED
+  included: {
+    en: [
+      'Local Berber guide',
+      'Traditional family home visit',
+      'Moroccan tea & homemade bread',
+      'Traditional crafts demonstration',
+    ],
+    fr: [
+      'Guide berbère local',
+      'Visite d’une maison familiale',
+      'Thé marocain et pain fait maison',
+      'Démonstration d’artisanat traditionnel',
+    ],
+    es: [
+      'Guía bereber local',
+      'Visita a una casa familiar',
+      'Té marroquí y pan casero',
+      'Demostración de artesanía tradicional',
+    ],
+  },
+
+  // WHAT'S NOT INCLUDED
+  notIncluded: {
+    en: ['Transport from Marrakech', 'Lunch'],
+    fr: ['Transport depuis Marrakech', 'Déjeuner'],
+    es: ['Transporte desde Marrakech', 'Almuerzo'],
+  },
+
+  // RATINGS & VISIBILITY
+  rating: 4.95,
+  reviewsCount: 208,
+  featured: true,
+},
+
+ 
+{
+  // BASIC INFORMATION
+  id: 'hiking',
+  slug: 'atlas-mountains-guided-hiking',
+
+  title: {
+    en: 'Guided Hiking in the Atlas Mountains',
+    fr: 'Randonnée Guidée dans les Montagnes de l’Atlas',
+    es: 'Senderismo Guiado en las Montañas del Atlas',
+  },
+
+  shortDesc: {
+    en: 'Explore mountain trails, Berber villages and spectacular landscapes with a local Atlas Mountains guide',
+    fr: 'Explorez les sentiers de montagne, les villages berbères et les paysages spectaculaires avec un guide local',
+    es: 'Explora senderos de montaña, pueblos bereberes y paisajes espectaculares con un guía local',
+  },
+
+  longDesc: {
+    en: 'Discover the beauty of the High Atlas Mountains on a guided hiking adventure through the Ourika Valley. Accompanied by an experienced local mountain guide, explore traditional Berber villages, walnut groves, mountain streams and scenic trails surrounded by spectacular peaks. Choose a gentle walk through the valley or a more challenging hike towards panoramic mountain viewpoints, depending on your fitness level and interests. Along the way, discover local traditions, mountain wildlife and the natural landscapes that make the Atlas Mountains one of Morocco’s most beautiful hiking destinations. Enjoy a relaxing tea break and breathtaking views before returning through the mountain trails.',
+
+    fr: 'Découvrez la beauté du Haut Atlas lors d’une randonnée guidée dans la vallée de l’Ourika. Accompagné d’un guide local expérimenté, explorez les villages berbères, les noyers, les ruisseaux et les sentiers de montagne entourés de sommets spectaculaires. Choisissez une promenade tranquille dans la vallée ou une randonnée plus sportive vers de magnifiques panoramas, selon votre niveau. Découvrez les traditions locales et les paysages naturels du Haut Atlas.',
+
+    es: 'Descubre la belleza del Alto Atlas con una excursión guiada por el valle de Ourika. Acompañado por un guía local experimentado, explora pueblos bereberes, bosques de nogales, arroyos y senderos rodeados de impresionantes montañas. Elige un paseo tranquilo por el valle o una ruta más exigente hacia miradores panorámicos, según tu condición física. Descubre las tradiciones locales y los paisajes naturales que hacen del Atlas uno de los mejores destinos de senderismo de Marruecos.',
+  },
+
+  // EXPERIENCE DETAILS
+  category: 'nature',
+  duration: '5-6 hours',
+  price: 58,
+  difficulty: 'Moderate',
+  groupSize: '2-12 guests',
+
+  // IMAGES
+  image: '/images/yagour.jpg',
+
+  gallery: [
+    '/images/yagour.jpg',
+    '/images/hiking.jpg',
+    '/images/hero-atlas.jpg',
+    '/images/ourika-river.jpg',
+  ],
+
+  // HIGHLIGHTS
+  highlights: {
+    en: [
+      'Guided hiking through the beautiful High Atlas Mountains',
+      'Discover traditional Berber villages and mountain landscapes',
+      'Explore walnut groves, rivers and scenic mountain trails',
+      'Choose hiking routes adapted to your fitness level',
+      'Enjoy panoramic viewpoints and a traditional mountain tea break',
+    ],
+
+    fr: [
+      'Randonnée guidée dans les magnifiques montagnes du Haut Atlas',
+      'Découverte des villages berbères et des paysages montagnards',
+      'Exploration des noyers, des rivières et des sentiers panoramiques',
+      'Itinéraires adaptés à votre condition physique',
+      'Panoramas exceptionnels et pause thé traditionnelle en montagne',
+    ],
+
+    es: [
+      'Senderismo guiado por las montañas del Alto Atlas',
+      'Descubre pueblos bereberes y paisajes de montaña',
+      'Explora bosques de nogales, ríos y senderos panorámicos',
+      'Rutas adaptadas a tu condición física',
+      'Disfruta de vistas espectaculares y una pausa de té tradicional',
+    ],
+  },
+
+  // ITINERARY
+  itinerary: [
+    {
+      time: '08:30',
+
+      title: {
+        en: 'Meeting Point & Hiking Introduction',
+        fr: 'Point de rencontre et introduction à la randonnée',
+        es: 'Punto de encuentro e introducción al senderismo',
+      },
+
+      desc: {
+        en: 'Meet your local mountain guide and begin with a short introduction to the route, safety instructions and the surrounding Atlas Mountains. Choose a hiking trail according to your experience and fitness level before starting the adventure.',
+        fr: 'Rencontrez votre guide de montagne et découvrez l’itinéraire, les consignes de sécurité et les paysages environnants. Choisissez un sentier adapté à votre expérience et à votre condition physique.',
+        es: 'Conoce a tu guía de montaña y descubre la ruta, las instrucciones de seguridad y los paisajes del Atlas. Elige un sendero adaptado a tu experiencia y condición física.',
+      },
+    },
+
+    {
+      time: '09:00',
+
+      title: {
+        en: 'Mountain Trails & Berber Villages',
+        fr: 'Sentiers de montagne et villages berbères',
+        es: 'Senderos de montaña y pueblos bereberes',
+      },
+
+      desc: {
+        en: 'Walk through traditional mountain paths, walnut groves and small Berber villages. Discover local architecture, agricultural terraces and everyday life in the Atlas Mountains while enjoying beautiful views of the surrounding valley.',
+        fr: 'Parcourez les sentiers traditionnels, les noyers et les petits villages berbères. Découvrez l’architecture locale, les terrasses agricoles et la vie quotidienne dans les montagnes de l’Atlas.',
+        es: 'Camina por senderos tradicionales, bosques de nogales y pequeños pueblos bereberes. Descubre la arquitectura local, los campos en terrazas y la vida cotidiana en las montañas del Atlas.',
+      },
+    },
+
+    {
+      time: '11:00',
+
+      title: {
+        en: 'Mountain Viewpoints & Tea Break',
+        fr: 'Points de vue panoramiques et pause thé',
+        es: 'Miradores de montaña y pausa para el té',
+      },
+
+      desc: {
+        en: 'Reach beautiful mountain viewpoints overlooking the Ourika Valley and surrounding peaks. Take a relaxing break, enjoy Moroccan mint tea and discover the local flora, mountain wildlife and traditions with your guide.',
+        fr: 'Rejoignez de magnifiques points de vue sur la vallée de l’Ourika et les sommets environnants. Profitez d’une pause avec un thé à la menthe et découvrez la flore, la faune et les traditions locales.',
+        es: 'Llega a hermosos miradores con vistas al valle de Ourika y las montañas cercanas. Disfruta de una pausa con té marroquí y descubre la flora, la fauna y las tradiciones locales.',
+      },
+    },
+
+    {
+      time: '13:30',
+
+      title: {
+        en: 'Mountain Descent & Local Lunch',
+        fr: 'Descente de la montagne et déjeuner local',
+        es: 'Descenso de montaña y almuerzo local',
+      },
+
+      desc: {
+        en: 'Follow the mountain trails back towards the valley, enjoying the final landscapes and village views. Finish your hiking experience with an optional traditional Moroccan lunch at a local riverside restaurant.',
+        fr: 'Reprenez les sentiers en direction de la vallée en profitant des derniers panoramas. Terminez votre randonnée par un déjeuner marocain traditionnel en option dans un restaurant au bord de la rivière.',
+        es: 'Regresa por los senderos hacia el valle disfrutando de los últimos paisajes. Termina la experiencia con un almuerzo marroquí tradicional opcional en un restaurante junto al río.',
+      },
+    },
+  ],
+
+  // WHAT'S INCLUDED
+  included: {
+    en: [
+      'Experienced local mountain guide',
+      'Hiking poles',
+      'Traditional tea break',
+      'Basic safety equipment',
+    ],
+
+    fr: [
+      'Guide de montagne local expérimenté',
+      'Bâtons de randonnée',
+      'Pause thé traditionnelle',
+      'Équipement de sécurité de base',
+    ],
+
+    es: [
+      'Guía de montaña local experimentado',
+      'Bastones de senderismo',
+      'Pausa de té tradicional',
+      'Equipo básico de seguridad',
+    ],
+  },
+
+  // WHAT'S NOT INCLUDED
+  notIncluded: {
+    en: ['Transport', 'Lunch', 'Personal expenses and gratuities'],
+    fr: ['Transport', 'Déjeuner', 'Dépenses personnelles et pourboires'],
+    es: ['Transporte', 'Almuerzo', 'Gastos personales y propinas'],
+  },
+
+  // RATINGS & VISIBILITY
+  rating: 4.96,
+  reviewsCount: 267,
+  featured: true,
+},
+ 
+{
+  // BASIC INFORMATION
+  id: 'farming',
+  slug: 'farming-experience-local-family',
+
+  title: {
+    en: 'Authentic Berber Farming Experience in Ourika Valley',
+    fr: 'Expérience Agricole Authentique avec une Famille Berbère',
+    es: 'Experiencia Agrícola Bereber en el Valle de Ourika',
+  },
+
+  shortDesc: {
+    en: 'Discover traditional farming, work the land and experience rural Berber life in the Atlas Mountains',
+    fr: 'Découvrez l’agriculture traditionnelle et la vie rurale berbère dans les montagnes de l’Atlas',
+    es: 'Descubre la agricultura tradicional y la vida rural bereber en las montañas del Atlas',
+  },
+
+  longDesc: {
+    en: 'Spend a day with a local farming family in the beautiful Ourika Valley, surrounded by the High Atlas Mountains. Discover traditional agriculture, walk through terraced fields and learn how local farmers grow vegetables, olives and seasonal crops using generations-old techniques. Depending on the season, you’ll plant, harvest, irrigate the land, feed farm animals and explore the family orchard. Enjoy a traditional countryside breakfast while discovering the connection between Berber communities, their land and mountain life. A hands-on rural experience that brings you closer to authentic Moroccan village life.',
+
+    fr: 'Passez une journée avec une famille d’agriculteurs dans la magnifique vallée de l’Ourika, entourée des montagnes du Haut Atlas. Découvrez l’agriculture traditionnelle, parcourez les champs en terrasses et apprenez comment les agriculteurs cultivent les légumes, les olives et les cultures saisonnières. Selon la saison, participez aux plantations, aux récoltes, à l’irrigation et aux soins des animaux. Profitez d’un petit-déjeuner traditionnel à la campagne et découvrez la vie rurale berbère.',
+
+    es: 'Pasa un día con una familia de agricultores en el hermoso valle de Ourika, rodeado por las montañas del Alto Atlas. Descubre la agricultura tradicional, camina por campos en terrazas y aprende cómo los agricultores cultivan verduras, aceitunas y productos de temporada utilizando técnicas transmitidas durante generaciones. Según la estación, participarás en la siembra, la cosecha, el riego y el cuidado de los animales. Disfruta de un desayuno tradicional en el campo y descubre la auténtica vida rural bereber.',
+  },
+
+  // EXPERIENCE DETAILS
+  category: 'full-day',
+  duration: '8 hours',
+  price: 120,
+  difficulty: 'Active',
+  groupSize: '2-6 guests',
+
+  // IMAGES
+  image: '/images/ourikavalley.jpg',
+
+  gallery: [
+    '/images/ourikavalley.jpg',
+    '/images/ourika-river.jpg',
+    '/images/village2.jpg',
+  ],
+
+  // HIGHLIGHTS
+  highlights: {
+    en: [
+      'Hands-on traditional farming with a local Berber family',
+      'Explore terraced fields and ancient irrigation techniques',
+      'Seasonal planting, harvesting and vegetable gardening',
+      'Meet farm animals and discover traditional mountain agriculture',
+      'Enjoy a countryside breakfast with fresh local products',
+    ],
+
+    fr: [
+      'Découverte de l’agriculture traditionnelle avec une famille berbère',
+      'Exploration des champs en terrasses et des anciens systèmes d’irrigation',
+      'Plantation, récolte et jardinage selon les saisons',
+      'Rencontre avec les animaux de la ferme et découverte de l’agriculture montagnarde',
+      'Petit-déjeuner à la campagne avec des produits locaux',
+    ],
+
+    es: [
+      'Agricultura tradicional con una familia bereber local',
+      'Descubre los campos en terrazas y los antiguos sistemas de riego',
+      'Siembra, cosecha y cultivo de verduras según la temporada',
+      'Conoce los animales de la granja y la agricultura de montaña',
+      'Disfruta de un desayuno rural con productos locales',
+    ],
+  },
+
+  // ITINERARY
+  itinerary: [
+    {
+      time: '08:00',
+
+      title: {
+        en: 'Farm Walk & Introduction to Mountain Agriculture',
+        fr: 'Promenade à la ferme et découverte de l’agriculture',
+        es: 'Paseo por la granja e introducción a la agricultura',
+      },
+
+      desc: {
+        en: 'Meet your local farming family and explore their agricultural land. Discover traditional terraced fields, olive trees, vegetable gardens and ancient irrigation channels used to distribute mountain water.',
+        fr: 'Rencontrez votre famille d’agriculteurs et explorez ses terres. Découvrez les champs en terrasses, les oliviers, les potagers et les anciens canaux d’irrigation.',
+        es: 'Conoce a la familia de agricultores y explora sus tierras. Descubre los campos en terrazas, los olivos, los huertos y los antiguos canales de riego.',
+      },
+    },
+
+    {
+      time: '08:45',
+
+      title: {
+        en: 'Hands-on Traditional Farming',
+        fr: 'Initiation aux travaux agricoles traditionnels',
+        es: 'Participa en la agricultura tradicional',
+      },
+
+      desc: {
+        en: 'Take part in real seasonal farm activities. Depending on the time of year, help plant vegetables, harvest olives, work the soil, irrigate fields using traditional methods or collect fresh produce from the garden.',
+        fr: 'Participez aux activités agricoles selon la saison. Aidez à planter des légumes, récolter les olives, travailler la terre, irriguer les champs ou cueillir des produits frais du jardin.',
+        es: 'Participa en las actividades agrícolas de temporada. Ayuda a plantar verduras, recoger aceitunas, trabajar la tierra, regar los campos o cosechar productos frescos del huerto.',
+      },
+    },
+
+    {
+      time: '10:30',
+
+      title: {
+        en: 'Traditional Farm Breakfast',
+        fr: 'Petit-déjeuner traditionnel à la ferme',
+        es: 'Desayuno tradicional en la granja',
+      },
+
+      desc: {
+        en: 'Relax with a traditional countryside breakfast overlooking the valley. Enjoy homemade bread, olives, local olive oil, seasonal products and Moroccan mint tea while listening to stories about farming and family traditions.',
+        fr: 'Profitez d’un petit-déjeuner traditionnel avec vue sur la vallée. Dégustez du pain maison, des olives, de l’huile d’olive locale et du thé à la menthe tout en découvrant les traditions agricoles.',
+        es: 'Disfruta de un desayuno tradicional con vistas al valle. Prueba pan casero, aceitunas, aceite de oliva local y té marroquí mientras descubres las tradiciones agrícolas de la familia.',
+      },
+    },
+
+    {
+      time: '11:30',
+
+      title: {
+        en: 'Farm Animals & Rural Family Life',
+        fr: 'Animaux de la ferme et vie rurale',
+        es: 'Animales de granja y vida rural',
+      },
+
+      desc: {
+        en: 'Meet the farm animals, discover how families care for their donkeys, chickens and other livestock, and learn about the important role animals play in traditional farming and everyday life in the Atlas Mountains.',
+        fr: 'Rencontrez les animaux de la ferme et découvrez comment les familles s’occupent de leurs ânes, poules et autres animaux. Apprenez leur importance dans l’agriculture traditionnelle.',
+        es: 'Conoce los animales de la granja y descubre cómo las familias cuidan de sus burros, gallinas y otros animales. Aprende su importancia en la agricultura tradicional.',
+      },
+    },
+
+    {
+      time: '13:00',
+
+      title: {
+        en: 'Harvest & Local Farm Experience',
+        fr: 'Récolte et découverte de la vie agricole',
+        es: 'Cosecha y experiencia agrícola local',
+      },
+
+      desc: {
+        en: 'Continue exploring the family farm, discover seasonal crops and traditional food production, and take part in additional activities depending on the season. Enjoy the peaceful mountain surroundings before saying goodbye to your hosts.',
+        fr: 'Continuez à explorer la ferme familiale, découvrez les cultures saisonnières et les méthodes de production traditionnelles. Participez à d’autres activités selon la saison avant de terminer cette expérience.',
+        es: 'Continúa explorando la granja familiar, descubre los cultivos de temporada y los métodos tradicionales de producción. Participa en otras actividades según la estación antes de despedirte de tus anfitriones.',
+      },
+    },
+  ],
+
+  // WHAT'S INCLUDED
+  included: {
+    en: [
+      'Local farming family guide',
+      'Traditional farming activities',
+      'Farm tools and equipment',
+      'Traditional countryside breakfast',
+    ],
+
+    fr: [
+      'Accompagnement par une famille d’agriculteurs',
+      'Activités agricoles traditionnelles',
+      'Outils et matériel agricole',
+      'Petit-déjeuner traditionnel à la campagne',
+    ],
+
+    es: [
+      'Acompañamiento de una familia de agricultores',
+      'Actividades agrícolas tradicionales',
+      'Herramientas y material agrícola',
+      'Desayuno tradicional en el campo',
+    ],
+  },
+
+  // WHAT'S NOT INCLUDED
+  notIncluded: {
+    en: ['Transport from Marrakech', 'Lunch'],
+    fr: ['Transport depuis Marrakech', 'Déjeuner'],
+    es: ['Transporte desde Marrakech', 'Almuerzo'],
+  },
+
+  // RATINGS & VISIBILITY
+  rating: 4.92,
+  reviewsCount: 94,
+  featured: true,
+},
+
+{
+  // BASIC INFORMATION
+  id: 'waterfalls',
+  slug: 'setti-fatma-waterfalls-excursion',
+
+  title: {
+    en: 'Setti Fatma Waterfalls & Ourika Valley Hike',
+    fr: 'Randonnée aux Cascades de Setti Fatma et dans la Vallée de l’Ourika',
+    es: 'Senderismo a las Cascadas de Setti Fatma en el Valle de Ourika',
+  },
+
+  shortDesc: {
+    en: 'Discover the famous seven waterfalls, cross mountain streams and explore the beautiful landscapes of the Atlas Mountains',
+    fr: 'Découvrez les sept cascades, traversez les ruisseaux de montagne et explorez les paysages du Haut Atlas',
+    es: 'Descubre las siete cascadas, cruza arroyos de montaña y explora los paisajes del Alto Atlas',
+  },
+
+  longDesc: {
+    en: 'Discover one of the most beautiful natural attractions in Ourika Valley with a guided hike to the famous seven waterfalls of Setti Fatma. Follow mountain trails, cross flowing streams and climb rocky paths surrounded by traditional Berber villages and spectacular Atlas Mountain scenery. Accompanied by a local mountain guide, discover hidden viewpoints, small waterfalls and the natural beauty of the valley. Take a break at a traditional mountain café overlooking the river, enjoy Moroccan mint tea and experience the welcoming atmosphere of this popular mountain village. A perfect adventure for nature lovers and travellers looking to explore the Atlas Mountains near Marrakech.',
+
+    fr: 'Découvrez l’un des plus beaux sites naturels de la vallée de l’Ourika avec une randonnée guidée vers les célèbres sept cascades de Setti Fatma. Suivez les sentiers de montagne, traversez les ruisseaux et empruntez des chemins rocheux entourés de villages berbères et de magnifiques paysages du Haut Atlas. Accompagné d’un guide local, découvrez les cascades et les points de vue de la vallée. Profitez d’une pause dans un café traditionnel avec un thé à la menthe face à la rivière.',
+
+    es: 'Descubre uno de los lugares naturales más bonitos del valle de Ourika con una caminata guiada hasta las famosas siete cascadas de Setti Fatma. Sigue senderos de montaña, cruza pequeños arroyos y sube por caminos rocosos rodeados de pueblos bereberes y espectaculares paisajes del Atlas. Acompañado por un guía local, descubre cascadas y miradores naturales. Disfruta de una pausa en un café tradicional junto al río con un té marroquí.',
+  },
+
+  // EXPERIENCE DETAILS
+  category: 'nature',
+  duration: '3 hours',
+  price: 35,
+  difficulty: 'Moderate',
+  groupSize: '2-15 guests',
+
+  // IMAGES
+  image: '/images/waterfall.jpg',
+
+  gallery: [
+    '/images/waterfall.jpg',
+    '/images/ourika-river.jpg',
+    '/images/hero-atlas.jpg',
+  ],
+
+  // HIGHLIGHTS
+  highlights: {
+    en: [
+      'Guided hike to the famous seven waterfalls of Setti Fatma',
+      'Explore rocky mountain trails and natural river crossings',
+      'Discover beautiful waterfalls and hidden valley viewpoints',
+      'Experience traditional Berber village life and mountain scenery',
+      'Enjoy Moroccan mint tea at a riverside mountain café',
+    ],
+
+    fr: [
+      'Randonnée guidée vers les célèbres sept cascades de Setti Fatma',
+      'Exploration des sentiers rocheux et traversées de rivière',
+      'Découverte des cascades et des magnifiques panoramas',
+      'Découverte des villages berbères et des paysages montagnards',
+      'Thé à la menthe dans un café traditionnel au bord de la rivière',
+    ],
+
+    es: [
+      'Excursión guiada a las famosas siete cascadas de Setti Fatma',
+      'Explora senderos rocosos y cruza pequeños ríos de montaña',
+      'Descubre cascadas y miradores naturales del valle',
+      'Conoce los pueblos bereberes y los paisajes del Atlas',
+      'Disfruta de té marroquí en un café tradicional junto al río',
+    ],
+  },
+
+  // ITINERARY
+  itinerary: [
+    {
+      time: '10:00',
+
+      title: {
+        en: 'Setti Fatma Village & River Walk',
+        fr: 'Village de Setti Fatma et promenade au bord de la rivière',
+        es: 'Pueblo de Setti Fatma y paseo junto al río',
+      },
+
+      desc: {
+        en: 'Explore the lively mountain village of Setti Fatma, discover its traditional atmosphere and walk along the Ourika River. Meet your local guide and prepare for the waterfall hike through the surrounding mountains.',
+        fr: 'Découvrez le village animé de Setti Fatma, son ambiance traditionnelle et les paysages de la rivière Ourika. Rencontrez votre guide local avant de commencer la randonnée vers les cascades.',
+        es: 'Descubre el animado pueblo de Setti Fatma, su ambiente tradicional y los paisajes del río Ourika. Conoce a tu guía local antes de comenzar la caminata hacia las cascadas.',
+      },
+    },
+
+    {
+      time: '10:45',
+
+      title: {
+        en: 'Hiking to the Seven Waterfalls',
+        fr: 'Randonnée vers les sept cascades',
+        es: 'Senderismo hacia las siete cascadas',
+      },
+
+      desc: {
+        en: 'Follow mountain paths, climb rocky sections and cross small streams as you discover the beautiful waterfalls of Setti Fatma. Enjoy spectacular views, natural pools and photo opportunities along the way.',
+        fr: 'Suivez les sentiers de montagne, traversez les passages rocheux et les petits ruisseaux pour découvrir les magnifiques cascades de Setti Fatma. Profitez des panoramas et des pauses photo.',
+        es: 'Sigue senderos de montaña, sube por zonas rocosas y cruza pequeños arroyos para descubrir las hermosas cascadas de Setti Fatma. Disfruta de los paisajes y las oportunidades para hacer fotos.',
+      },
+    },
+
+    {
+      time: '12:30',
+
+      title: {
+        en: 'Mountain Tea & Return to the Village',
+        fr: 'Thé en montagne et retour au village',
+        es: 'Té en la montaña y regreso al pueblo',
+      },
+
+      desc: {
+        en: 'Relax at a traditional mountain café overlooking the river and enjoy Moroccan mint tea. Descend towards Setti Fatma at a comfortable pace, with the option to enjoy a traditional Moroccan lunch at a local riverside restaurant.',
+        fr: 'Détendez-vous dans un café traditionnel avec vue sur la rivière et dégustez un thé à la menthe. Redescendez tranquillement vers Setti Fatma avec la possibilité de déjeuner dans un restaurant local au bord de l’eau.',
+        es: 'Relájate en un café tradicional con vistas al río y disfruta de un té marroquí. Regresa tranquilamente a Setti Fatma con la opción de almorzar en un restaurante local junto al río.',
+      },
+    },
+  ],
+
+  // WHAT'S INCLUDED
+  included: {
+    en: [
+      'Experienced local waterfall guide',
+      'Guided hiking experience',
+      'Moroccan mint tea',
+      'Assistance during the waterfall hike',
+    ],
+
+    fr: [
+      'Guide local expérimenté',
+      'Randonnée guidée',
+      'Thé à la menthe marocain',
+      'Accompagnement pendant la randonnée',
+    ],
+
+    es: [
+      'Guía local experimentado',
+      'Excursión de senderismo guiada',
+      'Té marroquí a la menta',
+      'Asistencia durante la caminata',
+    ],
+  },
+
+  // WHAT'S NOT INCLUDED
+  notIncluded: {
+    en: ['Transport from Marrakech', 'Lunch', 'Personal expenses'],
+    fr: ['Transport depuis Marrakech', 'Déjeuner', 'Dépenses personnelles'],
+    es: ['Transporte desde Marrakech', 'Almuerzo', 'Gastos personales'],
+  },
+
+  // RATINGS & VISIBILITY
+  rating: 4.89,
+  reviewsCount: 421,
+  featured: true,
+},
+
+  
+ 
   {
     id: 'bread',
     slug: 'traditional-bread-making-tafarnout',
@@ -180,6 +898,7 @@ export const experiences: Experience[] = [
     reviewsCount: 156,
     featured: false,
   },
+
   {
     id: 'tea',
     slug: 'mint-tea-ceremony-hospitality',
@@ -203,13 +922,14 @@ export const experiences: Experience[] = [
     reviewsCount: 189,
     featured: false,
   },
+
   {
     id: 'excursion to Aafay',
     slug: 'Agafay Marrakech Desert',
     title: { en: "Agafay Desert half day tour", fr: "Visite Sahara de Agafay", es: 'Sahara agafay medio dia Excursion' },
     shortDesc: { en: 'Meet the women cracking, grinding and bottling liquid gold', fr: "Rencontrez les femmes qui pressent l'or liquide", es: 'Conoce a las mujeres que prensan el oro líquido' },
     longDesc: { en: '100% women-owned. See every step from nut to oil, taste amlou, learn why cooperatives matter for Atlas girls education. Shop fairly — all profits go to members and village school.', fr: '100% femmes. De la noix à l’huile, dégustation amlou, commerce équitable — profits pour scolarisation.', es: '100% mujeres. De la nuez al aceite, prueba amlou, comercio justo — ganancias para escuela.' },
-    category: 'half-day',
+    category: 'Sahara-Desert',
     duration: '5 hours',
     price: 15,
     difficulty: 'Easy',
@@ -226,19 +946,20 @@ export const experiences: Experience[] = [
     reviewsCount: 134,
     featured: false,
   },
+
   {
-    id: 'Kasbahs',
+    id: 'sahara-tour',
     slug: 'Kasbah ait ben Haddou discovery full day',
     title: { en: "Kasbah ait ben Haddou discovery", fr: "Kasbah ait ben Haddou discovery", es: 'Kasbah ait ben Haddou discovery' },
     shortDesc: { en: 'Meet the women cracking, grinding and bottling liquid gold, grinding and bottling liquid gold', fr: "Rencontrez les femmes qui pressent l'or liquide", es: 'Conoce a las mujeres que prensan el oro líquido' },
     longDesc: { en: '100% women-owned. See every step from nut to oil, taste amlou, learn why cooperatives matter for Atlas girls education. Shop fairly — all profits go to members and village school.', fr: '100% femmes. De la noix à l’huile, dégustation amlou, commerce équitable — profits pour scolarisation.', es: '100% mujeres. De la nuez al aceite, prueba amlou, comercio justo — ganancias para escuela.' },
-    category: 'full-day',
+    category: 'Sahara-Desert',
     duration: '12 hours',
     price: 15,
     difficulty: 'Easy',
     groupSize: '2-25 guests',
     image: '/images/agafay/ait-ben-haddou.jpg',
-    gallery: ['/images/cooperative.jpg', '/images/woman.jpg', '/images/spices.jpg'],
+    gallery: ['/images/agafay/ait-ben-haddou.jpg','/images/cooperative.jpg', '/images/woman.jpg', '/images/spices.jpg'],
     highlights: { en: ['Meet cooperative', 'Cold-press demo', 'Amlou & cosmetics', 'Fair-trade shop'], fr: ['Rencontre coopérative', 'Demo pression à froid', 'Amlou & cosmétiques', 'Boutique équitable'], es: ['Encuentro cooperativa', 'Demo prensado frío', 'Amlou y cosmética', 'Tienda comercio justo'] },
     itinerary: [
       { time: 'Flexible', title: { en: 'From Nut to Oil', fr: 'De la Noix à l’Huile', es: 'De la Nuez al Aceite' }, desc: { en: 'Tour, demo, tasting, optional shopping', fr: 'Tour, démo, dégustation, boutique', es: 'Tour, demo, degustación, tienda' } },
@@ -247,15 +968,16 @@ export const experiences: Experience[] = [
     notIncluded: { en: ['Purchases'], fr: ['Achats'], es: ['Compras'] },
     rating: 4.93,
     reviewsCount: 134,
-    featured: false,
+    featured: true,
   },
+
   {
     id: 'Mrzouga desert',
     slug: 'three-days-sahara-highlights',
     title: { en: 'three-days-Merzouga-sahara-highlights ', fr: 'three-days-Merzouga-sahara-highlights', es: 'Mthree-days-Merzouga-sahara-highlights' },
     shortDesc: { en: 'The perfect escape: valley, village, waterfalls & lunch in 5h', fr: 'L’échappée parfaite: vallée, village, cascades & déjeuner en 5h', es: 'La escapada perfecta: valle, pueblo, cascadas y almuerzo en 5h' },
     longDesc: { en: 'Picked up from Marrakech at 9am, back for siesta. Visit a Berber house, walk to Setti Fatma falls, riverside tagine lunch, and stop at women’s cooperative. Best for short stays.', fr: 'Prise en charge Marrakech 9h, retour sieste. Maison berbère, cascades Setti Fatma, tajine rivière, coopérative féminine.', es: 'Recogida Marrakech 9h, regreso siesta. Casa bereber, cascadas Setti Fatma, tajine río, cooperativa femenina.' },
-    category: 'full-day',
+    category: 'Sahara-Desert',
     duration: '72  hours',
     price: 62,
     originalPrice: 75,
@@ -276,6 +998,7 @@ export const experiences: Experience[] = [
     reviewsCount: 523,
     featured: false,
   },
+
   {
     id: 'full-day-tour',
     slug: 'full-day-atlas-3 valleys-immersion',
@@ -304,6 +1027,7 @@ export const experiences: Experience[] = [
     reviewsCount: 687,
     featured: true,
   },
+
   {
     id: 'full-day-exp',
     slug: 'full-day-atlas-ourika',
@@ -333,8 +1057,6 @@ export const experiences: Experience[] = [
     featured: false,
   },
 
-
-
    {
     id: 'Hiking In Tasghimot mountains',
     slug: 'Half day trekking-in-atlas-ourika',
@@ -363,6 +1085,7 @@ export const experiences: Experience[] = [
     reviewsCount: 200,
     featured: true,
   },
+  
   {
     id: 'Asguine riveer hike',
     slug: 'Half day asguine and tasghimot',

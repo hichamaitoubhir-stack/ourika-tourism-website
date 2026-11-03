@@ -9,8 +9,8 @@ export default function WinterPromotionBar() {
 
   const messages = {
     en: {
-      title: "Don't miss our winter promotion 2027!",
-      detail: "Enjoy 30% OFF authentic Ourika Valley & Atlas Mountains experiences.",
+      title: "The best top 10 attractions in Marrakesh of 2026!",
+      detail: "Enjoy 30% OFF of most booked tours & experiences in Marrakesh - Atlas Mountains - Desert - Ourika valley.",
       button: "Explore offers",
     },
     fr: {

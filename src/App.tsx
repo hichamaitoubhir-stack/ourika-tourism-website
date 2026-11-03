@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Link, useParams, useNavigate, useLocation
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Clock, Users, MapPin, Star, ArrowUpRight, Menu, X, 
-  Mountain, UtensilsCrossed, Droplets, Home as HomeIcon,
+  Mountain,MountainSnow, UtensilsCrossed, Droplets, Home as HomeIcon,
   Leaf, Heart, Quote, Check, Shield, Calendar,
   Mail, Phone, Instagram, Facebook, Youtube,
   ChevronRight, Play, Sparkles
@@ -12,6 +12,9 @@ import { experiences, reviews as reviewsData } from './lib/data';
 import { LangContext, dict, type Lang } from './lib/i18n';
 import WinterPromotionBar from "./lib/WinterPromotionBar";
 import FAQSection from "./lib/FAQSection";
+import Logo from "./lib/logo";
+
+
 
 const WHATSAPP_NUMBER = '212606125022';
 const WA_LINK = (text: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -39,9 +42,10 @@ function Header() {
     { to: '/experiences', label: t.nav.experiences },
     { to: '/half-day-tours', label: t.nav.half },
     { to: '/full-day-tours', label: t.nav.full },
-    { to: '/about', label: t.nav.about },
-    { to: '/gallery', label: t.nav.gallery },
-    { to: '/blog', label: t.nav.blog },
+    { to: '/sahara-desert', label: 'Desert',isNew: true },
+    // { to: '/about', label: t.nav.about },
+    // { to: '/gallery', label: t.nav.gallery },
+    // { to: '/blog', label: t.nav.blog },
     { to: '/contact', label: t.nav.contact },
   ];
 
@@ -49,19 +53,10 @@ function Header() {
     
     <>
       <header className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled||open?'bg-[#FFFBF2]/90 backdrop-blur-xl shadow-[0_2px_30px_rgba(0,0,0,0.06)]':'bg-transparent'}`}>
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-8 h-[72px] flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#1A3A2F] grid place-items-center">
-              <Mountain className="w-5 h-5 text-[#F5EBDC]" />
-              
-            </div>
-            <div className="leading-none">
-              <div className="font-display font-[660] text-[18px] tracking-[-0.02em] text-[#1A3A2F]">OURIKA</div>
-              <div className="text-[10px] tracking-[0.18em] uppercase font-[700] text-[#D9773A] -mt-0.5">Authentic</div>
-            </div>
-          </Link>
+        <div className="mx-auto max-w-[1280px] px-6 lg:px-8 h-[72px] flex items-center justify-between ">
+          <Logo/>
 
-          <nav className="hidden lg:flex items-center gap-1 bg-white/70 backdrop-blur border border-black/[0.06] rounded-full p-1">
+          <nav className="hidden lg:flex items-center gap-1  backdrop-blur  rounded-full p-3 " >
             {links.map(l=>(
               <Link key={l.to} to={l.to} className={`px-4 py-2 rounded-full text-[13.5px] font-[550] tracking-[-0.01em] transition ${loc.pathname===l.to?'bg-[#1A3A2F] text-white':'text-[#1A3A2F]/70 hover:text-[#1A3A2F] hover:bg-[#F5EBDC]'}`}>{l.label}</Link>
             ))}
@@ -160,10 +155,11 @@ function Footer() {
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8 pt-16 pb-8">
         <div className="grid md:grid-cols-[1.5fr_1fr_1fr_1.2fr] gap-10 pb-12 border-b border-white/10">
           <div>
-            <div className="flex items-center gap-3 mb-5">
+            <Logo/>
+            {/* <div className="flex items-center gap-3 mb-5">
               <div className="w-9 h-9 rounded-xl bg-[#F5EBDC] grid place-items-center"><Mountain className="w-5 h-5 text-[#1A3A2F]"/></div>
               <div className="leading-none"><div className="font-display font-[700] text-[18px] tracking-tight">OURIKA</div><div className="text-[10px] tracking-[0.18em] uppercase text-[#D9773A] font-[800]">Authentic</div></div>
-            </div>
+            </div> */}
             <p className="text-[14px] leading-[1.6] text-white/60 max-w-[32ch]">{t.footer.tagline}</p>
             <div className="flex gap-2 mt-6">
               {[Instagram, Facebook, Youtube].map((I,i)=>(
@@ -253,9 +249,13 @@ function BookingWidget({ exp }: { exp: typeof experiences[0] }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [msg, setMsg] = useState('');
+  const [food, setFood] = useState(false);
+  const [transport, setTransport] = useState(false);
   const [payMode, setPayMode] = useState<'now'|'later'>('now');
   const [success, setSuccess] = useState(false);
-  const total = exp.price * guests;
+  const total = guests * exp.price +(food ? 30 : 0) + (transport ? 70 : 0);
+
+  
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -276,9 +276,20 @@ function BookingWidget({ exp }: { exp: typeof experiences[0] }) {
   return (
     <form onSubmit={submit} className="bg-white rounded-[24px] border border-black/[0.06] shadow-[0_12px_40px_rgba(0,0,0,0.06)] p-5 lg:p-6 sticky top-[90px]">
       <div className="flex items-baseline justify-between">
-        <div><span className="text-[12px] text-[#8A7D6B]">{t.common.from} </span><span className="font-display text-[28px] font-[750] tracking-tight">€{exp.price}</span><span className="text-[12px] text-[#8A7D6B]">{t.common.perPerson}</span></div>
-        <div className="text-[14px] flex items-center gap-1"><Star className="w-3.5 h-3.5 fill-[#1A3A2F]"/>{exp.rating} ({exp.reviewsCount})</div>
-      </div>
+  <div>
+    <span className="text-[12px] text-[#8A7D6B]">{t.common.from} </span>
+    <span className="font-display text-[28px] font-[750] tracking-tight">
+      €{exp.price}
+    </span>
+    <span className="text-[12px] text-[#8A7D6B]">{t.common.perPerson}</span>
+  </div>
+
+  <div className="text-[13px] flex items-center gap-1 bg-black text-[#D4AF37] px-3 py-1.5 rounded-full">
+    <Star className="w-3.5 h-3.5 fill-[#D4AF37] text-[#D4AF37]" />
+    <span className="font-[700]">{exp.rating}</span>
+    <span className="text-[#D4AF37]/80">({exp.reviewsCount})</span>
+  </div>
+</div>
 
       <div className="grid grid-cols-2 gap-3 mt-5">
         <label className="grid gap-1.5"><span className="text-[11px] font-[700] tracking-[0.08em] uppercase text-[#8A7D6B]">{t.booking.date}</span><input required type="date" value={date} onChange={e=>setDate(e.target.value)} className="h-11 rounded-full border border-black/10 px-4 text-[14px] bg-[#FFFBF2] focus:outline-none focus:border-[#D9773A]"/></label>
@@ -295,7 +306,56 @@ function BookingWidget({ exp }: { exp: typeof experiences[0] }) {
         <button type="button" onClick={()=>setPayMode('now')} className={`flex-1 h-9 rounded-full text-[12px] font-[650] transition ${payMode==='now'?'bg-[#1A3A2F] text-white':'text-[#1A3A2F]/60'}`}>{t.booking.pay}</button>
         <button type="button" onClick={()=>setPayMode('later')} className={`flex-1 h-9 rounded-full text-[12px] font-[650] transition ${payMode==='later'?'bg-[#1A3A2F] text-white':'text-[#1A3A2F]/60'}`}>{t.booking.payLater}</button>
       </div>
+      {/* extra */}
+      <div className="mt-5">
+  <h4 className="font-display text-[15px] font-[700]">
+    Customize your experience
+  </h4>
+  <p className="text-[12px] text-[#8A7D6B] mt-1">
+    Add optional services to your booking.
+  </p>
 
+  <div className=" grid gap-3 mt-3">
+
+    <label className="flex items-center justify-between p-4 rounded-[16px] border border-black bg- text-[#D4AF37] cursor-pointer hover:border-[#D9773A]">
+  <div className="flex items-center gap-3">
+    <input
+      type="checkbox"
+      checked={food}
+      onChange={e => setFood(e.target.checked)}
+      className="w-4 h-4 accent-[#D9773A]"
+    />
+    <div>
+      <p className="text-[13px] font-[650]">Food & Snacks</p>
+      <p className="text-[11px] text-[#D4AF37]/70">
+        Traditional Moroccan food and refreshments
+      </p>
+    </div>
+  </div>
+  <span className="font-[700] text-[14px]">+$30</span>
+</label>
+
+    <label  className="flex items-center justify-between p-4 rounded-[16px] border border-black bg- text-[#D4AF37] cursor-pointer hover:border-[#D9773A]">
+      <div className="flex items-center gap-3 ">
+        <input
+          type="checkbox"
+          checked={transport}
+          onChange={e => setTransport(e.target.checked)}
+          className="w-4 h-4 accent-[#D9773A]"
+        />
+        <div >
+          <p className="text-[13px] font-[650]" >Transportation</p>
+          <p className="text-[11px] text-[#8A7D6B]">
+            Private transportation for your experience
+          </p>
+        </div>
+      </div>
+      <span className="font-[700] text-[14px]">+$70</span>
+    </label>
+
+  </div>
+</div>
+      {/* extra */}
       <div className="mt-4 flex items-center justify-between text-[13px]">
         <span className="text-[#8A7D6B]">{guests} x €{exp.price}</span><span className="font-[700]">€{total}</span>
       </div>
@@ -329,20 +389,12 @@ function HomePage() {
       <WinterPromotionBar />
       {/* HERO */}
       <section className="relative max-w-[1280px] mx-auto px-6 lg:px-8 pt-2">
-        {/* <div className="relative rounded-[32px] overflow-hidden bg-[#1A3A2F] min-h-[88vh] flex items-end"> */}
         <div className="relative rounded-[28px] md:rounded-[32px] overflow-hidden bg-[#1A3A2F] min-h-[720px] md:min-h-[88vh] flex items-end">
           <img src="/images/cookingClass.png" alt="Atlas Mountains Ourika Valley" fetchPriority="high" decoding="async" className="absolute inset-0 
           w-full h-full object-cover opacity-[0.72]" loading="eager"/>
 
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1A3A2F] via-[#1A3A2F]/30 to-transparent" />
-          {/* <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
-            <Badge><span className="w-2 h-2 rounded-full bg-[#D9773A] animate-pulse"/>
-            {t.hero.badge}</Badge>
-            <div className="hidden md:flex items-center gap-2 text-[11px] text-white/70">
-            <MapPin className="w-3.5 h-3.5"/> 31.316°N, 7.780°W • Tnine Ourika</div>
-          </div> */}
-
-          {/* chengeer */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[oklch(75% 0.183 55.934)] via-[oklch(93.8% 0.127 124.321)]/30 to-transparent" />
+          
 <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
   <Badge>
     <span className="w-2 h-2 rounded-full bg-[#D9773A] animate-pulse"/>
@@ -494,7 +546,7 @@ function HomePage() {
             <Link to="/contact" className="h-14 rounded-full bg-white border border-black/10 flex items-center justify-between px-6 font-[600] text-[14px]"><span>Or send a message</span><Mail className="w-5 h-5"/></Link>
           </div>
         </div>
-         <FAQSection />
+         {/* <FAQSection /> */}
       </section>
     </main>
   );
@@ -513,7 +565,7 @@ function ExperiencesPage() {
           <h1 className="font-display text-[40px] lg:text-[56px] font-[650] leading-[0.9] tracking-[-0.04em] mt-4">All Ourika experiences,<br/>built with families.</h1>
         </div>
         <div className="flex gap-2 flex-wrap p-1 rounded-full bg-white border border-black/5">
-          {(['all','half-day','full-day','cultural','nature'] as const).map(f=>(
+          {(['all','half-day','full-day','cultural','nature','Sahara-Desert'] as const).map(f=>(
             <button key={f} onClick={()=>setFilter(f)} className={`px-4 h-9 rounded-full text-[12px] font-[700] uppercase tracking-[0.06em] transition ${filter===f?'bg-[#1A3A2F] text-white':'text-[#8A7D6B] hover:bg-[#F5EBDC] hover:text-[#1A3A2F]'}`}>{f.replace('-',' ')}</button>
           ))}
         </div>
@@ -557,6 +609,66 @@ function FullDayPage() {
     </main>
   );
 }
+// sahara desert card
+function SaharaDesertPage() {
+  const list = experiences.filter(
+    e => e.category === 'Sahara-Desert'
+  );
+
+  return (
+    <main className="max-w-[1280px] mx-auto px-6 lg:px-8 py-10">
+
+      <div className="relative h-[320px] md:h-[420px] rounded-[28px] overflow-hidden">
+        <img
+          src="/images/agafay/ait-ben-haddou.jpg"
+          alt="Discover Morocco's Sahara Desert"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
+        <div className="absolute inset-0 bg-black/45" />
+
+        <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-14 text-white">
+          <p className="text-sm font-semibold uppercase tracking-widest mb-4">
+            Discover Morocco
+          </p>
+
+          <h1 className="font-display text-4xl md:text-6xl font-bold">
+            Sahara Desert Experiences
+          </h1>
+
+          <p className="mt-4 max-w-xl text-sm md:text-base text-white/90">
+            Explore Morocco through unforgettable desert journeys,
+            local culture and authentic experiences.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-10">
+        <h2 className="font-display text-3xl font-bold">
+          Explore our Sahara experiences
+        </h2>
+
+        <p className="mt-2 text-sm text-[#8A7D6B]">
+          Discover our selected tours and experiences.
+        </p>
+      </div>
+
+      <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {list.map(e => (
+          <ExperienceCard key={e.id} exp={e} />
+        ))}
+      </div>
+
+      {list.length === 0 && (
+        <p className="mt-8 text-center text-[#8A7D6B]">
+          New Sahara experiences coming soon.
+        </p>
+      )}
+
+    </main>
+  );
+}
+//sahara desert card
 
 function ExperienceDetailPage() {
   const { slug } = useParams();
@@ -786,6 +898,11 @@ export default function App() {
             <Route path="/experiences/:slug" element={<ExperienceDetailPage/>}/>
             <Route path="/half-day-tours" element={<HalfDayPage/>}/>
             <Route path="/full-day-tours" element={<FullDayPage/>}/>
+            
+            <Route path="/sahara-desert"element={<SaharaDesertPage />}
+ 
+  
+/>
             <Route path="/about" element={<AboutPage/>}/>
             
             <Route path="/gallery" element={<GalleryPage/>}/>
