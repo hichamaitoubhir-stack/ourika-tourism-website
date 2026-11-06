@@ -19,8 +19,8 @@ export default function WinterPromotionBar() {
       button: "Voir les offres",
     },
     es: {
-      title: "¡No te pierdas nuestra promoción de invierno 2027!",
-      detail: "Ahorra un 30 % en experiencias auténticas en Ourika y el Atlas.",
+      title: "¡Este invierno,!",
+      detail: "vive la magia del Valle Ourika y desierto con un 30 % de descuento!",
       button: "Ver ofertas",
     },
   };

@@ -561,7 +561,7 @@ export const experiences: Experience[] = [
   groupSize: '2-6 guests',
 
   // IMAGES
-  image: '/images/ourikavalley.jpg',
+  image: '/images/experiencia_agrícola.webp',
 
   gallery: [
     '/images/ourikavalley.jpg',
@@ -749,12 +749,10 @@ export const experiences: Experience[] = [
   groupSize: '2-15 guests',
 
   // IMAGES
-  image: '/images/waterfall.jpg',
+  image: '/images/rio_de_ourika_atlas.jpg',
 
   gallery: [
-    '/images/waterfall.jpg',
-    '/images/ourika-river.jpg',
-    '/images/hero-atlas.jpg',
+    '/images/fullhero.jpg', '/images/hiking.jpg', '/images/ourikavalle.jpeg', '/images/rio_de_ourika_atlas.jpg','/images/Valle-de-Ourika.jpg','/images/ourikavalley.jpg', '/images/mint-tea.jpg',
   ],
 
   // HIGHLIGHTS
@@ -923,81 +921,582 @@ export const experiences: Experience[] = [
     featured: false,
   },
 
-  {
-    id: 'excursion to Aafay',
-    slug: 'Agafay Marrakech Desert',
-    title: { en: "Agafay Desert half day tour", fr: "Visite Sahara de Agafay", es: 'Sahara agafay medio dia Excursion' },
-    shortDesc: { en: 'Meet the women cracking, grinding and bottling liquid gold', fr: "Rencontrez les femmes qui pressent l'or liquide", es: 'Conoce a las mujeres que prensan el oro líquido' },
-    longDesc: { en: '100% women-owned. See every step from nut to oil, taste amlou, learn why cooperatives matter for Atlas girls education. Shop fairly — all profits go to members and village school.', fr: '100% femmes. De la noix à l’huile, dégustation amlou, commerce équitable — profits pour scolarisation.', es: '100% mujeres. De la nuez al aceite, prueba amlou, comercio justo — ganancias para escuela.' },
-    category: 'Sahara-Desert',
-    duration: '5 hours',
-    price: 15,
-    difficulty: 'Easy',
-    groupSize: '2-25 guests',
-    image: '/images/agafay/agafay-excursion.png',
-    gallery: ['/images/agafay/agafay-excursion.png', '/images/woman.jpg', '/images/spices.jpg'],
-    highlights: { en: ['Meet cooperative', 'Cold-press demo', 'Amlou & cosmetics', 'Fair-trade shop'], fr: ['Rencontre coopérative', 'Demo pression à froid', 'Amlou & cosmétiques', 'Boutique équitable'], es: ['Encuentro cooperativa', 'Demo prensado frío', 'Amlou y cosmética', 'Tienda comercio justo'] },
-    itinerary: [
-      { time: 'Flexible', title: { en: 'From Nut to Oil', fr: 'De la Noix à l’Huile', es: 'De la Nuez al Aceite' }, desc: { en: 'Tour, demo, tasting, optional shopping', fr: 'Tour, démo, dégustation, boutique', es: 'Tour, demo, degustación, tienda' } },
-    ],
-    included: { en: ['Guided visit', 'Tasting', 'Tea'], fr: ['Visite guidée', 'Dégustation', 'Thé'], es: ['Visita guiada', 'Degustación', 'Té'] },
-    notIncluded: { en: ['Purchases'], fr: ['Achats'], es: ['Compras'] },
-    rating: 4.93,
-    reviewsCount: 134,
-    featured: false,
+  
+{
+  id: 'excursion-to-agafay',
+  slug: 'agafay-desert-half-day-tour',
+
+  title: {
+    en: 'Agafay Desert Escape – Half-Day Experience',
+    fr: 'Évasion dans le désert d’Agafay – Demi-journée',
+    es: 'Escapada al Desierto de Agafay – Medio Día'
   },
 
-  {
-    id: 'sahara-tour',
-    slug: 'Kasbah ait ben Haddou discovery full day',
-    title: { en: "Kasbah ait ben Haddou discovery", fr: "Kasbah ait ben Haddou discovery", es: 'Kasbah ait ben Haddou discovery' },
-    shortDesc: { en: 'Meet the women cracking, grinding and bottling liquid gold, grinding and bottling liquid gold', fr: "Rencontrez les femmes qui pressent l'or liquide", es: 'Conoce a las mujeres que prensan el oro líquido' },
-    longDesc: { en: '100% women-owned. See every step from nut to oil, taste amlou, learn why cooperatives matter for Atlas girls education. Shop fairly — all profits go to members and village school.', fr: '100% femmes. De la noix à l’huile, dégustation amlou, commerce équitable — profits pour scolarisation.', es: '100% mujeres. De la nuez al aceite, prueba amlou, comercio justo — ganancias para escuela.' },
-    category: 'Sahara-Desert',
-    duration: '12 hours',
-    price: 15,
-    difficulty: 'Easy',
-    groupSize: '2-25 guests',
-    image: '/images/agafay/ait-ben-haddou.jpg',
-    gallery: ['/images/agafay/ait-ben-haddou.jpg','/images/cooperative.jpg', '/images/woman.jpg', '/images/spices.jpg'],
-    highlights: { en: ['Meet cooperative', 'Cold-press demo', 'Amlou & cosmetics', 'Fair-trade shop'], fr: ['Rencontre coopérative', 'Demo pression à froid', 'Amlou & cosmétiques', 'Boutique équitable'], es: ['Encuentro cooperativa', 'Demo prensado frío', 'Amlou y cosmética', 'Tienda comercio justo'] },
-    itinerary: [
-      { time: 'Flexible', title: { en: 'From Nut to Oil', fr: 'De la Noix à l’Huile', es: 'De la Nuez al Aceite' }, desc: { en: 'Tour, demo, tasting, optional shopping', fr: 'Tour, démo, dégustation, boutique', es: 'Tour, demo, degustación, tienda' } },
-    ],
-    included: { en: ['Guided visit', 'Tasting', 'Tea'], fr: ['Visite guidée', 'Dégustation', 'Thé'], es: ['Visita guiada', 'Degustación', 'Té'] },
-    notIncluded: { en: ['Purchases'], fr: ['Achats'], es: ['Compras'] },
-    rating: 4.93,
-    reviewsCount: 134,
-    featured: true,
+  shortDesc: {
+    en: 'Escape Marrakech and discover Agafay’s dramatic rocky landscapes, golden hills, Atlas Mountain views and authentic Berber hospitality.',
+    fr: 'Échappez à l’agitation de Marrakech et découvrez les paysages rocheux d’Agafay, les collines dorées, les vues sur l’Atlas et l’hospitalité berbère.',
+    es: 'Escapa del bullicio de Marrakech y descubre los paisajes rocosos de Agafay, sus colinas doradas, vistas al Atlas y la auténtica hospitalidad bereber.'
   },
 
-  {
-    id: 'Mrzouga desert',
-    slug: 'three-days-sahara-highlights',
-    title: { en: 'three-days-Merzouga-sahara-highlights ', fr: 'three-days-Merzouga-sahara-highlights', es: 'Mthree-days-Merzouga-sahara-highlights' },
-    shortDesc: { en: 'The perfect escape: valley, village, waterfalls & lunch in 5h', fr: 'L’échappée parfaite: vallée, village, cascades & déjeuner en 5h', es: 'La escapada perfecta: valle, pueblo, cascadas y almuerzo en 5h' },
-    longDesc: { en: 'Picked up from Marrakech at 9am, back for siesta. Visit a Berber house, walk to Setti Fatma falls, riverside tagine lunch, and stop at women’s cooperative. Best for short stays.', fr: 'Prise en charge Marrakech 9h, retour sieste. Maison berbère, cascades Setti Fatma, tajine rivière, coopérative féminine.', es: 'Recogida Marrakech 9h, regreso siesta. Casa bereber, cascadas Setti Fatma, tajine río, cooperativa femenina.' },
-    category: 'Sahara-Desert',
-    duration: '72  hours',
-    price: 62,
-    originalPrice: 75,
-    difficulty: 'Easy',
-    groupSize: '2-16 guests',
-    image: '/images/sahara/desert-merzouga-camp.jpg',
-    gallery: ['/images/sahara/desert-merzouga-camp.jpg', '/images/waterfall.jpg', '/images/berber-village.jpg', '/images/mint-tea.jpg'],
-    highlights: { en: ['Hotel pickup Marrakech', 'Berber house & tea', 'Waterfalls with local guide', 'Riverside lunch'], fr: ['Prise en charge hôtel Marrakech', 'Maison berbère & thé', 'Cascades guide local', 'Déjeuner rivière'], es: ['Recogida hotel Marrakech', 'Casa bereber y té', 'Cascadas con guía local', 'Almuerzo río'] },
-    itinerary: [
-      { time: '09:00', title: { en: 'Pickup & Drive', fr: 'Prise en charge & Route', es: 'Recogida y Ruta' }, desc: { en: 'Scenic 45min drive, photo stops', fr: 'Route scénique 45min', es: 'Ruta escénica 45min' } },
-      { time: '10:00', title: { en: 'Village & Cooperative', fr: 'Village & Coopérative', es: 'Pueblo y Cooperativa' }, desc: { en: 'Home visit, argan demo', fr: 'Visite maison, démo argan', es: 'Visita casa, demo argán' } },
-      { time: '11:30', title: { en: 'Waterfalls Hike', fr: 'Randonnée Cascades', es: 'Caminata Cascadas' }, desc: { en: 'Guided to 7 falls', fr: 'Guidé aux 7 cascades', es: 'Guiado a 7 cascadas' } },
-      { time: '13:00', title: { en: 'Lunch & Return', fr: 'Déjeuner & Retour', es: 'Almuerzo y Regreso' }, desc: { en: 'Riverside tagine, drive back', fr: 'Tajine rivière, retour', es: 'Tajine río, regreso' } },
-    ],
-    included: { en: ['Transport from Marrakech', 'Driver & guide', 'Tea & lunch', 'Waterfall guide'], fr: ['Transport Marrakech', 'Chauffeur & guide', 'Thé & déjeuner', 'Guide cascades'], es: ['Transporte Marrakech', 'Conductor y guía', 'Té y almuerzo', 'Guía cascadas'] },
-    notIncluded: { en: ['Drinks', 'Tips'], fr: ['Boissons', 'Pourboires'], es: ['Bebidas', 'Propinas'] },
-    rating: 4.7,
-    reviewsCount: 523,
-    featured: false,
+  longDesc: {
+    en: 'Discover the unique beauty of the Agafay Desert on a half-day escape from Marrakech. Although it is not a sandy Sahara desert, Agafay offers a spectacular landscape of rocky hills, dry valleys and wide-open horizons with views of the High Atlas Mountains on clear days. Explore the desert surroundings, visit a traditional Berber-style camp and experience Moroccan hospitality over a refreshing glass of mint tea. Enjoy the peaceful atmosphere, take memorable photographs and discover a different side of Morocco just outside the city. Optional activities such as camel rides, quad biking and traditional meals can be arranged at an additional cost, depending on availability.',
+
+    fr: 'Découvrez la beauté unique du désert d’Agafay lors d’une escapade d’une demi-journée au départ de Marrakech. Contrairement au Sahara, Agafay offre des collines rocheuses, des vallées arides et de vastes horizons avec des vues sur le Haut Atlas par temps clair. Explorez les environs, découvrez un campement d’inspiration berbère et profitez de l’hospitalité marocaine autour d’un thé à la menthe. Prenez de belles photos et découvrez une autre facette du Maroc, à quelques kilomètres de la ville. Des activités optionnelles comme la balade à dos de chameau, le quad et les repas traditionnels peuvent être organisées avec supplément, selon disponibilité.',
+
+    es: 'Descubre la belleza única del desierto de Agafay en una escapada de medio día desde Marrakech. Aunque no es un desierto de arena como el Sáhara, Agafay ofrece espectaculares colinas rocosas, valles secos y amplios horizontes con vistas al Alto Atlas en días despejados. Explora los alrededores, visita un campamento de estilo bereber y disfruta de la hospitalidad marroquí con un té de menta. Contempla el paisaje, haz fotografías inolvidables y descubre otra cara de Marruecos a poca distancia de la ciudad. Se pueden organizar actividades opcionales como paseos en camello, quad y comidas tradicionales con un coste adicional, según disponibilidad.'
   },
+
+  category: 'Sahara-Desert',
+  duration: '5 hours',
+  price: 15,
+  difficulty: 'Easy',
+  groupSize: '2-25 guests',
+
+  image: '/images/agafay/agafay-excursion.png',
+
+  gallery: [
+    '/images/agafay/agafay-excursion.png',
+    '/images/agafay/agafay-landscape.jpg',
+    '/images/agafay/agafay-camp.jpg',
+    '/images/agafay/agafay-sunset.jpg'
+  ],
+
+  highlights: {
+    en: [
+      'Escape the busy streets of Marrakech',
+      'Explore Agafay’s rocky desert landscapes',
+      'Enjoy panoramic views of the High Atlas on clear days',
+      'Visit a traditional Berber-style desert camp',
+      'Experience Moroccan mint tea and local hospitality',
+      'Discover beautiful photography spots',
+      'Optional camel ride or quad biking',
+      'Enjoy an optional traditional Moroccan meal'
+    ],
+
+    fr: [
+      'Échappez à l’agitation de Marrakech',
+      'Explorez les paysages rocheux du désert d’Agafay',
+      'Admirez les vues panoramiques sur le Haut Atlas par temps clair',
+      'Visitez un campement d’inspiration berbère',
+      'Savourez un thé à la menthe et découvrez l’hospitalité marocaine',
+      'Profitez de beaux endroits pour la photographie',
+      'Balade à dos de chameau ou quad en option',
+      'Repas marocain traditionnel en option'
+    ],
+
+    es: [
+      'Escapa del bullicio de Marrakech',
+      'Explora los paisajes rocosos del desierto de Agafay',
+      'Disfruta de vistas panorámicas del Alto Atlas en días despejados',
+      'Visita un campamento de estilo bereber',
+      'Prueba el té de menta y disfruta de la hospitalidad marroquí',
+      'Descubre lugares ideales para hacer fotografías',
+      'Paseo en camello o quad opcional',
+      'Comida tradicional marroquí opcional'
+    ]
+  },
+
+  itinerary: [
+    {
+      time: '09:00',
+      title: {
+        en: 'Departure from Marrakech',
+        fr: 'Départ de Marrakech',
+        es: 'Salida desde Marrakech'
+      },
+      desc: {
+        en: 'Meet your driver or guide at the agreed meeting point and leave the city behind for the open landscapes of Agafay.',
+        fr: 'Retrouvez votre chauffeur ou guide au point de rendez-vous convenu et quittez la ville en direction des paysages d’Agafay.',
+        es: 'Reúnete con tu conductor o guía en el punto acordado y deja atrás la ciudad para descubrir los paisajes abiertos de Agafay.'
+      }
+    },
+    {
+      time: '10:00',
+      title: {
+        en: 'Discover the Agafay Desert',
+        fr: 'Découverte du désert d’Agafay',
+        es: 'Descubre el desierto de Agafay'
+      },
+      desc: {
+        en: 'Explore the rocky hills, dry valleys and wide desert horizons. Stop at scenic viewpoints for photographs and enjoy the peaceful atmosphere.',
+        fr: 'Explorez les collines rocheuses, les vallées arides et les grands horizons du désert. Faites des pauses aux plus beaux points de vue.',
+        es: 'Explora las colinas rocosas, los valles secos y los amplios horizontes del desierto. Haz paradas en miradores para tomar fotografías.'
+      }
+    },
+    {
+      time: '11:00',
+      title: {
+        en: 'Berber Hospitality and Mint Tea',
+        fr: 'Hospitalité berbère et thé à la menthe',
+        es: 'Hospitalidad bereber y té de menta'
+      },
+      desc: {
+        en: 'Visit a desert camp and enjoy traditional Moroccan mint tea while learning about local hospitality and life in the surrounding region.',
+        fr: 'Visitez un campement dans le désert et savourez un thé à la menthe tout en découvrant l’hospitalité marocaine et la vie locale.',
+        es: 'Visita un campamento en el desierto y disfruta de un té de menta mientras descubres la hospitalidad marroquí y la vida local.'
+      }
+    },
+    {
+      time: '12:00',
+      title: {
+        en: 'Optional Desert Activities',
+        fr: 'Activités optionnelles dans le désert',
+        es: 'Actividades opcionales en el desierto'
+      },
+      desc: {
+        en: 'Add an optional camel ride or quad biking adventure to make your Agafay experience even more memorable.',
+        fr: 'Ajoutez une balade à dos de chameau ou une excursion en quad pour rendre votre expérience encore plus mémorable.',
+        es: 'Añade un paseo en camello o una aventura en quad para hacer tu experiencia aún más especial.'
+      }
+    },
+    {
+      time: '13:00',
+      title: {
+        en: 'Return to Marrakech',
+        fr: 'Retour à Marrakech',
+        es: 'Regreso a Marrakech'
+      },
+      desc: {
+        en: 'After a memorable desert escape, begin your return journey to Marrakech.',
+        fr: 'Après cette belle escapade dans le désert, prenez le chemin du retour hacia Marrakech.',
+        es: 'Después de esta experiencia en el desierto, comienza el viaje de regreso a Marrakech.'
+      }
+    }
+  ],
+
+  included: {
+    en: [
+      'Guided Agafay Desert experience',
+      'Visit to a desert camp',
+      'Moroccan mint tea',
+      'Scenic photo stops'
+    ],
+    fr: [
+      'Expérience guidée dans le désert d’Agafay',
+      'Visite d’un campement dans le désert',
+      'Thé marocain à la menthe',
+      'Arrêts photos panoramiques'
+    ],
+    es: [
+      'Experiencia guiada por el desierto de Agafay',
+      'Visita a un campamento del desierto',
+      'Té marroquí de menta',
+      'Paradas panorámicas para fotografías'
+    ]
+  },
+
+  notIncluded: {
+    en: [
+      'Transportation, unless selected',
+      'Camel ride',
+      'Quad biking',
+      'Lunch or dinner',
+      'Personal expenses'
+    ],
+    fr: [
+      'Transport, sauf si sélectionné',
+      'Balade à dos de chameau',
+      'Quad',
+      'Déjeuner ou dîner',
+      'Dépenses personnelles'
+    ],
+    es: [
+      'Transporte, salvo que se seleccione',
+      'Paseo en camello',
+      'Quad',
+      'Almuerzo o cena',
+      'Gastos personales'
+    ]
+  },
+
+  rating: 4.93,
+  reviewsCount: 134,
+  featured: false,
+},
+
+
+{
+  id: 'sahara-tour',
+  slug: 'ait-ben-haddou-kasbah-full-day-tour',
+
+  title: {
+    en: 'Aït Ben Haddou Kasbah & Atlas Mountains Full-Day Tour',
+    fr: 'Excursion à Aït Ben Haddou et dans le Haut Atlas – Journée complète',
+    es: 'Excursión a Ait Ben Haddou y el Alto Atlas – Día Completo'
+  },
+
+  shortDesc: {
+    en: 'Cross the spectacular High Atlas Mountains, discover traditional Berber villages and explore the ancient UNESCO-listed Kasbah of Aït Ben Haddou.',
+    fr: 'Traversez les magnifiques montagnes du Haut Atlas, découvrez des villages berbères traditionnels et explorez l’ancienne kasbah d’Aït Ben Haddou, classée à l’UNESCO.',
+    es: 'Cruza las espectaculares montañas del Alto Atlas, descubre pueblos bereberes tradicionales y explora la antigua kasbah de Ait Ben Haddou, declarada Patrimonio de la Humanidad por la UNESCO.'
+  },
+
+  longDesc: {
+    en: 'Travel from Marrakech through the spectacular landscapes of the High Atlas Mountains on a full-day journey to the historic Kasbah of Aït Ben Haddou. Cross the famous Tizi n’Tichka mountain pass, admire panoramic views of valleys and traditional Berber villages, and discover the changing landscapes along the route. Arrive at Aït Ben Haddou, a remarkable fortified earthen village and UNESCO World Heritage Site. Walk through its narrow alleys, climb towards the old granary and enjoy breathtaking views over the surrounding valley. Discover the architecture, history and stories of this historic caravan settlement, which has also appeared in famous film and television productions. Enjoy time for lunch and photography before returning to Marrakech through the Atlas Mountains.',
+
+    fr: 'Partez de Marrakech à travers les paysages spectaculaires du Haut Atlas pour une excursion d’une journée à la célèbre kasbah d’Aït Ben Haddou. Traversez le col de Tizi n’Tichka, admirez les panoramas sur les vallées et les villages berbères traditionnels. Découvrez Aït Ben Haddou, un remarquable village fortifié en terre, classé au patrimoine mondial de l’UNESCO. Promenez-vous dans ses ruelles, montez vers l’ancien grenier et profitez d’une vue magnifique sur la vallée. Découvrez son architecture, son histoire et son ancien rôle sur les routes commerciales caravanières. Profitez d’un temps libre pour déjeuner et prendre des photos avant de retourner à Marrakech à travers les montagnes de l’Atlas.',
+
+    es: 'Viaja desde Marrakech a través de los espectaculares paisajes del Alto Atlas en una excursión de día completo hasta la histórica kasbah de Ait Ben Haddou. Cruza el famoso puerto de montaña de Tizi n’Tichka, contempla las vistas panorámicas de los valles y descubre los pueblos bereberes tradicionales. Llega a Ait Ben Haddou, un impresionante pueblo fortificado de adobe declarado Patrimonio de la Humanidad por la UNESCO. Pasea por sus estrechas calles, sube hasta el antiguo granero y disfruta de las vistas del valle. Descubre su arquitectura, su historia y su pasado como importante punto de las antiguas rutas comerciales. Disfruta de tiempo libre para almorzar y hacer fotografías antes de regresar a Marrakech atravesando las montañas del Atlas.'
+  },
+
+  category: 'Sahara-Desert',
+  duration: '12 hours',
+  price: 15,
+  difficulty: 'Easy',
+  groupSize: '2-25 guests',
+
+  image: '/images/agafay/ait-ben-haddou.jpg',
+
+  gallery: [
+    '/images/agafay/ait-ben-haddou.jpg',
+    '/images/ait-ben-haddou-kasbah.jpg',
+    '/images/atlas-mountains.jpg',
+    '/images/tizi-n-tichka.jpg'
+  ],
+
+  highlights: {
+    en: [
+      'Discover the UNESCO World Heritage Site of Aït Ben Haddou',
+      'Cross the spectacular Tizi n’Tichka mountain pass',
+      'Enjoy panoramic views of the High Atlas Mountains',
+      'Explore traditional Berber villages and earthen architecture',
+      'Walk through the ancient fortified Kasbah',
+      'Discover the history of ancient caravan trading routes',
+      'Visit famous filming locations',
+      'Capture beautiful photographs of the Atlas landscapes',
+      'Enjoy free time for a traditional Moroccan lunch'
+    ],
+
+    fr: [
+      'Découvrez le site d’Aït Ben Haddou classé au patrimoine mondial de l’UNESCO',
+      'Traversez le spectaculaire col de Tizi n’Tichka',
+      'Admirez les panoramas sur le Haut Atlas',
+      'Découvrez les villages berbères et l’architecture en terre',
+      'Explorez l’ancienne kasbah fortifiée',
+      'Découvrez l’histoire des anciennes routes caravanières',
+      'Découvrez des lieux de tournage célèbres',
+      'Prenez de magnifiques photos des paysages de l’Atlas',
+      'Profitez d’un temps libre pour déjeuner'
+    ],
+
+    es: [
+      'Descubre Ait Ben Haddou, Patrimonio Mundial de la UNESCO',
+      'Cruza el espectacular puerto de montaña de Tizi n’Tichka',
+      'Disfruta de vistas panorámicas del Alto Atlas',
+      'Descubre pueblos bereberes y arquitectura de adobe',
+      'Explora la antigua kasbah fortificada',
+      'Conoce la historia de las antiguas rutas comerciales',
+      'Descubre famosos escenarios de cine',
+      'Haz fotografías increíbles de los paisajes del Atlas',
+      'Disfruta de tiempo libre para un almuerzo tradicional'
+    ]
+  },
+
+  itinerary: [
+    {
+      time: '07:00',
+      title: {
+        en: 'Departure from Marrakech',
+        fr: 'Départ de Marrakech',
+        es: 'Salida desde Marrakech'
+      },
+      desc: {
+        en: 'Meet your driver or guide and begin your journey towards the High Atlas Mountains.',
+        fr: 'Retrouvez votre chauffeur ou guide et commencez votre voyage vers le Haut Atlas.',
+        es: 'Reúnete con tu conductor o guía y comienza el viaje hacia las montañas del Alto Atlas.'
+      }
+    },
+    {
+      time: '09:00',
+      title: {
+        en: 'Cross the Tizi n’Tichka Pass',
+        fr: 'Traversée du col de Tizi n’Tichka',
+        es: 'Cruce del puerto de Tizi n’Tichka'
+      },
+      desc: {
+        en: 'Enjoy spectacular mountain scenery, panoramic viewpoints and photo stops along one of Morocco’s most famous mountain roads.',
+        fr: 'Admirez les paysages montagneux, les panoramas et les arrêts photos le long de l’une des routes de montagne les plus célèbres du Maroc.',
+        es: 'Disfruta de los paisajes de montaña, miradores panorámicos y paradas fotográficas en una de las carreteras de montaña más famosas de Marruecos.'
+      }
+    },
+    {
+      time: '10:30',
+      title: {
+        en: 'Discover Berber Villages',
+        fr: 'Découverte des villages berbères',
+        es: 'Descubre los pueblos bereberes'
+      },
+      desc: {
+        en: 'Pass through traditional mountain villages and discover local architecture, terraced landscapes and everyday life in the Atlas region.',
+        fr: 'Traversez des villages de montagne traditionnels et découvrez l’architecture locale, les paysages en terrasses et la vie quotidienne dans l’Atlas.',
+        es: 'Atraviesa pueblos tradicionales de montaña y descubre la arquitectura local, los paisajes en terrazas y la vida cotidiana del Atlas.'
+      }
+    },
+    {
+      time: '12:00',
+      title: {
+        en: 'Explore Aït Ben Haddou Kasbah',
+        fr: 'Visite de la kasbah d’Aït Ben Haddou',
+        es: 'Explora la kasbah de Ait Ben Haddou'
+      },
+      desc: {
+        en: 'Walk through the ancient fortified village, explore its narrow alleys and climb towards the upper viewpoint overlooking the valley.',
+        fr: 'Promenez-vous dans l’ancien village fortifié, explorez ses ruelles et montez jusqu’au point de vue dominant la vallée.',
+        es: 'Pasea por el antiguo pueblo fortificado, recorre sus callejuelas y sube hasta el mirador con vistas al valle.'
+      }
+    },
+    {
+      time: '13:30',
+      title: {
+        en: 'Traditional Moroccan Lunch',
+        fr: 'Déjeuner marocain traditionnel',
+        es: 'Almuerzo tradicional marroquí'
+      },
+      desc: {
+        en: 'Enjoy free time to have lunch at a local restaurant with views of the historic Kasbah.',
+        fr: 'Profitez d’un temps libre pour déjeuner dans un restaurant local avec vue sur la kasbah historique.',
+        es: 'Disfruta de tiempo libre para almorzar en un restaurante local con vistas a la kasbah histórica.'
+      }
+    },
+    {
+      time: '15:00',
+      title: {
+        en: 'Return Journey through the Atlas',
+        fr: 'Retour à travers l’Atlas',
+        es: 'Regreso a través del Atlas'
+      },
+      desc: {
+        en: 'Begin the scenic drive back to Marrakech, enjoying the changing mountain landscapes along the way.',
+        fr: 'Commencez le trajet panoramique vers Marrakech en profitant des paysages changeants de la montagne.',
+        es: 'Comienza el viaje panorámico de regreso a Marrakech disfrutando de los paisajes cambiantes de las montañas.'
+      }
+    },
+    {
+      time: '19:00',
+      title: {
+        en: 'Arrival in Marrakech',
+        fr: 'Arrivée à Marrakech',
+        es: 'Llegada a Marrakech'
+      },
+      desc: {
+        en: 'Arrive back in Marrakech after a full day exploring the Atlas Mountains and Aït Ben Haddou.',
+        fr: 'Retour à Marrakech après une journée complète à explorer l’Atlas et Aït Ben Haddou.',
+        es: 'Regreso a Marrakech después de un día completo explorando el Atlas y Ait Ben Haddou.'
+      }
+    }
+  ],
+
+  included: {
+    en: [
+      'Professional driver',
+      'Air-conditioned vehicle, if transport is selected',
+      'Visit to Aït Ben Haddou',
+      'Scenic photo stops',
+      'Free time to explore the Kasbah'
+    ],
+    fr: [
+      'Chauffeur professionnel',
+      'Véhicule climatisé, si le transport est sélectionné',
+      'Visite d’Aït Ben Haddou',
+      'Arrêts photos panoramiques',
+      'Temps libre pour explorer la kasbah'
+    ],
+    es: [
+      'Conductor profesional',
+      'Vehículo con aire acondicionado, si se selecciona el transporte',
+      'Visita a Ait Ben Haddou',
+      'Paradas panorámicas para fotografías',
+      'Tiempo libre para explorar la kasbah'
+    ]
+  },
+
+  notIncluded: {
+    en: [
+      'Lunch and drinks',
+      'Local Kasbah guide, unless arranged',
+      'Entrance fees, if applicable',
+      'Personal expenses',
+      'Optional activities'
+    ],
+    fr: [
+      'Déjeuner et boissons',
+      'Guide local de la kasbah, sauf arrangement préalable',
+      'Frais d’entrée, le cas échéant',
+      'Dépenses personnelles',
+      'Activités optionnelles'
+    ],
+    es: [
+      'Almuerzo y bebidas',
+      'Guía local de la kasbah, salvo acuerdo previo',
+      'Entradas, si corresponde',
+      'Gastos personales',
+      'Actividades opcionales'
+    ]
+  },
+
+  rating: 4.93,
+  reviewsCount: 134,
+  featured: true,
+},
+
+
+  {
+  id: 'merzouga-desert',
+  slug: 'three-days-sahara-highlights',
+  title: {
+    en: '3-Day Merzouga Sahara Desert Adventure',
+    fr: 'Circuit de 3 jours dans le désert du Sahara à Merzouga',
+    es: 'Aventura de 3 días en el desierto del Sahara de Merzouga'
+  },
+  shortDesc: {
+    en: 'Cross the Atlas Mountains, discover ancient kasbahs and experience a magical night among the Sahara dunes.',
+    fr: 'Traversez les montagnes de l’Atlas, découvrez d’anciennes kasbahs et vivez une nuit magique au cœur des dunes du Sahara.',
+    es: 'Cruza las montañas del Atlas, descubre antiguas kasbahs y vive una noche mágica entre las dunas del Sahara.'
+  },
+  longDesc: {
+    en: 'Set off from Marrakech on an unforgettable three-day journey to the Merzouga Desert. Travel across the spectacular High Atlas Mountains, visit traditional Berber villages and explore the historic Kasbah of Aït Ben Haddou. Continue through the dramatic landscapes of southern Morocco, passing through the Dades Valley and the impressive Todra Gorges. In Merzouga, enjoy a camel trek across the golden Erg Chebbi dunes, watch the sunset over the Sahara and spend the night in a desert camp under a sky full of stars. Experience the hospitality, landscapes and traditions of southern Morocco before returning to Marrakech.',
+    fr: 'Partez de Marrakech pour un voyage inoubliable de trois jours vers le désert de Merzouga. Traversez les magnifiques montagnes du Haut Atlas, découvrez des villages berbères traditionnels et explorez la célèbre kasbah d’Aït Ben Haddou. Continuez à travers les paysages du sud marocain, la vallée du Dadès et les impressionnantes gorges du Todra. À Merzouga, profitez d’une balade à dos de chameau dans les dunes dorées de l’Erg Chebbi, admirez le coucher du soleil et passez une nuit dans un campement saharien sous un magnifique ciel étoilé. Découvrez l’hospitalité et les traditions du sud du Maroc avant de retourner à Marrakech.',
+    es: 'Sal de Marrakech para vivir un viaje inolvidable de tres días hacia el desierto de Merzouga. Cruza las espectaculares montañas del Alto Atlas, descubre pueblos bereberes tradicionales y visita la famosa kasbah de Ait Ben Haddou. Continúa por los impresionantes paisajes del sur de Marruecos, el valle del Dades y las gargantas del Todra. Al llegar a Merzouga, disfruta de un paseo en camello por las dunas doradas de Erg Chebbi, contempla la puesta de sol y pasa la noche en un campamento del desierto bajo un cielo lleno de estrellas. Descubre la hospitalidad y las tradiciones del sur de Marruecos antes de regresar a Marrakech.'
+  },
+  category: 'Sahara-Desert',
+  duration: '3 days',
+  price: 62,
+  originalPrice: 75,
+  difficulty: 'Easy',
+  groupSize: '2-16 guests',
+  image: '/images/sahara/desert-merzouga-camp.jpg',
+  gallery: [
+    '/images/sahara/desert-merzouga-camp.jpg',
+    '/images/sahara/erg-chebbi-dunes.jpg',
+    '/images/sahara/camel-trekking.jpg',
+    '/images/sahara/desert-camp.jpg'
+  ],
+  highlights: {
+    en: [
+      'Journey across the High Atlas Mountains',
+      'Visit the UNESCO-listed Aït Ben Haddou Kasbah',
+      'Discover the Dades Valley and Todra Gorges',
+      'Explore the golden Erg Chebbi dunes',
+      'Camel trek at sunset in the Sahara',
+      'Overnight stay in a desert camp',
+      'Traditional Moroccan dinner and breakfast',
+      'Stargazing in the Sahara Desert'
+    ],
+    fr: [
+      'Traversée des montagnes du Haut Atlas',
+      'Visite de la kasbah d’Aït Ben Haddou, classée à l’UNESCO',
+      'Découverte de la vallée du Dadès et des gorges du Todra',
+      'Exploration des dunes dorées de l’Erg Chebbi',
+      'Balade à dos de chameau au coucher du soleil',
+      'Nuit dans un campement saharien',
+      'Dîner traditionnel marocain et petit-déjeuner',
+      'Observation des étoiles dans le désert'
+    ],
+    es: [
+      'Ruta por las montañas del Alto Atlas',
+      'Visita a la kasbah de Ait Ben Haddou, Patrimonio de la UNESCO',
+      'Descubre el valle del Dades y las gargantas del Todra',
+      'Explora las dunas doradas de Erg Chebbi',
+      'Paseo en camello al atardecer',
+      'Noche en un campamento del desierto',
+      'Cena tradicional marroquí y desayuno',
+      'Observación de estrellas en el Sahara'
+    ]
+  },
+  itinerary: [
+    {
+      time: 'Day 1',
+      title: {
+        en: 'Marrakech – Aït Ben Haddou – Dades Valley',
+        fr: 'Marrakech – Aït Ben Haddou – Vallée du Dadès',
+        es: 'Marrakech – Ait Ben Haddou – Valle del Dades'
+      },
+      desc: {
+        en: 'Depart from Marrakech, cross the High Atlas Mountains through the Tizi n’Tichka Pass and visit the historic Aït Ben Haddou Kasbah. Continue through Ouarzazate and the Valley of Roses before reaching the Dades Valley for the night.',
+        fr: 'Départ de Marrakech, traversée du Haut Atlas par le col de Tizi n’Tichka et visite de la kasbah historique d’Aït Ben Haddou. Continuation vers Ouarzazate et la vallée des Roses avant de rejoindre la vallée du Dadès pour la nuit.',
+        es: 'Salida de Marrakech, travesía del Alto Atlas por el puerto de Tizi n’Tichka y visita de la histórica kasbah de Ait Ben Haddou. Continuación hacia Ouarzazate y el Valle de las Rosas antes de llegar al valle del Dades para pasar la noche.'
+      }
+    },
+    {
+      time: 'Day 2',
+      title: {
+        en: 'Dades Valley – Todra Gorges – Merzouga Desert',
+        fr: 'Vallée du Dadès – Gorges du Todra – Désert de Merzouga',
+        es: 'Valle del Dades – Gargantas del Todra – Desierto de Merzouga'
+      },
+      desc: {
+        en: 'Explore the spectacular Todra Gorges before travelling through traditional desert villages towards Merzouga. Enjoy a camel trek across the Erg Chebbi dunes at sunset and spend the night in a Sahara desert camp.',
+        fr: 'Explorez les impressionnantes gorges du Todra avant de traverser des villages traditionnels en direction de Merzouga. Profitez d’une balade à dos de chameau dans les dunes de l’Erg Chebbi au coucher du soleil et passez la nuit dans un campement saharien.',
+        es: 'Explora las impresionantes gargantas del Todra antes de atravesar pueblos tradicionales hacia Merzouga. Disfruta de un paseo en camello por las dunas de Erg Chebbi al atardecer y pasa la noche en un campamento del Sahara.'
+      }
+    },
+    {
+      time: 'Day 3',
+      title: {
+        en: 'Merzouga – Return to Marrakech',
+        fr: 'Merzouga – Retour à Marrakech',
+        es: 'Merzouga – Regreso a Marrakech'
+      },
+      desc: {
+        en: 'Wake up early to admire the sunrise over the dunes. After breakfast, begin the return journey to Marrakech, enjoying scenic stops along the way.',
+        fr: 'Réveillez-vous tôt pour admirer le lever du soleil sur les dunes. Après le petit-déjeuner, commencez le retour vers Marrakech avec des arrêts panoramiques en chemin.',
+        es: 'Despiértate temprano para admirar el amanecer sobre las dunas. Después del desayuno, comienza el viaje de regreso a Marrakech con paradas panorámicas durante el recorrido.'
+      }
+    }
+  ],
+  included: {
+    en: [
+      'Transport from Marrakech in an air-conditioned vehicle',
+      'Driver and transport expenses',
+      'Accommodation during the tour',
+      'Desert camp overnight stay',
+      'Camel trek in Merzouga',
+      'Breakfasts and dinners as specified in the package'
+    ],
+    fr: [
+      'Transport depuis Marrakech en véhicule climatisé',
+      'Chauffeur et frais de transport',
+      'Hébergement pendant le circuit',
+      'Nuit dans un campement saharien',
+      'Balade à dos de chameau à Merzouga',
+      'Petits-déjeuners et dîners selon le forfait'
+    ],
+    es: [
+      'Transporte desde Marrakech en vehículo climatizado',
+      'Conductor y gastos de transporte',
+      'Alojamiento durante el circuito',
+      'Noche en un campamento del desierto',
+      'Paseo en camello en Merzouga',
+      'Desayunos y cenas según el paquete'
+    ]
+  },
+  notIncluded: {
+    en: [
+      'Lunches',
+      'Drinks',
+      'Optional activities',
+      'Personal expenses',
+      'Tips'
+    ],
+    fr: [
+      'Déjeuners',
+      'Boissons',
+      'Activités optionnelles',
+      'Dépenses personnelles',
+      'Pourboires'
+    ],
+    es: [
+      'Almuerzos',
+      'Bebidas',
+      'Actividades opcionales',
+      'Gastos personales',
+      'Propinas'
+    ]
+  },
+  rating: 4.7,
+  reviewsCount: 523,
+  featured: false,
+},
 
   {
     id: 'full-day-tour',
@@ -1011,8 +1510,8 @@ export const experiences: Experience[] = [
     originalPrice: 140,
     difficulty: 'Moderate',
     groupSize: '2-12 guests',
-    image: '/images/hero-atlas.jpg',
-    gallery: ['/images/hero-atlas.jpg', '/images/hiking.jpg', '/images/cooking.jpg', '/images/farm.jpg', '/images/mint-tea.jpg','/images/ourikavalley.jpg', '/images/mint-tea.jpg'],
+    image: '/images/fullhero.jpg',
+    gallery: ['/images/fullhero.jpg', '/images/hiking.jpg', '/images/ourikavalle.jpeg', '/images/rio_de_ourika_atlas.jpg','/images/Valle-de-Ourika.jpg','/images/ourikavalley.jpg', '/images/mint-tea.jpg'],
     highlights: { en: ['4 experiences in 1 day', 'All meals included', 'Marrakech transport', '100% local revenue'], fr: ['4 expériences en 1 jour', 'Tous repas inclus', 'Transport Marrakech', '100% revenu local'], es: ['4 experiencias en 1 día', 'Todas las comidas incluidas', 'Transporte Marrakech', '100% ingreso local'] },
     itinerary: [
       { time: '08:30', title: { en: 'Marrakech Pickup', fr: 'Prise en charge Marrakech', es: 'Recogida Marrakech' }, desc: { en: 'Begin scenic drive', fr: 'Début route scénique', es: 'Inicio ruta escénica' } },
@@ -1057,70 +1556,16 @@ export const experiences: Experience[] = [
     featured: false,
   },
 
-   {
-    id: 'Hiking In Tasghimot mountains',
-    slug: 'Half day trekking-in-atlas-ourika',
-    title: { en: 'Full-Day Atlas hills', fr: 'Journée Complète dams les collins', es: 'Día Completo Atlas en colinas de Atlas' },
-    shortDesc: { en: 'Deep dive: hike, cook, farm & tea — the whole valley in one day', fr: 'Plongée profonde: rando, cuisine, ferme & thé — toute la vallée en un jour', es: 'Inmersión profunda: senderismo, cocina, granja y té — todo el valle en un día' },
-    longDesc: { en: 'Our bestseller for curious travelers. Morning hike, farming break, bread baking, cooking class lunch, cooperative visit and sunset tea above terraces. All local, all connected.', fr: 'Best-seller curieux. Rando matin, ferme, pain, cours cuisine déjeuner, coopérative, thé coucher soleil.', es: 'Más vendido para curiosos. Senderismo mañana, granja, pan, clase cocina almuerzo, cooperativa, té atardecer.' },
-    category: 'half-day',
-    duration: '3 hours',
-    price: 825,
-    originalPrice: 120,
-    difficulty: 'Moderate',
-    groupSize: '2-15 guests',
-    image: '/images/hiking.jpg',
-    gallery: ['/images/hiking.jpg', '/images/hiking.jpg', '/images/cooking.jpg', '/images/farm.jpg', '/images/mint-tea.jpg'],
-    highlights: { en: ['4 experiences in 1 day', 'All meals included', 'Marrakech transport', '100% local revenue'], fr: ['4 expériences en 1 jour', 'Tous repas inclus', 'Transport Marrakech', '100% revenu local'], es: ['4 experiencias en 1 día', 'Todas las comidas incluidas', 'Transporte Marrakech', '100% ingreso local'] },
-    itinerary: [
-      { time: '08:30', title: { en: 'Marrakech Pickup', fr: 'Prise en charge Marrakech', es: 'Recogida Marrakech' }, desc: { en: 'Begin scenic drive', fr: 'Début route scénique', es: 'Inicio ruta escénica' } },
-      { time: '09:30', title: { en: 'Hike & Farm', fr: 'Rando & Ferme', es: 'Senderismo y Granja' }, desc: { en: '2h valley hike + farm tasks', fr: '2h rando + tâches ferme', es: '2h senderismo + tareas granja' } },
-      { time: '11:30', title: { en: 'Bread & Cooking', fr: 'Pain & Cuisine', es: 'Pan y Cocina' }, desc: { en: 'Bake bread, cook tagine', fr: 'Cuire pain, cuisiner tajine', es: 'Hornear pan, cocinar tajine' } },
-      { time: '14:00', title: { en: 'Feast & Cooperative', fr: 'Festin & Coopérative', es: 'Festín y Cooperativa' }, desc: { en: 'Lunch, then women co-op', fr: 'Déjeuner, puis coop féminine', es: 'Almuerzo, luego co-op mujeres' } },
-      { time: '15:30', title: { en: 'Tea & Return', fr: 'Thé & Retour', es: 'Té y Regreso' }, desc: { en: 'Sunset tea, drive back by 17:30', fr: 'Thé coucher soleil, retour 17h30', es: 'Té atardecer, regreso 17:30' } },
-    ],
-    included: { en: ['Public transport', 'local guides', 'All food & tea', 'Donations'], fr: ['Transport', 'Tous guides', 'Toute nourriture & thé', 'Dons'], es: ['Transporte', 'Todos los guías', 'Toda comida y té', 'Donaciones'] },
-    notIncluded: { en: ['Drinks'], fr: ['Boissons'], es: ['Bebidas'] },
-    rating: 2.8,
-    reviewsCount: 200,
-    featured: true,
-  },
   
-  {
-    id: 'Asguine riveer hike',
-    slug: 'Half day asguine and tasghimot',
-    title: { en: 'Hiking from Asguine to Tasghimot', fr: 'Journée Complète dams les collins', es: 'Día Completo Atlas en colinas de Atlas' },
-    shortDesc: { en: 'Deep dive: hike, cook, farm & tea — the whole valley in one day', fr: 'Plongée profonde: rando, cuisine, ferme & thé — toute la vallée en un jour', es: 'Inmersión profunda: senderismo, cocina, granja y té — todo el valle en un día' },
-    longDesc: { en: 'Our bestseller for curious travelers. Morning hike, farming break, bread baking, cooking class lunch, cooperative visit and sunset tea above terraces. All local, all connected.', fr: 'Best-seller curieux. Rando matin, ferme, pain, cours cuisine déjeuner, coopérative, thé coucher soleil.', es: 'Más vendido para curiosos. Senderismo mañana, granja, pan, clase cocina almuerzo, cooperativa, té atardecer.' },
-    category: 'half-day',
-    duration: '4 hours',
-    price: 125,
-    originalPrice: 120,
-    difficulty: 'Moderate',
-    groupSize: '2-15 guests',
-    image: '/images/hiking.jpg',
-    gallery: ['/images/hiking.jpg', '/images/hiking.jpg', '/images/cooking.jpg', '/images/farm.jpg', '/images/mint-tea.jpg'],
-    highlights: { en: ['4 experiences in 1 day', 'All meals included', 'Marrakech transport', '100% local revenue'], fr: ['4 expériences en 1 jour', 'Tous repas inclus', 'Transport Marrakech', '100% revenu local'], es: ['4 experiencias en 1 día', 'Todas las comidas incluidas', 'Transporte Marrakech', '100% ingreso local'] },
-    itinerary: [
-      { time: '08:30', title: { en: 'Marrakech Pickup', fr: 'Prise en charge Marrakech', es: 'Recogida Marrakech' }, desc: { en: 'Begin scenic drive', fr: 'Début route scénique', es: 'Inicio ruta escénica' } },
-      { time: '09:30', title: { en: 'Hike & Farm', fr: 'Rando & Ferme', es: 'Senderismo y Granja' }, desc: { en: '2h valley hike + farm tasks', fr: '2h rando + tâches ferme', es: '2h senderismo + tareas granja' } },
-      { time: '11:30', title: { en: 'Bread & Cooking', fr: 'Pain & Cuisine', es: 'Pan y Cocina' }, desc: { en: 'Bake bread, cook tagine', fr: 'Cuire pain, cuisiner tajine', es: 'Hornear pan, cocinar tajine' } },
-      { time: '14:00', title: { en: 'Feast & Cooperative', fr: 'Festin & Coopérative', es: 'Festín y Cooperativa' }, desc: { en: 'Lunch, then women co-op', fr: 'Déjeuner, puis coop féminine', es: 'Almuerzo, luego co-op mujeres' } },
-      { time: '15:30', title: { en: 'Tea & Return', fr: 'Thé & Retour', es: 'Té y Regreso' }, desc: { en: 'Sunset tea, drive back by 17:30', fr: 'Thé coucher soleil, retour 17h30', es: 'Té atardecer, regreso 17:30' } },
-    ],
-    included: { en: ['Public transport', 'local guides', 'All food & tea', 'Donations'], fr: ['Transport', 'Tous guides', 'Toute nourriture & thé', 'Dons'], es: ['Transporte', 'Todos los guías', 'Toda comida y té', 'Donaciones'] },
-    notIncluded: { en: ['Drinks'], fr: ['Boissons'], es: ['Bebidas'] },
-    rating: 4.8,
-    reviewsCount: 1120,
-    featured: true,
-  },
+  
+  
 
 ];
 
 export const reviews = [
-  { name: 'Sophie L.', country: 'France', rating: 5, text: { en: 'The cooking class with Fatima changed how I cook forever. Real, slow, generous.', fr: 'Le cours avec Fatima a changé ma cuisine pour toujours. Vrai, lent, généreux.', es: 'La clase con Fatima cambió mi forma de cocinar para siempre.' }, avatar: '/images/woman.jpg' },
-  { name: 'James & Clara', country: 'UK', rating: 5, text: { en: 'Not touristy at all. We were in a real home. Our guide grew up there. Magic.', fr: "Pas touristique du tout. Dans une vraie maison. Guide né là. Magique.", es: 'Nada turístico. Estuvimos en una casa real. Guía criado allí. Mágico.' }, avatar: '/images/woman.jpg' },
-  { name: 'Ana M.', country: 'Spain', rating: 5, text: { en: 'Waterfalls hike was perfect. Tea at the top with view of whole valley — unforgettable.', fr: 'Rando cascades parfaite. Thé au sommet avec vue vallée — inoubliable.', es: 'Caminata cascadas perfecta. Té en la cima con vistas al valle — inolvidable.' }, avatar: '/images/woman.jpg' },
-  { name: 'David K.', country: 'Germany', rating: 5, text: { en: 'Full-day tour worth every dirham. Supports locals directly, you feel it.', fr: 'Journée complète vaut chaque dirham. Soutien direct aux locaux, on le sent.', es: 'Tour de día completo vale cada dirham. Apoya a locales directamente.' }, avatar: '/images/woman.jpg' },
-  { name: 'Mouna bK.', country: 'Morocco', rating: 5, text: { en: 'Full-day tour worth every dirham. Supports locals directly, you feel it.', fr: 'Journée complète vaut chaque dirham. Soutien direct aux locaux, on le sent.', es: 'Tour de día completo vale cada dirham. Apoya a locales directamente.' }, avatar: '/images/woman.jpg' },
+  { name: 'Sophie L.',gender:'male', country: 'France', rating: 5, text: { en: 'The cooking class with Fatima changed how I cook forever. Real, slow, generous.', fr: 'Le cours avec Fatima a changé ma cuisine pour toujours. Vrai, lent, généreux.', es: 'La clase con Fatima cambió mi forma de cocinar para siempre.' }, avatar: '/images/woman.jpg' },
+  { name: 'James & Clara',gender:'female', country: 'UK', rating: 5, text: { en: 'Not touristy at all. We were in a real home. Our guide grew up there. Magic.', fr: "Pas touristique du tout. Dans une vraie maison. Guide né là. Magique.", es: 'Nada turístico. Estuvimos en una casa real. Guía criado allí. Mágico.' }, avatar: '/images/woman.jpg' },
+  { name: 'Ana M.',gender:'female', country: 'Spain', rating: 5, text: { en: 'Waterfalls hike was perfect. Tea at the top with view of whole valley — unforgettable.', fr: 'Rando cascades parfaite. Thé au sommet avec vue vallée — inoubliable.', es: 'Caminata cascadas perfecta. Té en la cima con vistas al valle — inolvidable.' }, avatar: '/images/woman.jpg' },
+  { name: 'David K.',gender:'male', country: 'Germany', rating: 5, text: { en: 'Full-day tour worth every dirham. Supports locals directly, you feel it.', fr: 'Journée complète vaut chaque dirham. Soutien direct aux locaux, on le sent.', es: 'Tour de día completo vale cada dirham. Apoya a locales directamente.' }, avatar: '/images/woman.jpg' },
+  { name: 'Mouna bK.',gender:'female', country: 'Morocco', rating: 5, text: { en: 'Full-day tour worth every dirham. Supports locals directly, you feel it.', fr: 'Journée complète vaut chaque dirham. Soutien direct aux locaux, on le sent.', es: 'Tour de día completo vale cada dirham. Apoya a locales directamente.' }, avatar: '/images/woman.jpg' },
 ];

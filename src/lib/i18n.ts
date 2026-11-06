@@ -15,7 +15,7 @@ export const dict: Record<Lang, any> = {
     },
     common: { bookNow: 'Book Now', viewAll: 'View All Experiences', from: 'from', perPerson: '/person', duration: 'Duration', group: 'Group', diff: 'Level', rating: 'Rating', included: 'Included', notIncluded: 'Not included', itinerary: 'Itinerary', highlights: 'Highlights', secure: 'Secure payment', whatsapp: 'WhatsApp us', needHelp: 'Need help choosing?', freeCancel: 'Free cancellation 24h before', instantConf: 'Instant confirmation' },
     booking: { title: 'Check Availability', date: 'Date', guests: 'Guests', name: 'Full name', email: 'Email', message: 'Message (allergies, pickup)', pay: 'Pay now & confirm', payLater: 'Reserve & pay on site', wa: 'Ask on WhatsApp first' },
-    footer: { tagline: 'Community-led tourism in Ourika Valley. Every booking directly supports Berber families.', links: 'Explore', contact: 'Contact', legal: '© 2026 Ourika Authentic. Crafted in the Atlas.' },
+    footer: { tagline: 'Community-led tourism in Ourika Valley. Every booking directly supports Berber families.', links: 'Explore', contact: 'Contact', legal: '© 2026 Atlas y desierto. Crafted in the Atlas.' },
   },
   fr: {
     nav: { home: 'Accueil', experiences: 'Expériences', half: 'Demi-journée', full: 'Journée complète', about: 'À propos', gallery: 'Galerie', blog: 'Journal', contact: 'Contact' },
@@ -29,12 +29,12 @@ export const dict: Record<Lang, any> = {
     },
     common: { bookNow: 'Réserver', viewAll: 'Toutes les expériences', from: 'dès', perPerson: '/pers', duration: 'Durée', group: 'Groupe', diff: 'Niveau', rating: 'Note', included: 'Inclus', notIncluded: 'Non inclus', itinerary: 'Programme', highlights: 'Points forts', secure: 'Paiement sécurisé', whatsapp: 'WhatsApp nous', needHelp: 'Besoin d’aide ?', freeCancel: 'Annulation gratuite 24h avant', instantConf: 'Confirmation instantanée' },
     booking: { title: 'Vérifier dispo', date: 'Date', guests: 'Invités', name: 'Nom complet', email: 'Email', message: 'Message (allergies, ramassage)', pay: 'Payer & confirmer', payLater: 'Réserver & payer sur place', wa: 'Demander sur WhatsApp' },
-    footer: { tagline: 'Tourisme communautaire en vallée d’Ourika. Chaque réservation soutient les familles berbères.', links: 'Explorer', contact: 'Contact', legal: '© 2026 Ourika Authentic. Créé dans l’Atlas.' },
+    footer: { tagline: 'Tourisme communautaire en vallée d’Ourika. Chaque réservation soutient les familles berbères.', links: 'Explorer', contact: 'Contact', legal: '© 2027 Atlas y desierto. Créé dans l’Atlas.' },
   },
   es: {
     nav: { home: 'Inicio', experiences: 'Experiencias', half: 'Medio día', full: 'Día completo', about: 'Nosotros', gallery: 'Galería', blog: 'Blog', contact: 'Contacto' },
     hero: {
-      badge: '40 min de Marrakech • Atlas Mountains',
+      badge: 'Aventura entre montañas y desierto • Marruecos',
       title: 'Valle de Ourika,\nDonde el Atlas Respira',
       subtitle: 'Experiencias bereberes auténticas con las familias que han dado forma a estas terrazas durante siglos. Sin montajes — cocinas reales, senderos reales.',
       ctaPrimary: 'Ver experiencias',
@@ -43,7 +43,7 @@ export const dict: Record<Lang, any> = {
     },
     common: { bookNow: 'Reservar', viewAll: 'Ver todo', from: 'desde', perPerson: '/persona', duration: 'Duración', group: 'Grupo', diff: 'Nivel', rating: 'Valoración', included: 'Incluido', notIncluded: 'No incluido', itinerary: 'Itinerario', highlights: 'Destacado', secure: 'Pago seguro', whatsapp: 'WhatsApp', needHelp: '¿Necesitas ayuda?', freeCancel: 'Cancelación gratis 24h antes', instantConf: 'Confirmación instantánea' },
     booking: { title: 'Ver disponibilidad', date: 'Fecha', guests: 'Personas', name: 'Nombre completo', email: 'Email', message: 'Mensaje (alergias, recogida)', pay: 'Pagar y confirmar', payLater: 'Reservar y pagar allí', wa: 'Preguntar por WhatsApp' },
-    footer: { tagline: 'Turismo comunitario en Ourika. Cada reserva apoya directo a familias bereberes.', links: 'Explorar', contact: 'Contacto', legal: '© 2026 Ourika Authentic. Hecho en el Atlas.' },
+    footer: { tagline: 'Turismo comunitario en Ourika. Cada reserva apoya directo a familias bereberes.', links: 'Explorar', contact: 'Contacto',  legal: `© ${new Date().getFullYear()} Atlas y Desierto. Hecho en el Atlas.`, },
   }
 };
 

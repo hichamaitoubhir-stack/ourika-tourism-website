@@ -12,7 +12,13 @@ import { experiences, reviews as reviewsData } from './lib/data';
 import { LangContext, dict, type Lang } from './lib/i18n';
 import WinterPromotionBar from "./lib/WinterPromotionBar";
 import FAQSection from "./lib/FAQSection";
-import Logo from "./lib/logo";
+import Logo from "./lib/Logo";
+import { UserRound } from 'lucide-react';
+import LegalLinks from "./lib/LegalLinks";
+import Privacy from "./lib/pages/Privacy";
+import Terms from "./lib/pages/Terms";
+import Imprint from "./lib/pages/Imprint";
+
 
 
 
@@ -42,7 +48,7 @@ function Header() {
     { to: '/experiences', label: t.nav.experiences },
     { to: '/half-day-tours', label: t.nav.half },
     { to: '/full-day-tours', label: t.nav.full },
-    { to: '/sahara-desert', label: 'Desert',isNew: true },
+    { to: '/sahara-desert', label: 'Sahara-Desert',isNew: true },
     // { to: '/about', label: t.nav.about },
     // { to: '/gallery', label: t.nav.gallery },
     // { to: '/blog', label: t.nav.blog },
@@ -85,14 +91,7 @@ function Header() {
                 {links.map(l=>(
                   <Link key={l.to} to={l.to} className={`py-3 text-[18px] font-display font-[550] tracking-tight flex items-center justify-between border-b border-black/5 last:border-0 ${loc.pathname===l.to?'text-[#D9773A]':'text-[#1A3A2F]'}`}>{l.label}<ChevronRight className="w-4 h-4 opacity-40"/></Link>
                 ))}
-                {/* <div className="flex gap-2 pt-4">
-                  {(['en','fr','es'] as Lang[]).map(l=>(
-                    <button key={l} onClick={()=>setLang(l)} className={`flex-1 h-11 rounded-full border text-[13px] font-[700] uppercase ${lang===l?'bg-[#1A3A2F] text-white border-[#1A3A2F]':'bg-white border-black/10'}`}>{l}
-                    </button>
-                  ))}
-                </div> */}
-
-              {/* labguage */}
+               
                             
 <div className="flex items-center justify-center gap-4 pt-4">
   {([
@@ -155,11 +154,8 @@ function Footer() {
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8 pt-16 pb-8">
         <div className="grid md:grid-cols-[1.5fr_1fr_1fr_1.2fr] gap-10 pb-12 border-b border-white/10">
           <div>
-            <Logo/>
-            {/* <div className="flex items-center gap-3 mb-5">
-              <div className="w-9 h-9 rounded-xl bg-[#F5EBDC] grid place-items-center"><Mountain className="w-5 h-5 text-[#1A3A2F]"/></div>
-              <div className="leading-none"><div className="font-display font-[700] text-[18px] tracking-tight">OURIKA</div><div className="text-[10px] tracking-[0.18em] uppercase text-[#D9773A] font-[800]">Authentic</div></div>
-            </div> */}
+            <Logo/ >
+            
             <p className="text-[14px] leading-[1.6] text-white/60 max-w-[32ch]">{t.footer.tagline}</p>
             <div className="flex gap-2 mt-6">
               {[Instagram, Facebook, Youtube].map((I,i)=>(
@@ -170,24 +166,25 @@ function Footer() {
           <div>
             <h4 className="text-[12px] uppercase tracking-[0.15em] font-[700] mb-4 text-white/40">{t.footer.links}</h4>
             <div className="grid gap-2 text-[14px] text-white/70">
-              <Link to="/experiences" className="hover:text-white">Experiences</Link>
-              <Link to="/half-day-tours" className="hover:text-white">Half-Day Tours</Link>
-              <Link to="/full-day-tours" className="hover:text-white">Full-Day Tours</Link>
-              <Link to="/blog" className="hover:text-white">Travel Journal</Link>
-              <Link to="/gallery" className="hover:text-white">Gallery</Link>
+  <Link to="/experiences" className="hover:text-white">Experiencias</Link>
+  <Link to="/half-day-tours" className="hover:text-white">Excursiones de medio día</Link>
+  <Link to="/full-day-tours" className="hover:text-white">Excursiones de día completo</Link>
+  <Link to="/blog" className="hover:text-white">Diario de viaje</Link>
+  <Link to="/gallery" className="hover:text-white">Galería</Link>
+
             </div>
           </div>
           <div>
             <h4 className="text-[12px] uppercase tracking-[0.15em] font-[700] mb-4 text-white/40">{t.footer.contact}</h4>
             <div className="grid gap-3 text-[14px] text-white/70">
-              <div className="flex gap-2"><MapPin className="w-4 h-4 mt-0.5 text-[#D9773A]"/>Tnine Ourika, Atlas Mountains<br/>40 min from Marrakech</div>
+              <div className="flex gap-2"><MapPin className="w-4 h-4 mt-0.5 text-[#D9773A]"/> Sahara Desierto & Atlas Montañas<br/>Desde Marrakesh</div>
               <div className="flex gap-2"><Phone className="w-4 h-4 mt-0.5 text-[#D9773A]"/>+212 6 06 12 50 22</div>
-              <div className="flex gap-2"><Mail className="w-4 h-4 mt-0.5 text-[#D9773A]"/>hello@ourika-authentic.ma</div>
+              <div className="flex gap-2"><Mail className="w-4 h-4 mt-0.5 text-[#D9773A]"/>hola@atlas-desierto.com</div>
             </div>
           </div>
           <div className="bg-white/[0.06] rounded-[20px] p-5 border border-white/10">
             <div className="flex items-center gap-2 text-[12px] font-[700] tracking-[0.12em] uppercase text-[#8FBDA3]"><Shield className="w-4 h-4"/>Secure & Direct</div>
-            <p className="text-[13px] leading-[1.5] text-white/60 mt-3">Payments processed via Stripe & PayPal. Free cancellation 24h before. 100% of profit to local families — no middlemen.</p>
+            <p className="text-[13px] leading-[1.5] text-white/60 mt-3">Pagos procesados a través de Stripe y PayPal. Cancelación gratuita hasta 24 horas antes. El 100 % de los beneficios se destina a las familias locales, sin intermediarios.</p>
             <div className="flex gap-2 mt-4 text-[10px] font-[700] tracking-wide">
               <span className="px-2.5 py-1 rounded-full bg-white text-[#1A3A2F]">STRIPE</span>
               <span className="px-2.5 py-1 rounded-full bg-white text-[#1A3A2F]">PAYPAL</span>
@@ -195,10 +192,16 @@ function Footer() {
             </div>
           </div>
         </div>
+
         <div className="flex flex-wrap items-center justify-between gap-4 pt-6 text-[12px] text-white/40">
-          <span>{t.footer.legal}</span>
-          <span className="flex gap-4"><a href="#" className="hover:text-white/70">Privacy</a><a href="#" className="hover:text-white/70">Terms</a><a href="#" className="hover:text-white/70">Imprint</a></span>
-        </div>
+  <span>{t.footer.legal}</span>
+  <span className="flex gap-4">
+    <a href="/privacy" className="hover:text-white/70">Privacy</a>
+    <a href="/terms" className="hover:text-white/70">Terms</a>
+    <a href="/Imprint" className="hover:text-white/70">Imprint</a>
+  </span>
+</div>
+        
       </div>
     </footer>
   );
@@ -253,7 +256,7 @@ function BookingWidget({ exp }: { exp: typeof experiences[0] }) {
   const [transport, setTransport] = useState(false);
   const [payMode, setPayMode] = useState<'now'|'later'>('now');
   const [success, setSuccess] = useState(false);
-  const total = guests * exp.price +(food ? 30 : 0) + (transport ? 70 : 0);
+  const total = guests * exp.price +(food ? guests * 15 : 0) + (transport ? 80 : 0);
 
   
 
@@ -309,10 +312,10 @@ function BookingWidget({ exp }: { exp: typeof experiences[0] }) {
       {/* extra */}
       <div className="mt-5">
   <h4 className="font-display text-[15px] font-[700]">
-    Customize your experience
+    Personaliza tu experiencia.
   </h4>
   <p className="text-[12px] text-[#8A7D6B] mt-1">
-    Add optional services to your booking.
+    Añade servicios opcionales a tu reserva.
   </p>
 
   <div className=" grid gap-3 mt-3">
@@ -326,13 +329,13 @@ function BookingWidget({ exp }: { exp: typeof experiences[0] }) {
       className="w-4 h-4 accent-[#D9773A]"
     />
     <div>
-      <p className="text-[13px] font-[650]">Food & Snacks</p>
+      <p className="text-[13px] font-[650]">Comida y aperitivos</p>
       <p className="text-[11px] text-[#D4AF37]/70">
-        Traditional Moroccan food and refreshments
+        Comida tradicional marroquí y bebidas refrescantes.
       </p>
     </div>
   </div>
-  <span className="font-[700] text-[14px]">+$30</span>
+  <span className="font-[700] text-[14px]">+$15</span>
 </label>
 
     <label  className="flex items-center justify-between p-4 rounded-[16px] border border-black bg- text-[#D4AF37] cursor-pointer hover:border-[#D9773A]">
@@ -344,20 +347,20 @@ function BookingWidget({ exp }: { exp: typeof experiences[0] }) {
           className="w-4 h-4 accent-[#D9773A]"
         />
         <div >
-          <p className="text-[13px] font-[650]" >Transportation</p>
+          <p className="text-[13px] font-[650]" >Transporte</p>
           <p className="text-[11px] text-[#8A7D6B]">
-            Private transportation for your experience
+            Transporte privado para tu experiencia.
           </p>
         </div>
       </div>
-      <span className="font-[700] text-[14px]">+$70</span>
+      <span className="font-[700] text-[14px]">+$ 70</span>
     </label>
 
   </div>
 </div>
       {/* extra */}
       <div className="mt-4 flex items-center justify-between text-[13px]">
-        <span className="text-[#8A7D6B]">{guests} x €{exp.price}</span><span className="font-[700]">€{total}</span>
+        <span className="text-[#8A7D6B]">{guests} x € {exp.price}</span><span className="font-[700]">€{total}</span>
       </div>
 
       <button type="submit" className="mt-4 w-full h-[48px] rounded-full bg-[#D9773A] text-white font-[700] text-[14px] tracking-[-0.01em] hover:bg-[#B85C24] transition flex items-center justify-center gap-2">
@@ -425,7 +428,7 @@ function HomePage() {
               <div className="rounded-[20px] bg-white/10 backdrop-blur-xl border border-white/15 p-5 text-white">
                 <div className="flex items-center gap-3 mb-4">
                   <img src="/images/woman.jpg" alt="host" className="w-10 h-10 rounded-full object-cover"/>
-                  <div><div className="text-[13px] font-[700] tracking-tight">Hosted by Hicham, Fatima & Hossain</div><div className="text-[11px] text-white/60">Berber families • Since 2014</div></div>
+                  <div><div className="text-[13px] font-[700] tracking-tight">Organizado por Hicham, Fatima & Hossain</div><div className="text-[11px] text-white/60">Berber families • Since 2014</div></div>
                 </div>
                 <div className="grid grid-cols-3 gap-3">
                   {t.hero.stats.map((s:any,i:number)=>(
@@ -439,8 +442,8 @@ function HomePage() {
 
         {/* trust strip */}
         <div className="mt-4 rounded-full border border-black/5 bg-white px-6 py-3 flex flex-wrap gap-x-6 gap-y-2 items-center justify-between text-[12px] text-[#8A7D6B]">
-          <span className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-[#F5EBDC] grid place-items-center text-[#1A3A2F]"><Check className="w-3.5 h-3.5"/></span>SEO: Ourika Valley tours • Atlas Mountains hiking • Things to do near Marrakech</span>
-          <span className="flex items-center gap-2"><Star className="w-4 h-4 fill-[#D9773A] text-[#D9773A]"/> 4.94 average from 2,400+ travelers • GetYourGuide / Airbnb / Google</span>
+          <span className="flex items-center gap-2"><span className="w-6 h-6 rounded-full bg-[#F5EBDC] grid place-items-center text-[#1A3A2F]"><Check className="w-3.5 h-3.5"/></span>Excursiones al valle de Ourika • Senderismo en las montañas del Atlas • Qué hacer cerca de Marrakech</span>
+          <span className="flex items-center gap-2"><Star className="w-4 h-4 fill-[#D9773A] text-[#D9773A]"/> Valoración media de 4,94/5 entre más de 2.400 viajeros • GetYourGuide / Airbnb / Google</span>
         </div>
       </section>
 
@@ -448,10 +451,13 @@ function HomePage() {
       <section className="max-w-[1280px] mx-auto px-6 lg:px-8 py-20">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-10">
           <div>
-            <div className="flex items-center gap-2 text-[11px] font-[800] tracking-[0.14em] uppercase text-[#D9773A]"><Leaf className="w-4 h-4"/> Authentic Berber Experiences</div>
-            <h2 className="font-display text-[36px] lg:text-[52px] font-[620] leading-[0.95] tracking-[-0.03em] mt-3">Slow travel,<br/>real connections.</h2>
+            <div className="flex items-center gap-2 text-[11px] font-[800] tracking-[0.14em] uppercase text-[#D9773A]"><Leaf className="w-4 h-4"/> Experiencias Bereberes Auténticas</div>
+            <h2 className="font-display text-[36px] lg:text-[52px] font-[620] leading-[0.95] tracking-[-0.03em] mt-3">Viaja sin prisas,<br/>conexiones reales.</h2>
           </div>
-          <p className="max-w-[36ch] text-[14px] leading-[1.6] text-[#8A7D6B]">Not staged folklore. You’ll be in kitchens where bread is still slapped onto clay, on trails only shepherds know, with families who keep 100% of what you pay.</p>
+          <p className="max-w-[36ch] text-[14px] leading-[1.6] text-[#8A7D6B]">
+            Descubre la auténtica cultura amazigh (bereber) de Marruecos a través de la cocina tradicional, 
+            antiguos senderos de montaña, pan casero y encuentros inolvidables con familias locales en el valle de Ourika y las montañas del Atlas.
+            </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -480,15 +486,15 @@ function HomePage() {
             </div>
           </div>
           <div>
-            <Badge>Berber Culture • Amazigh • Atlas Heritage</Badge>
-            <h2 className="font-display text-[36px] lg:text-[48px] font-[600] leading-[0.95] tracking-[-0.03em] mt-4">Not just earthen homes, but breathtaking landscapes and unforgettable hospitality</h2>
-            <p className="text-[15px] leading-[1.7] text-[#5A5348] mt-5">Ourika isn’t a day-trip backdrop. It’s 32 villages, terraced by Amazigh families for more than 2000 years. Water from khettara tunnels, bread from communal tabouna, argan oil cracked by women’s cooperatives. We’re not operators — we’re neighbors who started inviting friends.</p>
+            <Badge>Cultura Bereber • Amazigh • Patrimonio del Atlas y desierto</Badge>
+            <h2 className="font-display text-[36px] lg:text-[48px] font-[600] leading-[0.95] tracking-[-0.03em] mt-4">No son solo montañas y pueblos, son paisajes que enamoran y una hospitalidad que se siente en el corazón.</h2>
+            <p className="text-[15px] leading-[1.7] text-[#5A5348] mt-5">El valle de Ourika no es solo un destino: es un mundo de 32 pueblos, terrazas ancestrales y más de 3.000 años de cultura amazigh. Aquí, las tradiciones siguen vivas, desde el pan artesanal hasta los sabores y saberes de las familias locales. No somos simples operadores turísticos; somos vecinos que compartimos con orgullo nuestra tierra y nuestra forma de vivir.</p>
             <div className="grid sm:grid-cols-2 gap-4 mt-8">
-              {[
-                { icon: HomeIcon, title: 'Real Homes', desc: 'No staged show houses. Tea in living rooms, kids running around.' },
-                { icon: Leaf, title: 'Seasonal & Slow', desc: 'What you harvest, collect, cook depends on month — olives in Nov, barley in May.' },
-                { icon: UtensilsCrossed, title: 'Hands-in-Dough', desc: 'You knead, you flip, you burn fingers. That’s the point.' },
-                { icon: Droplets, title: 'Water Stories', desc: 'Learn the 12th-century irrigation still feeding every terrace.' },
+                      {[
+        { icon: HomeIcon, title: 'Hogares auténticos', desc: 'Sin casas preparadas para turistas. Té en el salón y niños jugando a tu alrededor.' },
+        { icon: Leaf, title: 'Tradición y ritmo natural', desc: 'Lo que se cosecha, recoge y cocina depende de la temporada: aceitunas en noviembre, cebada en mayo.' },
+        { icon: UtensilsCrossed, title: 'Manos a la masa', desc: 'Amasas, volteas y hasta te quemas los dedos. ¡De eso se trata!' },
+        { icon: Droplets, title: 'Historias del agua', desc: 'Descubre el sistema de riego del siglo XII que todavía da vida a las terrazas agrícolas.' },
               ].map((f,i)=>(
                 <div key={i} className="rounded-[18px] bg-[#FFFBF2] border border-black/5 p-4"><f.icon className="w-5 h-5 text-[#D9773A]"/><div className="font-[700] text-[14px] mt-2">{f.title}</div><div className="text-[12px] leading-[1.5] text-[#8A7D6B] mt-1">{f.desc}</div></div>
               ))}
@@ -499,31 +505,52 @@ function HomePage() {
 
       {/* Half vs Full */}
       <section className="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 grid lg:grid-cols-2 gap-5">
-        <Link to="/half-day-tours" className="group relative rounded-[28px] overflow-hidden min-h-[360px] flex items-end p-8 bg-[#1A3A2F]">
-          <img src="/images/ourika-river.jpg" alt="half day" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-[1.03] transition duration-[1000ms]" loading="lazy"/>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"/>
-          <div className="relative text-white"><div className="inline-flex px-3 py-1 rounded-full bg-white text-[#1A3A2F] text-[11px] font-[800] uppercase">Most booked</div><h3 className="font-display text-[32px] font-[600] leading-[0.95] mt-3">Half-Day Discovery<br/>from Marrakech</h3><p className="text-white/70 text-[13px] mt-2 max-w-[32ch]">5 hours • Pickup 9am • Village, waterfalls, riverside lunch. Perfect for short stays.</p><div className="mt-4 h-10 px-5 rounded-full bg-white text-[#1A3A2F] inline-flex items-center gap-2 text-[13px] font-[700]">Explore half-day <ArrowUpRight className="w-4 h-4"/></div></div>
-        </Link>
-        <Link to="/full-day-tours" className="group relative rounded-[28px] overflow-hidden min-h-[360px] flex items-end p-8 bg-[#D9773A]">
-          <img src="/images/hiking.jpg" alt="full day" className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-[1.03] transition duration-[1000ms]" loading="lazy"/>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"/>
-          <div className="relative text-white"><div className="inline-flex px-3 py-1 rounded-full bg-[#1A3A2F] text-white text-[11px] font-[800] uppercase">Deep dive</div><h3 className="font-display text-[32px] font-[600] leading-[0.95] mt-3">Full-Day Atlas<br/>Immersion</h3><p className="text-white/80 text-[13px] mt-2 max-w-[32ch]">8 hours • Hike, farm, bread, cook, cooperative, sunset tea. Our complete story.</p><div className="mt-4 h-10 px-5 rounded-full bg-[#1A3A2F] text-white inline-flex items-center gap-2 text-[13px] font-[700]">Explore full-day <ArrowUpRight className="w-4 h-4"/></div></div>
-        </Link>
-      </section>
+  <Link to="/half-day-tours" className="group relative rounded-[28px] overflow-hidden min-h-[360px] flex items-end p-8 bg-[#1A3A2F]">
+    <img src="/images/farm.jpg" alt="medio día" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-[1.03] transition duration-[1000ms]" loading="lazy"/>
+    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"/>
+    <div className="relative text-white">
+      <div className="inline-flex px-3 py-1 rounded-full bg-white text-[#1A3A2F] text-[11px] font-[800] uppercase">Más reservado</div>
+      <h3 className="font-display text-[32px] font-[600] leading-[0.95] mt-3">Descubre Atlas y Desierto<br/>desde Marrakech</h3>
+      <p className="text-white/70 text-[13px] mt-2 max-w-[32ch]">5 horas • Recogida a las 9:00 • Pueblo, cascadas y almuerzo junto al río. Ideal para estancias cortas.</p>
+      <div className="mt-4 h-10 px-5 rounded-full bg-white text-[#1A3A2F] inline-flex items-center gap-2 text-[13px] font-[700]">Explorar excursiones de medio día <ArrowUpRight className="w-4 h-4"/></div>
+    </div>
+  </Link>
+
+  <Link to="/full-day-tours" className="group relative rounded-[28px] overflow-hidden min-h-[360px] flex items-end p-8 bg-[#D9773A]">
+    <img src="/images/hiking.jpg" alt="día completo" className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-[1.03] transition duration-[1000ms]" loading="lazy"/>
+    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"/>
+    <div className="relative text-white">
+      <div className="inline-flex px-3 py-1 rounded-full bg-[#1A3A2F] text-white text-[11px] font-[800] uppercase">Experiencia completa</div>
+      <h3 className="font-display text-[32px] font-[600] leading-[0.95] mt-3">Inmersión en el Atlas y desierto<br/>de día completo</h3>
+      <p className="text-white/80 text-[13px] mt-2 max-w-[32ch]">8 horas • Senderismo, agricultura, pan tradicional, cocina, cooperativa y té al atardecer. Nuestra historia completa.</p>
+      <div className="mt-4 h-10 px-5 rounded-full bg-[#1A3A2F] text-white inline-flex items-center gap-2 text-[13px] font-[700]">Explorar excursiones de día completo <ArrowUpRight className="w-4 h-4"/></div>
+    </div>
+  </Link>
+</section>
 
       {/* Reviews */}
       <section className="bg-[#F5EBDC] border-y border-black/5 py-20">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="flex items-end justify-between gap-6 flex-wrap">
-            <h2 className="font-display text-[32px] lg:text-[44px] font-[600] leading-[0.95] tracking-[-0.02em]">Travelers don’t remember tours.<br/>They remember kitchens.</h2>
-            <div className="flex items-center gap-2 text-[13px]"><span className="w-8 h-8 rounded-full bg-[#1A3A2F] text-white grid place-items-center"><Star className="w-4 h-4 fill-white"/></span>4.94/5 from 2,400+ reviews on Google, Airbnb, GetYourGuide</div>
+            <h2 className="font-display text-[32px] lg:text-[44px] font-[600] leading-[0.95] tracking-[-0.02em]">Viajes auténticos,<br/>Historias Reales</h2>
+            <div className="flex items-center gap-2 text-[13px]"><span className="w-8 h-8 rounded-full bg-[#1A3A2F] text-white grid place-items-center"><Star className="w-4 h-4 fill-white"/></span>4.94/5 from 2,400+ reviews on Google</div>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
             {reviewsData.map((r,i)=>(
               <div key={i} className="bg-white rounded-[20px] border border-black/5 p-5">
                 <div className="flex items-center gap-1 text-[#D9773A]">{Array.from({length:5}).map((_,j)=><Star key={j} className="w-4 h-4 fill-[#D9773A]"/>)}</div>
                 <p className="text-[14px] leading-[1.5] mt-3">“{r.text[l as 'en'] ?? r.text.en}”</p>
-                <div className="flex items-center gap-2 mt-4"><div className="w-8 h-8 rounded-full bg-[#F5EBDC] overflow-hidden"><img src={r.avatar} alt={r.name} className="w-full h-full object-cover"/></div><div><div className="text-[13px] font-[700]">{r.name}</div><div className="text-[11px] text-[#8A7D6B]">{r.country}</div></div></div>
+                <div className="flex items-center gap-2 mt-4">
+                  {/* <div className="w-8 h-8 rounded-full bg-[#F5EBDC] overflow-hidden"><img src={r.avatar} alt={r.name} className="w-full h-full object-cover"/></div> */}
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                  r.gender === 'female'
+                    ? 'bg-[#F5EBDC] text-[#D9773A]'
+                    : 'bg-[#E8EFE9] text-[#1A3A2F]'
+                }`}>
+                  <UserRound className="w-4 h-4" />
+                </div>
+                  
+                  <div><div className="text-[13px] font-[700]">{r.name}</div><div className="text-[11px] text-[#8A7D6B]">{r.country}</div></div></div>
               </div>
             ))}
           </div>
@@ -536,14 +563,14 @@ function HomePage() {
         <div className="rounded-[24px] overflow-hidden border border-black/10 bg-white">
        
           <iframe title="Ourika Valley map" src="https://www.openstreetmap.org/export/embed.html?bbox=-7.85%2C31.25%2C-7.68%2C31.38&layer=mapnik&marker=31.316%2C-7.78" className="w-full h-[420px] border-0" loading="lazy"/>
-          <div className="p-4 flex items-center justify-between text-[12px]"><span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-[#D9773A]"/> Ourika Valley, 40n from Marrakech — pickup included on half/full-day tours</span><a href="https://maps.google.com/?q=Ourika+Valley" target="_blank" className="px-3 py-1.5 rounded-full bg-[#1A3A2F] text-white font-[600]">Open Google Maps</a></div>
+          <div className="p-4 flex items-center justify-between text-[12px]"><span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-[#D9773A]"/> Atlas Y desierto desde Marrakech — Recogida incluida en tours y experiencias</span><a href="https://maps.google.com/?q=Ourika+Valley" target="_blank" className="px-3 py-1.5 rounded-full bg-[#1A3A2F] text-white font-[600]">Open Google Maps</a></div>
         </div>
         <div>
-          <h3 className="font-display text-[30px] font-[600] leading-[1] tracking-tight">Come for the mountains,<br/>stay for the people.</h3>
-          <p className="text-[14px] leading-[1.6] text-[#8A7D6B] mt-4">All tours start in Ourika if you have your own transport. Coming from Marrakech? We pick you up. Small groups, instant confirmation, free cancellation 24h.</p>
+          <h3 className="font-display text-[30px] font-[600] leading-[1] tracking-tight">Ven por las montañas,<br/>quédate por su gente.</h3>
+          <p className="text-[14px] leading-[1.6] text-[#8A7D6B] mt-4">Salida directa con transporte propio o recogida en Marrakech. Grupos reducidos, confirmación inmediata y cancelación gratuita hasta 24 horas antes.</p>
           <div className="mt-6 grid gap-3">
-            <a href={WA_LINK('Hi! Can you help me choose between half-day and full-day?')} target="_blank" className="h-14 rounded-full bg-[#1A3A2F] text-white flex items-center justify-between px-6 font-[650] text-[14px]"><span className="flex items-center gap-3"><span className="w-8 h-8 rounded-full bg-white/15 grid place-items-center">💬</span>Chat on WhatsApp — replies in 20 min</span><ArrowUpRight className="w-5 h-5"/></a>
-            <Link to="/contact" className="h-14 rounded-full bg-white border border-black/10 flex items-center justify-between px-6 font-[600] text-[14px]"><span>Or send a message</span><Mail className="w-5 h-5"/></Link>
+            <a href={WA_LINK('Hi! Can you help me choose between half-day and full-day?')} target="_blank" className="h-14 rounded-full bg-[#1A3A2F] text-white flex items-center justify-between px-6 font-[650] text-[14px]"><span className="flex items-center gap-3"><span className="w-8 h-8 rounded-full bg-white/15 grid place-items-center">💬</span>Habla por WhatsApp — respondemos en 2 min.</span><ArrowUpRight className="w-5 h-5"/></a>
+            <Link to="/contact" className="h-14 rounded-full bg-white border border-black/10 flex items-center justify-between px-6 font-[600] text-[14px]"><span>O envíanos un mensaje.</span><Mail className="w-5 h-5"/></Link>
           </div>
         </div>
          {/* <FAQSection /> */}
@@ -561,8 +588,8 @@ function ExperiencesPage() {
     <main className="max-w-[1280px] mx-auto px-6 lg:px-8 py-10">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
-          <Badge> More than 20 experiences • Direct bookings • No middlemen</Badge>
-          <h1 className="font-display text-[40px] lg:text-[56px] font-[650] leading-[0.9] tracking-[-0.04em] mt-4">All Ourika experiences,<br/>built with families.</h1>
+          <Badge> Más de 20 experiencias • Reservas directas • Sin intermediarios</Badge>
+          <h1 className="font-display text-[40px] lg:text-[56px] font-[650] leading-[0.9] tracking-[-0.04em] mt-4">Todas las experiencias,<br/>creadas junto a familias locales.</h1>
         </div>
         <div className="flex gap-2 flex-wrap p-1 rounded-full bg-white border border-black/5">
           {(['all','half-day','full-day','cultural','nature','Sahara-Desert'] as const).map(f=>(
@@ -588,22 +615,23 @@ function HalfDayPage() {
   return (
     <main className="max-w-[1280px] mx-auto px-6 lg:px-8 py-10">
       <div className="rounded-[28px] overflow-hidden bg-[#1A3A2F] relative min-h-[320px] flex items-end p-10">
-        <img src="/images/waterfall.jpg" alt="half day" className="absolute inset-0 w-full h-full object-cover opacity-50" loading="lazy"/>
+        <img src="/images/ourika_valley_mountains.png" alt="medio día" className="absolute inset-0 w-full h-full object-cover opacity-50" loading="lazy"/>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"/>
-        <div className="relative text-white max-w-[60ch]"><Badge>Half-Day Tours • 4-5h • From Marrakech with pickup</Badge><h1 className="font-display text-[44px] font-[640] leading-[0.9] tracking-tight mt-4">Half-day, full heart.<br/>Best if you’re short on time.</h1><p className="text-white/70 text-[15px] leading-[1.5] mt-4">Leave Marrakech at 9am, back by 2pm. Perfect for families and first-timers: Berber house, Setti Fatma waterfalls, riverside tagine, women’s cooperative.</p></div>
+        <div className="relative text-white max-w-[60ch]"><Badge>Excursiones de medio día • 4-5 h • Recogida en Marrakech</Badge><h1 className="font-display text-[44px] font-[640] leading-[0.9] tracking-tight mt-4">Medio día, grandes emociones.<br/>Ideal si tienes poco tiempo.</h1><p className="text-white/70 text-[15px] leading-[1.5] mt-4">Sal de Marrakech a las 9:00 y regresa a las 14:00. Ideal para familias y quienes visitan la zona por primera vez: casa bereber, cascadas de Setti Fatma, tajín junto al río y cooperativa de mujeres.</p></div>
       </div>
       <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-5">{list.map(e=><ExperienceCard key={e.id} exp={e}/>)}</div>
     </main>
   );
 }
+
 function FullDayPage() {
   const list = experiences.filter(e=>e.category==='full-day');
   return (
     <main className="max-w-[1280px] mx-auto px-6 lg:px-8 py-10">
-      <div className="rounded-[28px] overflow-hidden bg-[#D9773A] relative min-h-[320px] flex items-end p-10">
-        <img src="/images/hero-atlas.jpg" alt="full day" className="absolute inset-0 w-full h-full object-cover opacity-60" loading="lazy"/>
+      <div className="rounded-[28px] overflow-hidden bg-[#1A3A2F] relative min-h-[320px] flex items-end p-10">
+        <img src="/images/fullhero.jpg" alt="día completo" className="absolute inset-0 w-full h-full object-cover opacity-60" loading="lazy"/>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"/>
-        <div className="relative text-white max-w-[60ch]"><Badge>Full-Day Tours • 8h • Deep immersion • All meals</Badge><h1 className="font-display text-[44px] font-[640] leading-[0.9] tracking-tight mt-4">One day, the whole valley:<br/>hike, farm, bake, cook.</h1><p className="text-white/80 text-[15px] leading-[1.5] mt-4">Our most complete journey. 2h hike, farming, bread in tabouna, cooking class lunch, cooperative visit and sunset mint tea above terraces. 100% revenue to families.</p></div>
+        <div className="relative text-white max-w-[60ch]"><Badge>Excursiones de día completo • 8 h • Inmersión auténtica • Todas las comidas</Badge><h1 className="font-display text-[44px] font-[640] leading-[0.9] tracking-tight mt-4">Un día para descubrir todo :<br/>camina, cultiva, hornea y cocina.</h1><p className="text-white/80 text-[15px] leading-[1.5] mt-4">Nuestra experiencia más completa: 2 horas de senderismo, actividades agrícolas, pan tradicional en horno de tabouna, almuerzo con clase de cocina, visita a una cooperativa y té a la menta al atardecer sobre las terrazas. El 100 % de los ingresos se destina a las familias locales.</p></div>
       </div>
       <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-5">{list.map(e=><ExperienceCard key={e.id} exp={e}/>)}</div>
     </main>
@@ -616,55 +644,13 @@ function SaharaDesertPage() {
   );
 
   return (
-    <main className="max-w-[1280px] mx-auto px-6 lg:px-8 py-10">
-
-      <div className="relative h-[320px] md:h-[420px] rounded-[28px] overflow-hidden">
-        <img
-          src="/images/agafay/ait-ben-haddou.jpg"
-          alt="Discover Morocco's Sahara Desert"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-
-        <div className="absolute inset-0 bg-black/45" />
-
-        <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-14 text-white">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-4">
-            Discover Morocco
-          </p>
-
-          <h1 className="font-display text-4xl md:text-6xl font-bold">
-            Sahara Desert Experiences
-          </h1>
-
-          <p className="mt-4 max-w-xl text-sm md:text-base text-white/90">
-            Explore Morocco through unforgettable desert journeys,
-            local culture and authentic experiences.
-          </p>
-        </div>
+   <main className="max-w-[1280px] mx-auto px-6 lg:px-8 py-10">
+      <div className="rounded-[28px] overflow-hidden bg-[#D9773A] relative min-h-[320px] flex items-end p-10">
+        <img src="/images/sahara/fulldaytours.jpg" alt="desierto del Sáhara" className="absolute inset-0 w-full h-full object-cover opacity-60" loading="lazy"/>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"/>
+        <div className="relative text-white max-w-[60ch]"><Badge>Excursiones • 8 h • Inmersión auténtica • Comidas y transporte incluidos</Badge><h1 className="font-display text-[44px] font-[640] leading-[0.9] tracking-tight mt-4">Excursiones al desierto :<br/>medio día, día completo y 3 días</h1><p className="text-white/80 text-[15px] leading-[1.5] mt-4">Descubre la magia del Sáhara, sus dunas doradas y la auténtica esencia de Marruecos con nuestras inolvidables excursiones por el desierto.</p></div>
       </div>
-
-      <div className="mt-10">
-        <h2 className="font-display text-3xl font-bold">
-          Explore our Sahara experiences
-        </h2>
-
-        <p className="mt-2 text-sm text-[#8A7D6B]">
-          Discover our selected tours and experiences.
-        </p>
-      </div>
-
-      <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {list.map(e => (
-          <ExperienceCard key={e.id} exp={e} />
-        ))}
-      </div>
-
-      {list.length === 0 && (
-        <p className="mt-8 text-center text-[#8A7D6B]">
-          New Sahara experiences coming soon.
-        </p>
-      )}
-
+      <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-5">{list.map(e=><ExperienceCard key={e.id} exp={e}/>)}</div>
     </main>
   );
 }
@@ -745,7 +731,7 @@ function AboutPage() {
         <div>
           <Badge>About Us • Community-led since 2014</Badge>
           <h1 className="font-display text-[42px] lg:text-[56px] font-[650] leading-[0.9] tracking-tight mt-4">We are not a tour company.<br/>We are a valley.</h1>
-          <p className="text-[15px] leading-[1.7] text-[#5A5348] mt-6">Ourika Authentic started when Fatima asked tourists filming her tabouna: “If you like bread, why don’t you make it with me tomorrow?” Word spread. Brahim’s house, Hassan’s trails, Khadija’s cooperative. No agency, no commission — just neighbors inviting you in. Today 27 families host, guide, cook, farm with you. Every euro stays.</p>
+          <p className="text-[15px] leading-[1.7] text-[#5A5348] mt-6">Ourika valle Authentic started when Fatima asked tourists filming her tabouna: “If you like bread, why don’t you make it with me tomorrow?” Word spread. Brahim’s house, Hassan’s trails, Khadija’s cooperative. No agency, no commission — just neighbors inviting you in. Today 27 families host, guide, cook, farm with you. Every euro stays.</p>
           <div className="mt-8 grid grid-cols-3 gap-4">
             {[{k:'2,400+',v:'Travelers hosted'},{k:'27',v:'Families part of network'},{k:'€182k',v:'Direct to locals since 2022'}].map((s,i)=>(
               <div key={i} className="rounded-[18px] bg-white border border-black/5 p-4"><div className="font-display text-[28px] font-[700] leading-none">{s.k}</div><div className="text-[12px] text-[#8A7D6B] mt-2">{s.v}</div></div>
@@ -759,7 +745,7 @@ function AboutPage() {
               'No fake folklorique staging — real homes, real work',
               'Women-led cooperative gets priority & fair price',
               'Free cancellation 24h before, instant confirmation',
-              'We speak Tashelhit, Darija, Arabic, French, English, Spanish',
+              'We speak Tashelhit, Darija, Arabic, French, English, Spanish.German',
             ].map((t,i)=><div key={i} className="flex gap-3 text-[14px] leading-[1.5]"><span className="w-6 h-6 rounded-full bg-[#F5EBDC] grid place-items-center shrink-0 mt-0.5"><Check className="w-3.5 h-3.5"/></span>{t}</div>)}
           </div>
         </div>
@@ -844,38 +830,38 @@ function ContactPage() {
   const [sent,setSent]=useState(false);
   return (
     <main className="max-w-[1280px] mx-auto px-6 lg:px-8 py-10 grid lg:grid-cols-[1fr_0.9fr] gap-10">
-      
-      <div>
-        <Badge>Contact • Usually replies in 20 minutes • WhatsApp preferred</Badge>
-        <h1 className="font-display text-[42px] font-[650] leading-[0.9] tracking-tight mt-4">Salam — how can we help<br/>you explore Ourika?</h1>
-        <div className="mt-8 grid sm:grid-cols-2 gap-4">
-          <div className="rounded-[18px] bg-white border border-black/5 p-5"><div className="text-[12px] font-[800] uppercase tracking-wide text-[#8A7D6B] flex items-center gap-2"><Phone className="w-4 h-4 text-[#D9773A]"/>WhatsApp / Call</div><div className="font-[600] mt-2">+212 6 12 34 56 78</div><a href={WA_LINK('Salam Ourika team!')} target="_blank" className="mt-3 inline-flex h-9 px-4 rounded-full bg-[#1A3A2F] text-white text-[12px] font-[700] items-center">Chat now</a></div>
-          <div className="rounded-[18px] bg-white border border-black/5 p-5"><div className="text-[12px] font-[800] uppercase tracking-wide text-[#8A7D6B] flex items-center gap-2"><Mail className="w-4 h-4 text-[#D9773A]"/>Email</div><div className="font-[600] mt-2">hello@ourika-authentic.ma</div><div className="text-[12px] text-[#8A7D6B] mt-1">Replies within 2h, 8am-9pm Morocco time</div></div>
-        </div>
-        <div className="mt-6 rounded-[18px] overflow-hidden border border-black/10">
-          <iframe title="Ourika map" src="https://www.openstreetmap.org/export/embed.html?bbox=-7.85%2C31.25%2C-7.68%2C31.38&layer=mapnik&marker=31.316%2C-7.78" className="w-full h-[320px] border-0" loading="lazy"/>
-        </div>
-      </div>
 
-      <form onSubmit={e=>{e.preventDefault(); setSent(true);}} className="bg-white rounded-[24px] border border-black/5 p-6 shadow-[0_12px_40px_rgba(0,0,0,0.05)]">
-        {sent?(
-          <div className="text-center py-16"><div className="w-14 h-14 rounded-full bg-[#8FBDA3]/20 grid place-items-center mx-auto mb-4"><Check className="w-7 h-7 text-[#1A3A2F]"/></div><h3 className="font-display text-[22px] font-[650]">Message sent — shukran!</h3><p className="text-[13px] text-[#8A7D6B] mt-2">We’ll reply on email & WhatsApp very soon.</p></div>
-        ):(
-          <>
-            <h3 className="font-display text-[20px] font-[650]">Send a message</h3>
-            <div className="mt-6 grid gap-4">
-              <div className="grid grid-cols-2 gap-3"><input required placeholder="Full name" className="h-11 rounded-full border border-black/10 px-4 text-[14px]"/><input required placeholder="Guests" type="number" min={1} className="h-11 rounded-full border border-black/10 px-4 text-[14px]"/></div>
-              <input required type="email" placeholder="Email" className="h-11 rounded-full border border-black/10 px-4 text-[14px]"/>
-              <input placeholder="Desired date" type="date" className="h-11 rounded-full border border-black/10 px-4 text-[14px]"/>
-              <textarea required placeholder="Tell us what you’d like to do — cooking, hiking, village, waterfalls..." rows={5} className="rounded-[16px] border border-black/10 p-4 text-[14px] resize-none"/>
-            </div>
-            <button type="submit" className="mt-6 w-full h-[48px] rounded-full bg-[#D9773A] text-white font-[700] text-[14px] hover:bg-[#B85C24] transition">Send message</button>
-            <a href={WA_LINK('Hi Ourika team, I have a question about experiences')} target="_blank" className="mt-3 w-full h-[48px] rounded-full border border-black/10 font-[600] text-[14px] grid place-items-center">Or chat on WhatsApp</a>
-            <p className="text-[11px] text-[#8A7D6B] text-center mt-4">Secure, no spam. We never share your email. Free cancellation guidance included.</p>
-          </>
-        )}
-      </form>
-    </main>
+  <div>
+    <Badge>Contacto • Respondemos normalmente en 5 minutos • Preferimos WhatsApp</Badge>
+    <h1 className="font-display text-[42px] font-[650] leading-[0.9] tracking-tight mt-4">¡Salam! ¿Cómo podemos ayudarte<br/>a descubrir Marruecos?</h1>
+    <div className="mt-8 grid sm:grid-cols-2 gap-4">
+      <div className="rounded-[18px] bg-white border border-black/5 p-5"><div className="text-[12px] font-[800] uppercase tracking-wide text-[#8A7D6B] flex items-center gap-2"><Phone className="w-4 h-4 text-[#D9773A]"/>WhatsApp / Teléfono</div><div className="font-[600] mt-2">+212 6 12 34 56 78</div><a href={WA_LINK('¡Salam, equipo de Ourika!')} target="_blank" className="mt-3 inline-flex h-9 px-4 rounded-full bg-[#1A3A2F] text-white text-[12px] font-[700] items-center">Escríbenos ahora</a></div>
+      <div className="rounded-[18px] bg-white border border-black/5 p-5"><div className="text-[12px] font-[800] uppercase tracking-wide text-[#8A7D6B] flex items-center gap-2"><Mail className="w-4 h-4 text-[#D9773A]"/>Correo electrónico</div><div className="font-[600] mt-2">hola@atlas-desierto.com</div><div className="text-[12px] text-[#8A7D6B] mt-1">Respondemos en un plazo de 2 horas, de 8:00 a 21:00 (hora de Marruecos)</div></div>
+    </div>
+    <div className="mt-6 rounded-[18px] overflow-hidden border border-black/10">
+      <iframe title="Mapa de Ourika" src="https://www.openstreetmap.org/export/embed.html?bbox=-7.85%2C31.25%2C-7.68%2C31.38&layer=mapnik&marker=31.316%2C-7.78" className="w-full h-[320px] border-0" loading="lazy"/>
+    </div>
+  </div>
+
+  <form onSubmit={e=>{e.preventDefault(); setSent(true);}} className="bg-white rounded-[24px] border border-black/5 p-6 shadow-[0_12px_40px_rgba(0,0,0,0.05)]">
+    {sent?(
+      <div className="text-center py-16"><div className="w-14 h-14 rounded-full bg-[#8FBDA3]/20 grid place-items-center mx-auto mb-4"><Check className="w-7 h-7 text-[#1A3A2F]"/></div><h3 className="font-display text-[22px] font-[650]">¡Mensaje enviado! ¡Shukran!</h3><p className="text-[13px] text-[#8A7D6B] mt-2">Te responderemos muy pronto por correo electrónico o WhatsApp.</p></div>
+    ):(
+      <>
+        <h3 className="font-display text-[20px] font-[650]">Envíanos un mensaje</h3>
+        <div className="mt-6 grid gap-4">
+          <div className="grid grid-cols-2 gap-3"><input required placeholder="Nombre completo" className="h-11 rounded-full border border-black/10 px-4 text-[14px]"/><input required placeholder="Número de personas" type="number" min={1} className="h-11 rounded-full border border-black/10 px-4 text-[14px]"/></div>
+          <input required type="email" placeholder="Correo electrónico" className="h-11 rounded-full border border-black/10 px-4 text-[14px]"/>
+          <input placeholder="Fecha deseada" type="date" className="h-11 rounded-full border border-black/10 px-4 text-[14px]"/>
+          <textarea required placeholder="Cuéntanos qué te gustaría hacer: cocina, senderismo, visita a un pueblo, cascadas..." rows={5} className="rounded-[16px] border border-black/10 p-4 text-[14px] resize-none"/>
+        </div>
+        <button type="submit" className="mt-6 w-full h-[48px] rounded-full bg-[#D9773A] text-white font-[700] text-[14px] hover:bg-[#B85C24] transition">Enviar mensaje</button>
+        <a href={WA_LINK('Hola, equipo de Ourika. Tengo una pregunta sobre las experiencias.')} target="_blank" className="mt-3 w-full h-[48px] rounded-full border border-black/10 font-[600] text-[14px] grid place-items-center">O escríbenos por WhatsApp</a>
+        <p className="text-[11px] text-[#8A7D6B] text-center mt-4">Tus datos están protegidos. No enviamos spam ni compartimos tu correo electrónico. Te informaremos sobre las condiciones de cancelación gratuita.</p>
+      </>
+    )}
+  </form>
+</main>
   );
 }
 
@@ -909,6 +895,9 @@ export default function App() {
             <Route path="/blog" element={<BlogPage/>}/>
             <Route path="/blog/:slug" element={<BlogDetailPage/>}/>
             <Route path="/contact" element={<ContactPage/>}/>
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/imprint" element={<Imprint />} />
           </Routes>
           <Footer/>
 

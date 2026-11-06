@@ -7,6 +7,7 @@ export default function Logo() {
     <Link to="/" className="flex items-center gap-3">
       <div className="w-14 h-9 rounded-xl bg-[#D9773A] grid place-items-center">
         {/* <MountainSnow className="w-5 h-5 text-[#F5EBDC]" /> */}
+  
           <svg
       viewBox="0 0 100 100"
       fill="none"
@@ -24,18 +25,19 @@ export default function Logo() {
         <path d="M53 43 L59 35 L66 46" />
         <path d="M18 75 Q39 59 57 73 T88 72" />
         <path d="M14 83 Q37 72 55 82 T88 81" />
-        <path d="M68 16 V23 M83 27 L78 32 M53 27 L58 32" />
+       
       </g>
     
     </svg>
+    
       </div>
 
       <div className="leading-none">
         <div className="font-display font-[660] text-[18px] tracking-[-0.02em] text-[#D9773A]">
-          OURIKA VALLE
+          Atlas <span className="text-[#D9773A] text-[1.2em] font-serif  mx-0.7">&</span>  Desierto
         </div> 
-        <div className="text-center text-[10px] tracking-[0.18em] uppercase font-[700] text-[black] mt-1">
-          -- Desde 2014 --
+        <div className="text-center text-[10px] tracking-[0.28em] uppercase font-[700] text-[black] mt-1">
+         EST. 2014
         </div>
       </div>
     </Link>

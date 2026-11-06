@@ -28,3 +28,4 @@ body { background: #FFFBF2; color: #1A3A2F; -webkit-font-smoothing: antialiased;
 @media(min-width:640px){ .masonry{column-count:2} }
 @media(min-width:1024px){ .masonry{column-count:3} }
 .masonry > * { break-inside: avoid; margin-bottom: 1rem; }
+
