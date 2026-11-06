@@ -29,7 +29,7 @@ export const dict: Record<Lang, any> = {
     },
     common: { bookNow: 'Réserver', viewAll: 'Toutes les expériences', from: 'dès', perPerson: '/pers', duration: 'Durée', group: 'Groupe', diff: 'Niveau', rating: 'Note', included: 'Inclus', notIncluded: 'Non inclus', itinerary: 'Programme', highlights: 'Points forts', secure: 'Paiement sécurisé', whatsapp: 'WhatsApp nous', needHelp: 'Besoin d’aide ?', freeCancel: 'Annulation gratuite 24h avant', instantConf: 'Confirmation instantanée' },
     booking: { title: 'Vérifier dispo', date: 'Date', guests: 'Invités', name: 'Nom complet', email: 'Email', message: 'Message (allergies, ramassage)', pay: 'Payer & confirmer', payLater: 'Réserver & payer sur place', wa: 'Demander sur WhatsApp' },
-    footer: { tagline: 'Tourisme communautaire en vallée d’Ourika. Chaque réservation soutient les familles berbères.', links: 'Explorer', contact: 'Contact', legal: '© 2027 Atlas y desierto. Créé dans l’Atlas.' },
+    footer: { tagline: 'Tourisme communautaire en vallée d’Ourika. Chaque réservation soutient les familles berbères.', links: 'Explorer', contact: 'Contact', legal: '© 2026 Atlas y desierto. Créé dans l’Atlas.' },
   },
   es: {
     nav: { home: 'Inicio', experiences: 'Experiencias', half: 'Medio día', full: 'Día completo', about: 'Nosotros', gallery: 'Galería', blog: 'Blog', contact: 'Contacto' },

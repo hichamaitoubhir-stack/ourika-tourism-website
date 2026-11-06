@@ -582,7 +582,7 @@ function HomePage() {
 function ExperiencesPage() {
   const { lang } = useContext(LangContext);
   const l = lang as 'en'|'fr'|'es';
-  const [filter, setFilter] = useState<'all'|'half-day'|'full-day'|'cultural'|'nature'>('all');
+  const [filter, setFilter] = useState<'all'|'half-day'|'full-day'|'cultural'|'nature'|'Sahara-Desert'>('all');
   const filtered = useMemo(()=> filter==='all'? experiences : experiences.filter(e=>e.category===filter), [filter]);
   return (
     <main className="max-w-[1280px] mx-auto px-6 lg:px-8 py-10">
@@ -835,7 +835,7 @@ function ContactPage() {
     <Badge>Contacto • Respondemos normalmente en 5 minutos • Preferimos WhatsApp</Badge>
     <h1 className="font-display text-[42px] font-[650] leading-[0.9] tracking-tight mt-4">¡Salam! ¿Cómo podemos ayudarte<br/>a descubrir Marruecos?</h1>
     <div className="mt-8 grid sm:grid-cols-2 gap-4">
-      <div className="rounded-[18px] bg-white border border-black/5 p-5"><div className="text-[12px] font-[800] uppercase tracking-wide text-[#8A7D6B] flex items-center gap-2"><Phone className="w-4 h-4 text-[#D9773A]"/>WhatsApp / Teléfono</div><div className="font-[600] mt-2">+212 6 12 34 56 78</div><a href={WA_LINK('¡Salam, equipo de Ourika!')} target="_blank" className="mt-3 inline-flex h-9 px-4 rounded-full bg-[#1A3A2F] text-white text-[12px] font-[700] items-center">Escríbenos ahora</a></div>
+      <div className="rounded-[18px] bg-white border border-black/5 p-5"><div className="text-[12px] font-[800] uppercase tracking-wide text-[#8A7D6B] flex items-center gap-2"><Phone className="w-4 h-4 text-[#D9773A]"/>WhatsApp / Teléfono</div><div className="font-[600] mt-2">+212 6 06 12 50</div><a href={WA_LINK('¡Salam, equipo de Ourika!')} target="_blank" className="mt-3 inline-flex h-9 px-4 rounded-full bg-[#1A3A2F] text-white text-[12px] font-[700] items-center">Escríbenos ahora</a></div>
       <div className="rounded-[18px] bg-white border border-black/5 p-5"><div className="text-[12px] font-[800] uppercase tracking-wide text-[#8A7D6B] flex items-center gap-2"><Mail className="w-4 h-4 text-[#D9773A]"/>Correo electrónico</div><div className="font-[600] mt-2">hola@atlas-desierto.com</div><div className="text-[12px] text-[#8A7D6B] mt-1">Respondemos en un plazo de 2 horas, de 8:00 a 21:00 (hora de Marruecos)</div></div>
     </div>
     <div className="mt-6 rounded-[18px] overflow-hidden border border-black/10">
